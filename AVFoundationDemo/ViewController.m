@@ -7,8 +7,14 @@
 //
 
 #import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
+
+@property (nonatomic,strong) AVCaptureSession *session;
+@property (nonatomic,strong) AVCaptureDevice *device;
+@property (nonatomic,strong) AVCaptureInput *input;
+@property (nonatomic,strong) AVCaptureOutput *output;
 
 @end
 
@@ -24,6 +30,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - 
+
 
 
 @end
