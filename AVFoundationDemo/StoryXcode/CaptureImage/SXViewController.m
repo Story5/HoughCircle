@@ -7,9 +7,11 @@
 //
 
 #import "SXViewController.h"
-#import "DetectCircleTool.h"
-#import "AVCamPreviewView.h"
+
 #import <AVFoundation/AVFoundation.h>
+#import "AVCamPreviewView.h"
+
+#import "DetectCircleTool.h"
 
 @interface SXViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -23,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet AVCamPreviewView *previewView;
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (nonatomic,strong) DetectCircleTool *detectCircleTool;
 
 @end
 
@@ -52,7 +56,10 @@
 //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
     UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
     
-    BOOL detected = [DetectCircleTool detectCircleInImage:image];
+    BOOL detected = [self.detectCircleTool detectCircleInImage:image];
+    
+    
+    
     NSLog(@"%d",detected);
     // Add your code here that uses the image
 //    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
@@ -211,6 +218,14 @@
 - (AVCaptureVideoPreviewLayer *)videoPreviewLayer
 {
     return (AVCaptureVideoPreviewLayer *)self.view.layer;
+}
+
+- (DetectCircleTool *)detectCircleTool
+{
+    if (_detectCircleTool == nil) {
+        _detectCircleTool = [[DetectCircleTool alloc] init];
+    }
+    return _detectCircleTool;
 }
 
 @end
