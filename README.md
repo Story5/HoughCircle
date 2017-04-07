@@ -1,5 +1,9 @@
 # AVFoundationDemo
 
+## Necessary framework
+Download the necessary [build of `opencv2.framework`](https://github.com/JoeHowse/iOSWithOpenCV/releases/download/1.1.0/opencv2.framework.zip)
+
+
 ## AVFoundation 相关类
 AVFoundation 框架基于以下几个类实现图像捕捉 ，通过这些类可以访问来自相机设备的原始数据并控制它的组件。
 
