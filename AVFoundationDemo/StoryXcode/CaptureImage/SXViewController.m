@@ -7,7 +7,7 @@
 //
 
 #import "SXViewController.h"
-
+#import "DetectCircleTool.h"
 #import "AVCamPreviewView.h"
 #import <AVFoundation/AVFoundation.h>
 
@@ -51,6 +51,9 @@
 //    CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
 //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
     UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
+    
+    BOOL detected = [DetectCircleTool detectCircleInImage:image];
+    NSLog(@"%d",detected);
     // Add your code here that uses the image
 //    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     NSLog(@"image");
@@ -138,24 +141,6 @@
 {
 //    // Set up the preview view.
     self.previewView.session = self.session;
-    
-    
-    
-//    AVCaptureSession *captureSession = self.session;
-//    CALayer *viewLayer = self.view.layer;
-//    
-//    AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:captureSession];
-//    [viewLayer addSublayer:captureVideoPreviewLayer];
-    
-    
-//    self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
-//    [self.previewLayer setBackgroundColor:[[UIColor blackColor] CGColor]];
-//    [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspect];
-//    CALayer *rootLayer = [self.previewView layer];
-//    [rootLayer setMasksToBounds:YES];
-//    [self.previewLayer setFrame:[rootLayer bounds]];
-//    [rootLayer addSublayer:self.previewLayer];
-//    [self.session startRunning];
 }
 
 // Create a UIImage from sample buffer data

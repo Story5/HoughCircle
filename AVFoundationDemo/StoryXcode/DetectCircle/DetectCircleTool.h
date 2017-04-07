@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface DetectCircleTool : NSObject
+
++ (BOOL)detectCircleInImage:(UIImage *)image;
 
 @end
