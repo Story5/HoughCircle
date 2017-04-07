@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  RHViewController.h
 //  AVFoundationDemo
 //
-//  Created by Story5 on 4/6/17.
+//  Created by Story5 on 4/7/17.
 //  Copyright © 2017 Story5. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface RHViewController : UIViewController
 
 @end
-
