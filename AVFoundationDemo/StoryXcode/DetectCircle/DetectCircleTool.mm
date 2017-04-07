@@ -14,41 +14,45 @@
 
 @implementation DetectCircleTool
 
-+ (BOOL)detectCircleInImage:(UIImage *)image
+- (BOOL)detectCircleInImage:(UIImage *)image
 {
+    // 将 UIImage 转成 MAT
     cv::Mat src;
     UIImageToMat(image, src);
     
-    size_t size = [self detectCircle:src];
-    if (size > 0) {
-        return true;
-    }
-    return false;
-}
-
-+ (size_t)detectCircle:(cv::Mat&)src
-{
+    // 将图像作灰度处理
     cv::Mat src_gray;
     cv::cvtColor( src, src_gray, CV_BGR2GRAY );
+    
+    // 高斯滤镜
     cv::GaussianBlur( src_gray, src_gray, cv::Size(9, 9), 2, 2 );
+    
+    // 霍夫变换检测圆形
     std::vector<cv::Vec3f> circles;
     cv::HoughCircles( src_gray, circles, CV_HOUGH_GRADIENT, 1, src_gray.rows/8, 200, 100, 0, 0 );
-    //    self.TakePictureButton.enabled = circles.size() > 0 ? YES : NO;
+    
     for( size_t i = 0; i < circles.size(); i++ )
     {
+        // 圆心
         cv::Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+        // 半径
         int radius = cvRound(circles[i][2]);
-        std::cout << center << std::endl;
-        printf("%d",radius);
+        
+        // 图像上画圆
         // circle center
         circle( src, center, 3, cv::Scalar(0,0,255), -1, 8, 0 );
         // circle outline
         circle( src, center, radius, cv::Scalar(0,255,0), 5, 8, 0 );
+        
+        
+        _center = CGPointMake(center.x, center.y);
+        _radius = radius;
     }
     
-    UIImage *image = MatToUIImage(src);
+    // 将 MAT 转换成 UIImage
+    _covertImage = MatToUIImage(src);
     
-    return circles.size();
+    return NO;
 }
 
 @end

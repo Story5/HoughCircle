@@ -11,6 +11,10 @@
 
 @interface DetectCircleTool : NSObject
 
-+ (BOOL)detectCircleInImage:(UIImage *)image;
+@property (nonatomic,readonly) CGPoint center;
+@property (nonatomic,readonly) int radius;
+@property (nonatomic,strong,readonly) UIImage *covertImage;
+
+- (BOOL)detectCircleInImage:(UIImage *)image;
 
 @end
