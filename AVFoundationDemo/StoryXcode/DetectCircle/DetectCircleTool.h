@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface DetectCircleTool : NSObject
+
+@property (nonatomic,readonly) CGPoint center;
+@property (nonatomic,readonly) int radius;
+@property (nonatomic,strong,readonly) UIImage *covertImage;
+
+- (BOOL)detectCircleInImage:(UIImage *)image;
 
 @end

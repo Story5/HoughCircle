@@ -8,8 +8,10 @@
 
 #import "SXViewController.h"
 
-#import "AVCamPreviewView.h"
 #import <AVFoundation/AVFoundation.h>
+#import "AVCamPreviewView.h"
+
+#import "DetectCircleTool.h"
 
 @interface SXViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -23,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet AVCamPreviewView *previewView;
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (nonatomic,strong) DetectCircleTool *detectCircleTool;
 
 @end
 
@@ -51,6 +55,12 @@
 //    CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
 //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
     UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
+    
+    BOOL detected = [self.detectCircleTool detectCircleInImage:image];
+    
+    
+    
+    NSLog(@"%d",detected);
     // Add your code here that uses the image
 //    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     NSLog(@"image");
@@ -138,24 +148,6 @@
 {
 //    // Set up the preview view.
     self.previewView.session = self.session;
-    
-    
-    
-//    AVCaptureSession *captureSession = self.session;
-//    CALayer *viewLayer = self.view.layer;
-//    
-//    AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:captureSession];
-//    [viewLayer addSublayer:captureVideoPreviewLayer];
-    
-    
-//    self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
-//    [self.previewLayer setBackgroundColor:[[UIColor blackColor] CGColor]];
-//    [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspect];
-//    CALayer *rootLayer = [self.previewView layer];
-//    [rootLayer setMasksToBounds:YES];
-//    [self.previewLayer setFrame:[rootLayer bounds]];
-//    [rootLayer addSublayer:self.previewLayer];
-//    [self.session startRunning];
 }
 
 // Create a UIImage from sample buffer data
@@ -226,6 +218,14 @@
 - (AVCaptureVideoPreviewLayer *)videoPreviewLayer
 {
     return (AVCaptureVideoPreviewLayer *)self.view.layer;
+}
+
+- (DetectCircleTool *)detectCircleTool
+{
+    if (_detectCircleTool == nil) {
+        _detectCircleTool = [[DetectCircleTool alloc] init];
+    }
+    return _detectCircleTool;
 }
 
 @end
