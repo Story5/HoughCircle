@@ -26,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Lc-oD-IIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-584" y="163"/>
+            <point key="canvasLocation" x="-585" y="244"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="R3r-Hb-gDX">
@@ -39,9 +39,24 @@
                     <view key="view" contentMode="scaleToFill" id="lI6-Ca-ZTe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GID-n5-Agg" customClass="AVCamPreviewView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GID-n5-Agg" firstAttribute="centerX" secondItem="lI6-Ca-ZTe" secondAttribute="centerX" id="MHq-24-EKf"/>
+                            <constraint firstItem="GID-n5-Agg" firstAttribute="width" secondItem="lI6-Ca-ZTe" secondAttribute="width" id="ayE-vB-BsH"/>
+                            <constraint firstItem="GID-n5-Agg" firstAttribute="centerY" secondItem="lI6-Ca-ZTe" secondAttribute="centerY" id="qaj-gL-9cs"/>
+                            <constraint firstItem="GID-n5-Agg" firstAttribute="height" secondItem="lI6-Ca-ZTe" secondAttribute="height" id="zgk-RY-5hL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="uKe-z4-VUJ"/>
+                    <connections>
+                        <outlet property="previewView" destination="GID-n5-Agg" id="cmK-Rj-jax"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51K-Zz-u05" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

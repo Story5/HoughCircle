@@ -7,6 +7,8 @@
 //
 
 #import "SXViewController.h"
+
+#import "AVCamPreviewView.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface SXViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -15,8 +17,11 @@
 @property (nonatomic,strong) AVCaptureDevice *device;
 //@property (nonatomic,strong) AVCaptureInput *input;
 @property (nonatomic,strong) AVCaptureDeviceInput *input;
-//@property (nonatomic,strong) AVCaptureOutput *output;
+
+// 可以逐帧处理捕获的视频
 @property (nonatomic,strong) AVCaptureVideoDataOutput *output;
+@property (weak, nonatomic) IBOutlet AVCamPreviewView *previewView;
+@property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 
 @end
 
@@ -25,6 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"%s",__func__);
+    self.view.backgroundColor = [UIColor redColor];
+    
     [self setAVCapture];
 }
 
@@ -55,37 +63,62 @@
 #pragma mark - set AVCapture
 - (void)setAVCapture
 {
-    NSError *error = nil;
-    
-    /*  **********   步骤 - 1   **********
-     *  Create the session
+    //  **********   步骤 - 1   **********
+    [self createSession];
+    //  **********   步骤 - 2   **********
+    [self configDevice];
+    //  **********   步骤 - 3   **********
+    [self configInput];
+    //  **********   步骤 - 4   **********
+    [self configOutput];
+    //  **********   步骤 - 5   **********
+    [self configPreview];
+    /*  **********   步骤 - 6   **********
+     * Start the session running to start the flow of data
      */
+    [self.session startRunning];
+    
+    // Assign session to an ivar.
+    [self setSession:self.session];
+}
+
+// Create the session
+- (void)createSession
+{
     self.session = [[AVCaptureSession alloc] init];
     // Configure the session to produce lower resolution video frames, if your
     // processing algorithm can cope. We'll specify medium quality for the
     // chosen device.
-    self.session.sessionPreset = AVCaptureSessionPresetMedium;
-    
-    /*  **********   步骤 - 2   **********
-     *  Find a suitable AVCaptureDevice
-     */
+//    self.session.sessionPreset = AVCaptureSessionPresetMedium;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        [self.session setSessionPreset:AVCaptureSessionPreset640x480];
+    else
+        [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
+}
+
+// Find a suitable AVCaptureDevice
+- (void)configDevice
+{
     self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
-    /*  **********   步骤 - 3   **********
-     *  Create a device input with the device and add it to the session
-     */
+}
+
+// Create a device input with the device and add it to the session
+- (void)configInput
+{
+    NSError *error = nil;
     self.input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
     if (!self.input) {
         // Handling the error appropriately.
     }
     [self.session addInput:self.input];
-    
-    /*  **********   步骤 - 4   **********
-     *  Create a VideoDataOutput and add it to the session
-     */
+}
+
+// Create a VideoDataOutput and add it to the session
+- (void)configOutput
+{
     self.output = [[AVCaptureVideoDataOutput alloc] init];
     [self.session addOutput:self.output];
-    
+
     // Configure your output.
     dispatch_queue_t queue = dispatch_queue_create("myQueue", NULL);
     [self.output setSampleBufferDelegate:self queue:queue];
@@ -94,21 +127,33 @@
     self.output.videoSettings = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
                                                             forKey:(id)kCVPixelBufferPixelFormatTypeKey];
     
-    
     // If you wish to cap the frame rate to a known value, such as 15 fps, set
     // minFrameDuration.
-//    self.output.minFrameDuration = CMTimeMake(1, 15);
-    [self.device lockForConfiguration:&error];
-    self.device.activeVideoMinFrameDuration = CMTimeMake(1, 15);
+    self.output.minFrameDuration = CMTimeMake(1, 15);
+}
+
+- (void)configPreview
+{
+//    // Set up the preview view.
+    self.previewView.session = self.session;
     
-    /*  **********   步骤 - 5   **********
-     * Start the session running to start the flow of data
-     */
-    [self.session startRunning];
     
-    // Assign session to an ivar.
-    [self setSession:self.session];
     
+//    AVCaptureSession *captureSession = self.session;
+//    CALayer *viewLayer = self.view.layer;
+//    
+//    AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:captureSession];
+//    [viewLayer addSublayer:captureVideoPreviewLayer];
+    
+    
+//    self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
+//    [self.previewLayer setBackgroundColor:[[UIColor blackColor] CGColor]];
+//    [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspect];
+//    CALayer *rootLayer = [self.previewView layer];
+//    [rootLayer setMasksToBounds:YES];
+//    [self.previewLayer setFrame:[rootLayer bounds]];
+//    [rootLayer addSublayer:self.previewLayer];
+//    [self.session startRunning];
 }
 
 // Create a UIImage from sample buffer data
@@ -175,6 +220,10 @@
     [self presentViewController:alert animated:true completion:nil];
 }
 
-
+#pragma mark - getter
+- (AVCaptureVideoPreviewLayer *)videoPreviewLayer
+{
+    return (AVCaptureVideoPreviewLayer *)self.view.layer;
+}
 
 @end
