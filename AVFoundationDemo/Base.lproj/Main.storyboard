@@ -45,7 +45,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="GID-n5-Agg" firstAttribute="centerX" secondItem="lI6-Ca-ZTe" secondAttribute="centerX" id="MHq-24-EKf"/>
                             <constraint firstItem="GID-n5-Agg" firstAttribute="width" secondItem="lI6-Ca-ZTe" secondAttribute="width" id="ayE-vB-BsH"/>

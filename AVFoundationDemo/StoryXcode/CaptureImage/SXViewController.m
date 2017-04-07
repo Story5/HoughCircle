@@ -22,6 +22,7 @@
 @property (nonatomic,strong) AVCaptureVideoDataOutput *output;
 @property (weak, nonatomic) IBOutlet AVCamPreviewView *previewView;
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -47,8 +48,9 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
     // Create a UIImage from the sample buffer data
+//    CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+//    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
     UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
-    
     // Add your code here that uses the image
 //    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     NSLog(@"image");

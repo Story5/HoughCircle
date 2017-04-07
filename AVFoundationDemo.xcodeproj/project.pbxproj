@@ -14,8 +14,10 @@
 		752BB1711E95ECEC007BE3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16F1E95ECEC007BE3DD /* LaunchScreen.storyboard */; };
 		752BB17A1E95EFEB007BE3DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752BB1791E95EFEB007BE3DD /* AVFoundation.framework */; };
 		752BB17D1E972E59007BE3DD /* RHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB17C1E972E59007BE3DD /* RHViewController.m */; };
-		752BB1831E975BE5007BE3DD /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1801E975BE5007BE3DD /* AVCamPreviewView.m */; };
-		752BB1841E975BE5007BE3DD /* SXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1821E975BE5007BE3DD /* SXViewController.m */; };
+		752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1871E97689E007BE3DD /* AVCamPreviewView.m */; };
+		752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1891E97689E007BE3DD /* SXViewController.m */; };
+		752BB18F1E9768B8007BE3DD /* DetectCircleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB18E1E9768B8007BE3DD /* DetectCircleTool.m */; };
+		752BB1911E9768FA007BE3DD /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752BB1901E9768FA007BE3DD /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +32,13 @@
 		752BB1791E95EFEB007BE3DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		752BB17B1E972E59007BE3DD /* RHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHViewController.h; sourceTree = "<group>"; };
 		752BB17C1E972E59007BE3DD /* RHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHViewController.m; sourceTree = "<group>"; };
-		752BB17F1E975BE5007BE3DD /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
-		752BB1801E975BE5007BE3DD /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
-		752BB1811E975BE5007BE3DD /* SXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXViewController.h; sourceTree = "<group>"; };
-		752BB1821E975BE5007BE3DD /* SXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXViewController.m; sourceTree = "<group>"; };
+		752BB1861E97689E007BE3DD /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
+		752BB1871E97689E007BE3DD /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
+		752BB1881E97689E007BE3DD /* SXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXViewController.h; sourceTree = "<group>"; };
+		752BB1891E97689E007BE3DD /* SXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXViewController.m; sourceTree = "<group>"; };
+		752BB18D1E9768B8007BE3DD /* DetectCircleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectCircleTool.h; sourceTree = "<group>"; };
+		752BB18E1E9768B8007BE3DD /* DetectCircleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetectCircleTool.m; sourceTree = "<group>"; };
+		752BB1901E9768FA007BE3DD /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				752BB1911E9768FA007BE3DD /* opencv2.framework in Frameworks */,
 				752BB17A1E95EFEB007BE3DD /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +99,7 @@
 		752BB1781E95EFEB007BE3DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				752BB1901E9768FA007BE3DD /* opencv2.framework */,
 				752BB1791E95EFEB007BE3DD /* AVFoundation.framework */,
 			);
 			name = Frameworks;
@@ -101,12 +108,30 @@
 		752BB17E1E975BE5007BE3DD /* StoryXcode */ = {
 			isa = PBXGroup;
 			children = (
-				752BB17F1E975BE5007BE3DD /* AVCamPreviewView.h */,
-				752BB1801E975BE5007BE3DD /* AVCamPreviewView.m */,
-				752BB1811E975BE5007BE3DD /* SXViewController.h */,
-				752BB1821E975BE5007BE3DD /* SXViewController.m */,
+				752BB1851E97689E007BE3DD /* CaptureImage */,
+				752BB18A1E97689E007BE3DD /* DetectCircle */,
 			);
 			path = StoryXcode;
+			sourceTree = "<group>";
+		};
+		752BB1851E97689E007BE3DD /* CaptureImage */ = {
+			isa = PBXGroup;
+			children = (
+				752BB1861E97689E007BE3DD /* AVCamPreviewView.h */,
+				752BB1871E97689E007BE3DD /* AVCamPreviewView.m */,
+				752BB1881E97689E007BE3DD /* SXViewController.h */,
+				752BB1891E97689E007BE3DD /* SXViewController.m */,
+			);
+			path = CaptureImage;
+			sourceTree = "<group>";
+		};
+		752BB18A1E97689E007BE3DD /* DetectCircle */ = {
+			isa = PBXGroup;
+			children = (
+				752BB18D1E9768B8007BE3DD /* DetectCircleTool.h */,
+				752BB18E1E9768B8007BE3DD /* DetectCircleTool.m */,
+			);
+			path = DetectCircle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +208,9 @@
 			files = (
 				752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */,
 				752BB17D1E972E59007BE3DD /* RHViewController.m in Sources */,
-				752BB1841E975BE5007BE3DD /* SXViewController.m in Sources */,
-				752BB1831E975BE5007BE3DD /* AVCamPreviewView.m in Sources */,
+				752BB18F1E9768B8007BE3DD /* DetectCircleTool.m in Sources */,
+				752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */,
+				752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */,
 				752BB1631E95ECEC007BE3DD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +332,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SHCZNHJ2VF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AVFoundationDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Story5.AVFoundationDemo;
@@ -318,6 +348,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SHCZNHJ2VF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AVFoundationDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Story5.AVFoundationDemo;
