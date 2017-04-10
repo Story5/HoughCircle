@@ -58,12 +58,23 @@
     //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
     UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
     
+    
     BOOL detected = [self.detectCircleTool detectCircleInImage:image];
     
     if (detected) {
         NSLog(@"center = %@",NSStringFromCGPoint(self.detectCircleTool.center));
         NSLog(@"radius = %d",self.detectCircleTool.radius);
         NSLog(@"image  = %@",self.detectCircleTool.covertImage);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self stopRunning];
+            self.stView.centerPoint = CGPointMake(arc4random_uniform(414), arc4random_uniform(500));
+            self.stView.radius = self.detectCircleTool.radius;
+            //            }
+            [self startRunning];
+        });
+        
+        //        [self.stView setNeedsDisplay];
+        //
         
     }
 }
@@ -162,6 +173,11 @@
 - (void)startRunning
 {
     [self.session startRunning];
+}
+
+- (void)stopRunning
+{
+    [self.session stopRunning];
 }
 
 // Create a UIImage from sample buffer data

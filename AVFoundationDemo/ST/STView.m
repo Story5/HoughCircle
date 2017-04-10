@@ -9,18 +9,28 @@
 #import "STView.h"
 
 @implementation STView
-//- (instancetype)initWithFrame:(CGRect)frame
-//{
-//    self = [super initWithFrame:frame];
-//    if (self) {
-//        self.backgroundColor = [UIColor clearColor];
-//    }
-//    return self;
-//}
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.centerPoint = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+        self.radius = 40;
+    }
+    return self;
+}
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.centerPoint = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+        self.radius = 40;
+    }
+    return self;
+}
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    [self drawPieChartBackGroundWithRedius:40 withCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2) withWidth:2 withColor:[UIColor redColor] andContextRef:context];
+    [self drawPieChartBackGroundWithRedius:self.radius withCenter:self.centerPoint withWidth:2 withColor:[UIColor redColor] andContextRef:context];
 }
 - (void)drawPieChartBackGroundWithRedius:(CGFloat)redius withCenter:(CGPoint)point withWidth:(CGFloat)width withColor:(UIColor *)color andContextRef:(CGContextRef)context
 {
@@ -40,5 +50,22 @@
     CGContextDrawPath(context, kCGPathStroke);
 }
 
+- (void)setCenterPoint:(CGPoint)centerPoint
+{
+    _centerPoint = centerPoint;
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self drawPieChartBackGroundWithRedius:self.radius withCenter:self.centerPoint withWidth:2 withColor:[UIColor redColor] andContextRef:context];
+    
+//    [self setNeedsDisplay];
+}
+- (void)setRadius:(CGFloat)radius
+{
+    _radius = radius;
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self drawPieChartBackGroundWithRedius:self.radius withCenter:self.centerPoint withWidth:2 withColor:[UIColor redColor] andContextRef:context];
+    
+    [self setNeedsDisplayInRect:CGRectMake(self.centerPoint.x, self.centerPoint.y, radius, radius)];
+
+}
 
 @end

@@ -10,4 +10,7 @@
 
 @interface STView : UIView
 
+@property (nonatomic, assign) CGPoint centerPoint;
+@property (nonatomic, assign) CGFloat radius;
+
 @end
