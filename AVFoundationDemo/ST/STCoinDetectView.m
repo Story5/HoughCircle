@@ -1,19 +1,19 @@
 //
-//  CoinDetectView.m
+//  STCoinDetectView.m
 //  AVFoundationDemo
 //
 //  Created by Story5 on 4/10/17.
 //  Copyright © 2017 Story5. All rights reserved.
 //
 
-#import "CoinDetectView.h"
+#import "STCoinDetectView.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import "AVCamPreviewView.h"
 #import "DetectCircleTool.h"
 
 
-@interface CoinDetectView ()<AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface STCoinDetectView ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property (nonatomic,strong) AVCaptureSession *session;
 @property (nonatomic,strong) AVCaptureDevice *device;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation CoinDetectView
+@implementation STCoinDetectView
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -143,7 +143,7 @@
     
     // If you wish to cap the frame rate to a known value, such as 15 fps, set
     // minFrameDuration.
-//    self.output.minFrameDuration = CMTimeMake(1, 15);
+    //    self.output.minFrameDuration = CMTimeMake(1, 15);
 }
 
 - (void)configPreview
@@ -215,12 +215,12 @@
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     NSLog(@"%s",__func__);
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Tips" message:@"save image failure" preferredStyle:UIAlertControllerStyleAlert];
-//    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//        
-//    }];
-//    [alert addAction:cancel];
-//    [self presentViewController:alert animated:true completion:nil];
+    //    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Tips" message:@"save image failure" preferredStyle:UIAlertControllerStyleAlert];
+    //    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    //
+    //    }];
+    //    [alert addAction:cancel];
+    //    [self presentViewController:alert animated:true completion:nil];
 }
 
 #pragma mark - getter

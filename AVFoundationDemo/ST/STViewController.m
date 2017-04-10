@@ -7,8 +7,11 @@
 //
 
 #import "STViewController.h"
+#import "STCoinDetectView.h"
 
 @interface STViewController ()
+
+@property (nonatomic,strong) STCoinDetectView *coinDetectView;
 
 @end
 
@@ -17,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.coinDetectView = [[STCoinDetectView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.coinDetectView];
 }
 
 - (void)didReceiveMemoryWarning {
