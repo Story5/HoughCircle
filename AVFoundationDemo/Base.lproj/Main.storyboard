@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="RH" id="Z6s-rM-zMm"/>
+                    <tabBarItem key="tabBarItem" title="RH" image="icon2.png" selectedImage="icon2.png" id="Z6s-rM-zMm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Lc-oD-IIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ST" id="oRY-oN-Kjh"/>
+                    <tabBarItem key="tabBarItem" title="ST" image="icon3.png" selectedImage="icon3.png" id="oRY-oN-Kjh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rN9-jD-2VH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,7 +71,7 @@
                             <constraint firstItem="ctR-Y2-1g8" firstAttribute="centerY" secondItem="lI6-Ca-ZTe" secondAttribute="centerY" id="utz-aa-WVE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="SX" id="uKe-z4-VUJ"/>
+                    <tabBarItem key="tabBarItem" title="SX" image="icon1.png" selectedImage="icon1.png" id="uKe-z4-VUJ"/>
                     <connections>
                         <outlet property="imageView" destination="ctR-Y2-1g8" id="rcJ-bF-NXx"/>
                     </connections>
@@ -100,4 +100,9 @@
             <point key="canvasLocation" x="-1578" y="243"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon1.png" width="25" height="25"/>
+        <image name="icon2.png" width="25" height="25"/>
+        <image name="icon3.png" width="25" height="25"/>
+    </resources>
 </document>

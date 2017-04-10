@@ -18,10 +18,21 @@
 		752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1871E97689E007BE3DD /* AVCamPreviewView.m */; };
 		752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1891E97689E007BE3DD /* SXViewController.m */; };
 		752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */; };
-		75E70BD81E9793FA00CCB1B4 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70BD71E9793FA00CCB1B4 /* flag.png */; };
 		75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */; };
 		75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */; };
 		75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */; };
+		75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BEA1E9B33A900CCB1B4 /* RHCoinDetectView.m */; };
+		75E70BEE1E9B33CA00CCB1B4 /* STCoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BED1E9B33CA00CCB1B4 /* STCoinDetectView.m */; };
+		75E70BFA1E9B375400CCB1B4 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70BF41E9B375400CCB1B4 /* flag.png */; };
+		75E70BFB1E9B375400CCB1B4 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70BF61E9B375400CCB1B4 /* icon1.png */; };
+		75E70BFC1E9B375400CCB1B4 /* icon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70BF71E9B375400CCB1B4 /* icon1@2x.png */; };
+		75E70BFD1E9B375400CCB1B4 /* icon1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70BF81E9B375400CCB1B4 /* icon1@3x.png */; };
+		75E70C041E9B4EA800CCB1B4 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C011E9B4EA800CCB1B4 /* icon2.png */; };
+		75E70C051E9B4EA800CCB1B4 /* icon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C021E9B4EA800CCB1B4 /* icon2@2x.png */; };
+		75E70C061E9B4EA800CCB1B4 /* icon2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C031E9B4EA800CCB1B4 /* icon2@3x.png */; };
+		75E70C0A1E9B505400CCB1B4 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C071E9B505400CCB1B4 /* icon3.png */; };
+		75E70C0B1E9B505400CCB1B4 /* icon3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C081E9B505400CCB1B4 /* icon3@2x.png */; };
+		75E70C0C1E9B505400CCB1B4 /* icon3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C091E9B505400CCB1B4 /* icon3@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,13 +53,31 @@
 		752BB1891E97689E007BE3DD /* SXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXViewController.m; sourceTree = "<group>"; };
 		752BB18D1E9768B8007BE3DD /* DetectCircleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectCircleTool.h; sourceTree = "<group>"; };
 		752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DetectCircleTool.mm; sourceTree = "<group>"; };
+
 		75E70BD71E9793FA00CCB1B4 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag.png; sourceTree = "<group>"; };
+
+		752BB1901E9768FA007BE3DD /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+
 		75E70BDE1E9B0D1A00CCB1B4 /* CoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectView.h; sourceTree = "<group>"; };
 		75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectView.m; sourceTree = "<group>"; };
 		75E70BE21E9B2F4400CCB1B4 /* RHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHViewController.h; sourceTree = "<group>"; };
 		75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHViewController.m; sourceTree = "<group>"; };
 		75E70BE61E9B2F5F00CCB1B4 /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
 		75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
+		75E70BE91E9B33A900CCB1B4 /* RHCoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHCoinDetectView.h; sourceTree = "<group>"; };
+		75E70BEA1E9B33A900CCB1B4 /* RHCoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHCoinDetectView.m; sourceTree = "<group>"; };
+		75E70BEC1E9B33CA00CCB1B4 /* STCoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCoinDetectView.h; sourceTree = "<group>"; };
+		75E70BED1E9B33CA00CCB1B4 /* STCoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCoinDetectView.m; sourceTree = "<group>"; };
+		75E70BF41E9B375400CCB1B4 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag.png; sourceTree = "<group>"; };
+		75E70BF61E9B375400CCB1B4 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		75E70BF71E9B375400CCB1B4 /* icon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon1@2x.png"; sourceTree = "<group>"; };
+		75E70BF81E9B375400CCB1B4 /* icon1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon1@3x.png"; sourceTree = "<group>"; };
+		75E70C011E9B4EA800CCB1B4 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		75E70C021E9B4EA800CCB1B4 /* icon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon2@2x.png"; sourceTree = "<group>"; };
+		75E70C031E9B4EA800CCB1B4 /* icon2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon2@3x.png"; sourceTree = "<group>"; };
+		75E70C071E9B505400CCB1B4 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		75E70C081E9B505400CCB1B4 /* icon3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@2x.png"; sourceTree = "<group>"; };
+		75E70C091E9B505400CCB1B4 /* icon3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +114,7 @@
 		752BB1601E95ECEC007BE3DD /* AVFoundationDemo */ = {
 			isa = PBXGroup;
 			children = (
-				75E70BD71E9793FA00CCB1B4 /* flag.png */,
+				75E70BF31E9B375400CCB1B4 /* Image */,
 				752BB1641E95ECEC007BE3DD /* AppDelegate.h */,
 				752BB1651E95ECEC007BE3DD /* AppDelegate.m */,
 				752BB17E1E975BE5007BE3DD /* StoryXcode */,
@@ -152,6 +181,8 @@
 		75E70BE11E9B2F4400CCB1B4 /* RH */ = {
 			isa = PBXGroup;
 			children = (
+				75E70BE91E9B33A900CCB1B4 /* RHCoinDetectView.h */,
+				75E70BEA1E9B33A900CCB1B4 /* RHCoinDetectView.m */,
 				75E70BE21E9B2F4400CCB1B4 /* RHViewController.h */,
 				75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */,
 			);
@@ -161,10 +192,37 @@
 		75E70BE41E9B2F4400CCB1B4 /* ST */ = {
 			isa = PBXGroup;
 			children = (
+				75E70BEC1E9B33CA00CCB1B4 /* STCoinDetectView.h */,
+				75E70BED1E9B33CA00CCB1B4 /* STCoinDetectView.m */,
 				75E70BE61E9B2F5F00CCB1B4 /* STViewController.h */,
 				75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */,
 			);
 			path = ST;
+			sourceTree = "<group>";
+		};
+		75E70BF31E9B375400CCB1B4 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				75E70BF41E9B375400CCB1B4 /* flag.png */,
+				75E70BF51E9B375400CCB1B4 /* TabBarIcon */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		75E70BF51E9B375400CCB1B4 /* TabBarIcon */ = {
+			isa = PBXGroup;
+			children = (
+				75E70BF61E9B375400CCB1B4 /* icon1.png */,
+				75E70BF71E9B375400CCB1B4 /* icon1@2x.png */,
+				75E70BF81E9B375400CCB1B4 /* icon1@3x.png */,
+				75E70C011E9B4EA800CCB1B4 /* icon2.png */,
+				75E70C021E9B4EA800CCB1B4 /* icon2@2x.png */,
+				75E70C031E9B4EA800CCB1B4 /* icon2@3x.png */,
+				75E70C071E9B505400CCB1B4 /* icon3.png */,
+				75E70C081E9B505400CCB1B4 /* icon3@2x.png */,
+				75E70C091E9B505400CCB1B4 /* icon3@3x.png */,
+			);
+			path = TabBarIcon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,9 +285,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				752BB1711E95ECEC007BE3DD /* LaunchScreen.storyboard in Resources */,
+				75E70BFC1E9B375400CCB1B4 /* icon1@2x.png in Resources */,
+				75E70BFA1E9B375400CCB1B4 /* flag.png in Resources */,
+				75E70C061E9B4EA800CCB1B4 /* icon2@3x.png in Resources */,
 				752BB16E1E95ECEC007BE3DD /* Assets.xcassets in Resources */,
+				75E70C0C1E9B505400CCB1B4 /* icon3@3x.png in Resources */,
+				75E70C051E9B4EA800CCB1B4 /* icon2@2x.png in Resources */,
+				75E70C0A1E9B505400CCB1B4 /* icon3.png in Resources */,
+				75E70BFB1E9B375400CCB1B4 /* icon1.png in Resources */,
 				752BB16C1E95ECEC007BE3DD /* Main.storyboard in Resources */,
-				75E70BD81E9793FA00CCB1B4 /* flag.png in Resources */,
+				75E70C0B1E9B505400CCB1B4 /* icon3@2x.png in Resources */,
+				75E70BFD1E9B375400CCB1B4 /* icon1@3x.png in Resources */,
+				75E70C041E9B4EA800CCB1B4 /* icon2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */,
 				752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */,
 				752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */,
 				752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */,
@@ -248,6 +316,7 @@
 				75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */,
 				752BB1631E95ECEC007BE3DD /* main.m in Sources */,
 				75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */,
+				75E70BEE1E9B33CA00CCB1B4 /* STCoinDetectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

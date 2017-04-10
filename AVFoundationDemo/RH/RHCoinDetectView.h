@@ -1,5 +1,5 @@
 //
-//  CoinDetectView.h
+//  RHCoinDetectView.h
 //  AVFoundationDemo
 //
 //  Created by Story5 on 4/10/17.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CoinDetectView : UIView
-
-- (void)startRunning;
-- (void)stopRunning;
+@interface RHCoinDetectView : UIView
 
 @end
