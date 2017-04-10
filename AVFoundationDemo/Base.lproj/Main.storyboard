@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--RH-->
         <scene sceneID="9BW-oB-DNf">
             <objects>
                 <viewController id="PEW-8I-Ttc" customClass="RHViewController" sceneMemberID="viewController">
@@ -22,13 +22,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Z6s-rM-zMm"/>
+                    <tabBarItem key="tabBarItem" title="RH" id="Z6s-rM-zMm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Lc-oD-IIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-585" y="244"/>
         </scene>
-        <!--Item 1-->
+        <!--ST-->
+        <scene sceneID="HJv-Z3-Wio">
+            <objects>
+                <viewController id="33p-cD-6B4" customClass="STViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0EQ-NQ-mOi"/>
+                        <viewControllerLayoutGuide type="bottom" id="28r-yt-jLg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cIz-zo-qU3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ST" id="oRY-oN-Kjh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rN9-jD-2VH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-586" y="970"/>
+        </scene>
+        <!--SX-->
         <scene sceneID="R3r-Hb-gDX">
             <objects>
                 <viewController id="1qn-sY-Dtx" customClass="SXViewController" sceneMemberID="viewController">
@@ -52,14 +71,14 @@
                             <constraint firstItem="ctR-Y2-1g8" firstAttribute="centerY" secondItem="lI6-Ca-ZTe" secondAttribute="centerY" id="utz-aa-WVE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="uKe-z4-VUJ"/>
+                    <tabBarItem key="tabBarItem" title="SX" id="uKe-z4-VUJ"/>
                     <connections>
                         <outlet property="imageView" destination="ctR-Y2-1g8" id="rcJ-bF-NXx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51K-Zz-u05" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-548" y="-514"/>
+            <point key="canvasLocation" x="-586" y="-436"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Pj7-la-u1R">
@@ -73,11 +92,12 @@
                     <connections>
                         <segue destination="1qn-sY-Dtx" kind="relationship" relationship="viewControllers" id="o3G-Yy-Wvn"/>
                         <segue destination="PEW-8I-Ttc" kind="relationship" relationship="viewControllers" id="pYf-2N-cw3"/>
+                        <segue destination="33p-cD-6B4" kind="relationship" relationship="viewControllers" id="dhm-pT-enD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txo-Cl-ZBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1537" y="-165"/>
+            <point key="canvasLocation" x="-1578" y="243"/>
         </scene>
     </scenes>
 </document>
