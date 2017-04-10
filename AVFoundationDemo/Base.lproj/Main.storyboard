@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="RH" image="icon2.jpeg" id="Z6s-rM-zMm"/>
+                    <tabBarItem key="tabBarItem" title="RH" image="icon2.png" selectedImage="icon2.png" id="Z6s-rM-zMm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Lc-oD-IIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ST" image="icon3.jpeg" selectedImage="icon3.jpeg" id="oRY-oN-Kjh"/>
+                    <tabBarItem key="tabBarItem" title="ST" image="icon3.png" selectedImage="icon3.png" id="oRY-oN-Kjh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rN9-jD-2VH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +102,7 @@
     </scenes>
     <resources>
         <image name="icon1.png" width="25" height="25"/>
-        <image name="icon2.jpeg" width="16" height="16"/>
-        <image name="icon3.jpeg" width="16" height="16"/>
+        <image name="icon2.png" width="25" height="25"/>
+        <image name="icon3.png" width="25" height="25"/>
     </resources>
 </document>
