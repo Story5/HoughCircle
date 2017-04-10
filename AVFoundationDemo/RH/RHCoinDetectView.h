@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RHCoinDetectView : UIView
+- (void)startRunning;
+- (void)stopRunning;
 
 @end

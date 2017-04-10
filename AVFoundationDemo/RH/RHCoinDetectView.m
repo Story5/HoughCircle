@@ -26,7 +26,7 @@
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
-
+@property (nonatomic,strong) UIImageView *imgView;
 @end
 
 @implementation RHCoinDetectView
@@ -39,13 +39,42 @@
     return self;
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-    [self setAVCapture];
+#pragma mark - draw rect
+//- (void)drawRect:(CGRect)rect {
+//    [super drawRect:rect];
+//    if (self.detectCircleTool.radius) {
+//        //边框圆
+//        CGContextRef context = UIGraphicsGetCurrentContext();
+//        CGContextSetLineWidth(context, 2);
+//        CGContextAddArc(context, self.detectCircleTool.center.x, self.detectCircleTool.center.y, self.detectCircleTool.radius, 0, 2*M_PI, 0);
+//        CGContextDrawPath(context, kCGPathStroke);
+//    }
+//    
+//}
+
+
+
+- (void)drawCircleWithCenter:(CGPoint)center Radius:(int)radius{
+    /*
+     *画实线圆
+     */
     
+    CGFloat r = (float)radius;
+    
+    CAShapeLayer *solidLine =  [CAShapeLayer layer];
+    CGMutablePathRef solidPath =  CGPathCreateMutable();
+    solidLine.lineWidth = 2.0f ;
+    solidLine.strokeColor = [UIColor cyanColor].CGColor;
+    solidLine.fillColor = [UIColor clearColor].CGColor;
+    CGPathAddEllipseInRect(solidPath, nil, CGRectMake(center.x,  center.y, r, r));
+    solidLine.path = solidPath;
+    CGPathRelease(solidPath);
+    [self.previewView.layer addSublayer:solidLine];
 }
+
+//- (void)layoutSublayersOfLayer:(CALayer *)layer{
+//    layer.frame =CGRectMake(self.detectCircleTool.center.x, self.detectCircleTool.center.y, self.detectCircleTool.radius, self.detectCircleTool.radius);
+//}
 
 #pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate
 // output
@@ -62,7 +91,13 @@
         NSLog(@"center = %@",NSStringFromCGPoint(self.detectCircleTool.center));
         NSLog(@"radius = %d",self.detectCircleTool.radius);
         NSLog(@"image  = %@",self.detectCircleTool.covertImage);
+//        [self setNeedsDisplay];
+//        [self.previewView layoutIfNeeded];
         
+//        [self drawCircleWithCenter:self.detectCircleTool.center Radius:self.detectCircleTool.radius];
+        [UIView animateWithDuration:0.01 animations:^{
+            self.imgView.frame = CGRectMake(self.detectCircleTool.center.x, self.detectCircleTool.center.y, 80, 80);
+        }];
     }
 }
 
@@ -88,10 +123,12 @@
     /*  **********   步骤 - 6   **********
      *
      */
-    [self startRunning];
+//    [self startRunning];
     
     // Assign session to an ivar.
     [self setSession:self.session];
+    
+    [self addSubview:self.imgView];
 }
 
 // Create the session
@@ -157,6 +194,11 @@
 {
     [self.session startRunning];
 }
+- (void)stopRunning
+{
+    [self.session stopRunning];
+}
+
 
 // Create a UIImage from sample buffer data
 - (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
@@ -223,6 +265,8 @@
     //    [self presentViewController:alert animated:true completion:nil];
 }
 
+
+
 #pragma mark - getter
 - (AVCaptureVideoPreviewLayer *)videoPreviewLayer
 {
@@ -244,6 +288,14 @@
         _detectCircleTool = [[DetectCircleTool alloc] init];
     }
     return _detectCircleTool;
+}
+
+- (UIImageView *)imgView{
+    if (!_imgView) {
+        _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 40, 40)];
+        _imgView.image = [UIImage imageNamed:@"flag"];
+    }
+    return _imgView;
 }
 
 @end
