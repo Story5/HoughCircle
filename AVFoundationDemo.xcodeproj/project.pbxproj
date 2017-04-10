@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0444EFDA1E978E3B00224B7E /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0444EFD91E978E3B00224B7E /* opencv2.framework */; };
 		752BB1631E95ECEC007BE3DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1621E95ECEC007BE3DD /* main.m */; };
 		752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1651E95ECEC007BE3DD /* AppDelegate.m */; };
 		752BB16C1E95ECEC007BE3DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16A1E95ECEC007BE3DD /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0444EFD91E978E3B00224B7E /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = AVFoundationDemo/opencv2.framework; sourceTree = "<group>"; };
 		752BB15E1E95ECEC007BE3DD /* AVFoundationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVFoundationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		752BB1621E95ECEC007BE3DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		752BB1641E95ECEC007BE3DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				752BB1911E9768FA007BE3DD /* opencv2.framework in Frameworks */,
+				0444EFDA1E978E3B00224B7E /* opencv2.framework in Frameworks */,
 				752BB17A1E95EFEB007BE3DD /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +107,7 @@
 		752BB1781E95EFEB007BE3DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0444EFD91E978E3B00224B7E /* opencv2.framework */,
 				752BB1901E9768FA007BE3DD /* opencv2.framework */,
 				752BB1791E95EFEB007BE3DD /* AVFoundation.framework */,
 			);
@@ -345,6 +348,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AVFoundationDemo",
 				);
 				INFOPLIST_FILE = AVFoundationDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -361,6 +365,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AVFoundationDemo",
 				);
 				INFOPLIST_FILE = AVFoundationDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
