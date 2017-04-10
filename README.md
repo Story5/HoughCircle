@@ -1,5 +1,10 @@
 # AVFoundationDemo
 
+## Introduction
+* 1.Use AVFoundation to get every frame of the capture video
+* 2.Use OpenCV to detect whether there is any circle in the image
+* 3.Use CoreGraphics to draw a Ruler and mesuare the height of fish in the same image.
+
 ## Necessary framework
 Download the necessary [build of `opencv2.framework`](https://github.com/JoeHowse/iOSWithOpenCV/releases/download/1.1.0/opencv2.framework.zip)
 

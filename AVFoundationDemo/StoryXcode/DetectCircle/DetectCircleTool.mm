@@ -31,6 +31,13 @@
     std::vector<cv::Vec3f> circles;
     cv::HoughCircles( src_gray, circles, CV_HOUGH_GRADIENT, 1, src_gray.rows/8, 200, 100, 0, 0 );
     
+    if (circles.size() <= 0) {
+        _center = CGPointZero;
+        _radius = 0;
+        _covertImage = nil;
+        return false;
+    }
+    
     for( size_t i = 0; i < circles.size(); i++ )
     {
         // 圆心
@@ -52,7 +59,7 @@
     // 将 MAT 转换成 UIImage
     _covertImage = MatToUIImage(src);
     
-    return NO;
+    return true;
 }
 
 @end

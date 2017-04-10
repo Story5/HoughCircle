@@ -58,12 +58,11 @@
     
     BOOL detected = [self.detectCircleTool detectCircleInImage:image];
     
-    
-    
-    NSLog(@"%d",detected);
-    // Add your code here that uses the image
-//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-    NSLog(@"image");
+    if (detected) {
+        NSLog(@"center = %@",NSStringFromCGPoint(self.detectCircleTool.center));
+        NSLog(@"radius = %d",self.detectCircleTool.radius);
+        NSLog(@"image  = %@",self.detectCircleTool.covertImage);
+    }
 }
 
 // drop
