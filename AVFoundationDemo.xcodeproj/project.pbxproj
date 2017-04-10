@@ -14,13 +14,13 @@
 		752BB16E1E95ECEC007BE3DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16D1E95ECEC007BE3DD /* Assets.xcassets */; };
 		752BB1711E95ECEC007BE3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16F1E95ECEC007BE3DD /* LaunchScreen.storyboard */; };
 		752BB17A1E95EFEB007BE3DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752BB1791E95EFEB007BE3DD /* AVFoundation.framework */; };
-		752BB17D1E972E59007BE3DD /* RHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB17C1E972E59007BE3DD /* RHViewController.m */; };
 		752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1871E97689E007BE3DD /* AVCamPreviewView.m */; };
 		752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1891E97689E007BE3DD /* SXViewController.m */; };
 		752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */; };
-		752BB1911E9768FA007BE3DD /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752BB1901E9768FA007BE3DD /* opencv2.framework */; };
 		75E70BD81E9793FA00CCB1B4 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70BD71E9793FA00CCB1B4 /* flag.png */; };
 		75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */; };
+		75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */; };
+		75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +34,6 @@
 		752BB1701E95ECEC007BE3DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		752BB1721E95ECEC007BE3DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752BB1791E95EFEB007BE3DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		752BB17B1E972E59007BE3DD /* RHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHViewController.h; sourceTree = "<group>"; };
-		752BB17C1E972E59007BE3DD /* RHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHViewController.m; sourceTree = "<group>"; };
 		752BB1861E97689E007BE3DD /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
 		752BB1871E97689E007BE3DD /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
 		752BB1881E97689E007BE3DD /* SXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXViewController.h; sourceTree = "<group>"; };
@@ -46,6 +44,10 @@
 		75E70BD71E9793FA00CCB1B4 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag.png; sourceTree = "<group>"; };
 		75E70BDE1E9B0D1A00CCB1B4 /* CoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectView.h; sourceTree = "<group>"; };
 		75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectView.m; sourceTree = "<group>"; };
+		75E70BE21E9B2F4400CCB1B4 /* RHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHViewController.h; sourceTree = "<group>"; };
+		75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHViewController.m; sourceTree = "<group>"; };
+		75E70BE61E9B2F5F00CCB1B4 /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
+		75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +87,8 @@
 				752BB1641E95ECEC007BE3DD /* AppDelegate.h */,
 				752BB1651E95ECEC007BE3DD /* AppDelegate.m */,
 				752BB17E1E975BE5007BE3DD /* StoryXcode */,
-				752BB17B1E972E59007BE3DD /* RHViewController.h */,
-				752BB17C1E972E59007BE3DD /* RHViewController.m */,
+				75E70BE11E9B2F4400CCB1B4 /* RH */,
+				75E70BE41E9B2F4400CCB1B4 /* ST */,
 				752BB16A1E95ECEC007BE3DD /* Main.storyboard */,
 				752BB16D1E95ECEC007BE3DD /* Assets.xcassets */,
 				752BB16F1E95ECEC007BE3DD /* LaunchScreen.storyboard */,
@@ -143,6 +145,24 @@
 				752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */,
 			);
 			path = DetectCircle;
+			sourceTree = "<group>";
+		};
+		75E70BE11E9B2F4400CCB1B4 /* RH */ = {
+			isa = PBXGroup;
+			children = (
+				75E70BE21E9B2F4400CCB1B4 /* RHViewController.h */,
+				75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */,
+			);
+			path = RH;
+			sourceTree = "<group>";
+		};
+		75E70BE41E9B2F4400CCB1B4 /* ST */ = {
+			isa = PBXGroup;
+			children = (
+				75E70BE61E9B2F5F00CCB1B4 /* STViewController.h */,
+				75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */,
+			);
+			path = ST;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,12 +239,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */,
-				752BB17D1E972E59007BE3DD /* RHViewController.m in Sources */,
 				752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */,
 				752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */,
+				75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */,
 				752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */,
 				75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */,
 				752BB1631E95ECEC007BE3DD /* main.m in Sources */,
+				75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
