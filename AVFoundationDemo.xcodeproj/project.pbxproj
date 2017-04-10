@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0444EFDA1E978E3B00224B7E /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0444EFD91E978E3B00224B7E /* opencv2.framework */; };
+		50D6A2931E9B31E1006ACDE6 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D6A2921E9B31E1006ACDE6 /* opencv2.framework */; };
+		50D6A2961E9B5AA0006ACDE6 /* STView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D6A2951E9B5AA0006ACDE6 /* STView.m */; };
 		752BB1631E95ECEC007BE3DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1621E95ECEC007BE3DD /* main.m */; };
 		752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1651E95ECEC007BE3DD /* AppDelegate.m */; };
 		752BB16C1E95ECEC007BE3DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16A1E95ECEC007BE3DD /* Main.storyboard */; };
@@ -32,10 +34,15 @@
 		75E70C0A1E9B505400CCB1B4 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C071E9B505400CCB1B4 /* icon3.png */; };
 		75E70C0B1E9B505400CCB1B4 /* icon3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C081E9B505400CCB1B4 /* icon3@2x.png */; };
 		75E70C0C1E9B505400CCB1B4 /* icon3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C091E9B505400CCB1B4 /* icon3@3x.png */; };
+		75E70C121E9B5F8C00CCB1B4 /* DrawCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */; };
+		75E70C151E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0444EFD91E978E3B00224B7E /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = AVFoundationDemo/opencv2.framework; sourceTree = "<group>"; };
+		50D6A2921E9B31E1006ACDE6 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		50D6A2941E9B5AA0006ACDE6 /* STView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STView.h; sourceTree = "<group>"; };
+		50D6A2951E9B5AA0006ACDE6 /* STView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STView.m; sourceTree = "<group>"; };
 		752BB15E1E95ECEC007BE3DD /* AVFoundationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVFoundationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		752BB1621E95ECEC007BE3DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		752BB1641E95ECEC007BE3DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,7 +58,6 @@
 		752BB1891E97689E007BE3DD /* SXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXViewController.m; sourceTree = "<group>"; };
 		752BB18D1E9768B8007BE3DD /* DetectCircleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectCircleTool.h; sourceTree = "<group>"; };
 		752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DetectCircleTool.mm; sourceTree = "<group>"; };
-		752BB1901E9768FA007BE3DD /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		75E70BDE1E9B0D1A00CCB1B4 /* CoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectView.h; sourceTree = "<group>"; };
 		75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectView.m; sourceTree = "<group>"; };
 		75E70BE21E9B2F4400CCB1B4 /* RHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHViewController.h; sourceTree = "<group>"; };
@@ -72,6 +78,10 @@
 		75E70C071E9B505400CCB1B4 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
 		75E70C081E9B505400CCB1B4 /* icon3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@2x.png"; sourceTree = "<group>"; };
 		75E70C091E9B505400CCB1B4 /* icon3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@3x.png"; sourceTree = "<group>"; };
+		75E70C101E9B5F8C00CCB1B4 /* DrawCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleView.h; sourceTree = "<group>"; };
+		75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircleView.m; sourceTree = "<group>"; };
+		75E70C131E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate_Flip.h"; sourceTree = "<group>"; };
+		75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate_Flip.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D6A2931E9B31E1006ACDE6 /* opencv2.framework in Frameworks */,
 				0444EFDA1E978E3B00224B7E /* opencv2.framework in Frameworks */,
 				752BB17A1E95EFEB007BE3DD /* AVFoundation.framework in Frameworks */,
 			);
@@ -133,8 +144,8 @@
 		752BB1781E95EFEB007BE3DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50D6A2921E9B31E1006ACDE6 /* opencv2.framework */,
 				0444EFD91E978E3B00224B7E /* opencv2.framework */,
-				752BB1901E9768FA007BE3DD /* opencv2.framework */,
 				752BB1791E95EFEB007BE3DD /* AVFoundation.framework */,
 			);
 			name = Frameworks;
@@ -145,6 +156,8 @@
 			children = (
 				752BB1851E97689E007BE3DD /* CaptureImage */,
 				752BB18A1E97689E007BE3DD /* DetectCircle */,
+				75E70C131E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.h */,
+				75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */,
 			);
 			path = StoryXcode;
 			sourceTree = "<group>";
@@ -156,6 +169,8 @@
 				752BB1871E97689E007BE3DD /* AVCamPreviewView.m */,
 				75E70BDE1E9B0D1A00CCB1B4 /* CoinDetectView.h */,
 				75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */,
+				75E70C101E9B5F8C00CCB1B4 /* DrawCircleView.h */,
+				75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */,
 				752BB1881E97689E007BE3DD /* SXViewController.h */,
 				752BB1891E97689E007BE3DD /* SXViewController.m */,
 			);
@@ -187,6 +202,8 @@
 			children = (
 				75E70BEC1E9B33CA00CCB1B4 /* STCoinDetectView.h */,
 				75E70BED1E9B33CA00CCB1B4 /* STCoinDetectView.m */,
+				50D6A2941E9B5AA0006ACDE6 /* STView.h */,
+				50D6A2951E9B5AA0006ACDE6 /* STView.m */,
 				75E70BE61E9B2F5F00CCB1B4 /* STViewController.h */,
 				75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */,
 			);
@@ -303,13 +320,16 @@
 				75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */,
 				752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */,
 				752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */,
+				50D6A2961E9B5AA0006ACDE6 /* STView.m in Sources */,
 				752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */,
 				75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */,
+				75E70C121E9B5F8C00CCB1B4 /* DrawCircleView.m in Sources */,
 				752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */,
 				75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */,
 				752BB1631E95ECEC007BE3DD /* main.m in Sources */,
 				75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */,
 				75E70BEE1E9B33CA00CCB1B4 /* STCoinDetectView.m in Sources */,
+				75E70C151E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

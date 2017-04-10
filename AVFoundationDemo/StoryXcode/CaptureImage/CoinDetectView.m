@@ -10,6 +10,9 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "AVCamPreviewView.h"
+#import "DrawCircleView.h"
+
+#import "UIImage+Rotate_Flip.h"
 #import "DetectCircleTool.h"
 
 
@@ -24,6 +27,8 @@
 @property (nonatomic,strong) AVCaptureVideoDataOutput *output;
 @property (nonatomic,strong) AVCamPreviewView *previewView;
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
+
+@property (nonatomic,strong) DrawCircleView *drawCircleView;
 
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
 
@@ -41,11 +46,14 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-    [self setAVCapture];
-    
-}
+//- (void)drawRect:(CGRect)rect {
+//    // Drawing code
+//    [self setAVCapture];
+//    
+//    
+//    UIImage *image = [UIImage imageNamed:@"flag.png"];
+//    [image drawInRect:CGRectMake(100, 100, 200, 200)];
+//}
 
 #pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate
 // output
@@ -54,7 +62,8 @@
     // Create a UIImage from the sample buffer data
     //    CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
-    UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
+    UIImage *sourceImage = [self imageFromSampleBuffer:sampleBuffer];
+    UIImage *image = [sourceImage rotateImageWithRadian:M_PI_2 cropMode:enSvCropExpand];
     
     BOOL detected = [self.detectCircleTool detectCircleInImage:image];
     
@@ -63,6 +72,10 @@
         NSLog(@"radius = %d",self.detectCircleTool.radius);
         NSLog(@"image  = %@",self.detectCircleTool.covertImage);
         
+        self.drawCircleView.circleCenter = self.detectCircleTool.center;
+        self.drawCircleView.circleRadius = self.detectCircleTool.radius;
+        [self.drawCircleView setNeedsDisplay];
+        [self.session stopRunning];
     }
 }
 
@@ -85,9 +98,10 @@
     [self configOutput];
     //  **********   步骤 - 5   **********
     [self configPreview];
-    /*  **********   步骤 - 6   **********
-     *
-     */
+    
+    [self configCircleImageView];
+    
+    //  **********   步骤 - 6   **********
     [self startRunning];
     
     // Assign session to an ivar.
@@ -101,7 +115,7 @@
     // Configure the session to produce lower resolution video frames, if your
     // processing algorithm can cope. We'll specify medium quality for the
     // chosen device.
-    self.session.sessionPreset = AVCaptureSessionPresetMedium;
+    self.session.sessionPreset = AVCaptureSessionPresetHigh;
 }
 
 // Find a suitable AVCaptureDevice
@@ -152,23 +166,33 @@
     self.previewView.session = self.session;
 }
 
+- (void)configCircleImageView
+{
+    self.drawCircleView.backgroundColor = [UIColor clearColor];
+}
+
 // Start the session running to start the flow of data
 - (void)startRunning
 {
     [self.session startRunning];
 }
 
+// Stop
 - (void)stopRunning
 {
     [self.session stopRunning];
 }
 
 // Create a UIImage from sample buffer data
-- (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
+- (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
 {
+    // Get a CMSampleBuffer's Core Video image buffer for the media data
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     // Lock the base address of the pixel buffer
-    CVPixelBufferLockBaseAddress(imageBuffer,0);
+    CVPixelBufferLockBaseAddress(imageBuffer, 0);
+    
+    // Get the number of bytes per row for the pixel buffer
+    void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
     
     // Get the number of bytes per row for the pixel buffer
     size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
@@ -178,43 +202,26 @@
     
     // Create a device-dependent RGB color space
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    if (!colorSpace)
-    {
-        NSLog(@"CGColorSpaceCreateDeviceRGB failure");
-        return nil;
-    }
     
-    // Get the base address of the pixel buffer
-    void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
-    // Get the data size for contiguous planes of the pixel buffer.
-    size_t bufferSize = CVPixelBufferGetDataSize(imageBuffer);
+    // Create a bitmap graphics context with the sample buffer data
+    CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8,
+                                                 bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+    // Create a Quartz image from the pixel data in the bitmap graphics context
+    CGImageRef quartzImage = CGBitmapContextCreateImage(context);
+    // Unlock the pixel buffer
+    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
     
-    // Create a Quartz direct-access data provider that uses data we supply
-    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, baseAddress, bufferSize,
-                                                              NULL);
-    // Create a bitmap image from data supplied by our data provider
-    CGImageRef cgImage =
-    CGImageCreate(width,
-                  height,
-                  8,
-                  32,
-                  bytesPerRow,
-                  colorSpace,
-                  kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Little,
-                  provider,
-                  NULL,
-                  true,
-                  kCGRenderingIntentDefault);
-    CGDataProviderRelease(provider);
+    // Free up the context and color space
+    CGContextRelease(context);
     CGColorSpaceRelease(colorSpace);
     
-    // Create and return an image object representing the specified Quartz image
-    UIImage *image = [UIImage imageWithCGImage:cgImage];
-    CGImageRelease(cgImage);
+    // Create an image object from the Quartz image
+    UIImage *image = [UIImage imageWithCGImage:quartzImage];
     
-    CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+    // Release the Quartz image
+    CGImageRelease(quartzImage);
     
-    return image;
+    return (image);
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
@@ -241,6 +248,15 @@
         [self addSubview:_previewView];
     }
     return _previewView;
+}
+
+- (DrawCircleView *)drawCircleView
+{
+    if (_drawCircleView == nil) {
+        _drawCircleView = [[DrawCircleView alloc] initWithFrame:self.bounds];
+        [self addSubview:_drawCircleView];
+    }
+    return _drawCircleView;
 }
 
 - (DetectCircleTool *)detectCircleTool
