@@ -10,6 +10,7 @@
 #import "UIImage+Rotate_Flip.h"
 #import <AVFoundation/AVFoundation.h>
 #import "AVCamPreviewView.h"
+#import "CGGeometryConvertTool.h"
 #import "DetectCircleTool.h"
 #import "STView.h"
 
@@ -27,6 +28,7 @@
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic, strong) STView *stView;
 
+@property (nonatomic,strong) CGGeometryConvertTool *covertTool;
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
 
 @end
@@ -58,6 +60,7 @@
     //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
     UIImage *sourceImage = [self imageFromSampleBuffer:sampleBuffer];
     UIImage *image = [sourceImage rotateImageWithRadian:M_PI_2 cropMode:enSvCropExpand];
+    self.covertTool.sourceSize = image.size;
     
     BOOL detected = [self.detectCircleTool detectCircleInImage:image];
     
@@ -71,8 +74,10 @@
             self.stView.radius = 0;
         } else {
             if (detected) {
-                self.stView.centerPoint = self.detectCircleTool.center;
-                self.stView.radius = self.detectCircleTool.radius;
+                CGPoint center = [self.covertTool convertPoint:self.detectCircleTool.center];
+                int radius = [self.covertTool covertIntLength:self.detectCircleTool.radius];
+                self.stView.centerPoint = center;
+                self.stView.radius = radius;
             } else {
                 self.stView.centerPoint = CGPointMake(0, 0);
                 self.stView.radius = 0;
@@ -118,7 +123,7 @@
     // Configure the session to produce lower resolution video frames, if your
     // processing algorithm can cope. We'll specify medium quality for the
     // chosen device.
-    self.session.sessionPreset = AVCaptureSessionPresetMedium;
+    self.session.sessionPreset = AVCaptureSessionPresetHigh;
 }
 
 // Find a suitable AVCaptureDevice
@@ -258,6 +263,15 @@
         [self addSubview:_previewView];
     }
     return _previewView;
+}
+
+- (CGGeometryConvertTool *)covertTool
+{
+    if (_covertTool == nil) {
+        _covertTool = [[CGGeometryConvertTool alloc] init];
+        _covertTool.covertSize = self.bounds.size;
+    }
+    return _covertTool;
 }
 
 - (DetectCircleTool *)detectCircleTool
