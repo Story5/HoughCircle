@@ -8,7 +8,7 @@
 
 #import "RHViewController.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import "RHCoinDetectView.h"
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 @interface RHViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate,AVCapturePhotoCaptureDelegate>
@@ -24,14 +24,15 @@
 //图像预览层，实时显示捕获的图像
 @property (nonatomic ,strong) AVCaptureVideoPreviewLayer *previewLayer;
 
-
-
 // btn
 @property (nonatomic,strong) UIButton *startBtn;
 @property (nonatomic,strong) UIButton *stopBtn;
 @property (nonatomic,strong) UIButton *catchBtn;
 @property (nonatomic,strong) UIImageView *catchImgView;
 @property (nonatomic,strong) NSMutableArray *arr;
+
+@property (nonatomic,strong) RHCoinDetectView *coinDetectView;
+
 @end
 
 @implementation RHViewController
@@ -40,11 +41,15 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self cameraDistrict];
+//    [self cameraDistrict];
+    [self creatUI];
     [self configureBasic];
 }
 
 
+- (void)creatUI{
+    [self.view addSubview:self.coinDetectView];
+}
 
 - (void)cameraDistrict
 {
@@ -109,19 +114,18 @@
 #pragma mark - event
 //设备取景开始
 - (void)startCatch{
-    [self.session startRunning];
+    [self.coinDetectView startRunning];
 }
 //设备停止取景
 - (void)stopCatch{
-    [self.session stopRunning];
+    [self.coinDetectView stopRunning];
+    [self.coinDetectView.layer removeAllAnimations];
 }
 
 //捕获当前帧
 - (void)catchCurrentImage{
-    [self stopCatch];
-    UIImage *image = [self.arr lastObject];
-//    self.catchImgView.image = image;
-    [self.catchImgView setImage:image];
+   
+    
 }
 
 
@@ -243,4 +247,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     }
     return _arr;
 }
+- (RHCoinDetectView *)coinDetectView{
+    if (!_coinDetectView) {
+        _coinDetectView = [[RHCoinDetectView alloc] initWithFrame:CGRectMake(0,64 , SCREEN_WIDTH, SCREEN_HEIGHT * 0.5)];
+    }
+    return _coinDetectView;
+}
+
 @end
