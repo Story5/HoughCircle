@@ -86,6 +86,13 @@
             [self.drawCircleView setNeedsDisplay];
 //            [self.session stopRunning];
         });
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.drawCircleView.circleCenter = CGPointZero;
+            self.drawCircleView.circleRadius = 0;
+            [self.drawCircleView setNeedsDisplay];
+            //            [self.session stopRunning];
+        });
     }
 }
 
