@@ -13,4 +13,6 @@
 @property (nonatomic, assign) CGPoint centerPoint;
 @property (nonatomic, assign) CGFloat radius;
 
+- (void)updateframe:(CGRect)frame;
+
 @end

@@ -1,4 +1,4 @@
-//
+
 //  STCoinDetectView.m
 //  AVFoundationDemo
 //
@@ -7,7 +7,7 @@
 //
 
 #import "STCoinDetectView.h"
-
+#import "UIImage+Rotate_Flip.h"
 #import <AVFoundation/AVFoundation.h>
 #import "AVCamPreviewView.h"
 #import "DetectCircleTool.h"
@@ -56,33 +56,39 @@
     // Create a UIImage from the sample buffer data
     //    CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
-    UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
-    
+    UIImage *sourceImage = [self imageFromSampleBuffer:sampleBuffer];
+    UIImage *image = [sourceImage rotateImageWithRadian:M_PI_2 cropMode:enSvCropExpand];
     
     BOOL detected = [self.detectCircleTool detectCircleInImage:image];
     
-    if (detected) {
-        NSLog(@"center = %@",NSStringFromCGPoint(self.detectCircleTool.center));
-        NSLog(@"radius = %d",self.detectCircleTool.radius);
-        NSLog(@"image  = %@",self.detectCircleTool.covertImage);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self stopRunning];
-            self.stView.centerPoint = CGPointMake(arc4random_uniform(414), arc4random_uniform(500));
-            self.stView.radius = self.detectCircleTool.radius;
-            //            }
-            [self startRunning];
-        });
-        
-        //        [self.stView setNeedsDisplay];
-        //
-        
-    }
+    //    if (detected) {
+    NSLog(@"center = %@",NSStringFromCGPoint(self.detectCircleTool.center));
+    NSLog(@"radius = %d",self.detectCircleTool.radius);
+    NSLog(@"image  = %@",self.detectCircleTool.covertImage);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (isnan(self.detectCircleTool.center.x) || isnan(self.detectCircleTool.center.y)) {
+            //                [self stopRunning];
+            [self configSTView:self.stView isHidden:YES];
+        } else {
+            
+            
+            if (detected) {
+                self.stView.centerPoint = self.detectCircleTool.center;
+                self.stView.radius = self.detectCircleTool.radius;
+            } else {
+                self.stView.centerPoint = CGPointMake(0, 0);
+                self.stView.radius = 0;
+                
+            }
+            [self.stView updateframe:CGRectMake(self.detectCircleTool.center.x - self.detectCircleTool.radius, self.detectCircleTool.center.y - self.detectCircleTool.radius, self.detectCircleTool.radius*2, self.detectCircleTool.radius*2)];
+        }
+    });
 }
 
 // drop
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
-    
+    //    [self stopRunning];
 }
 
 #pragma mark - set AVCapture
@@ -98,7 +104,7 @@
     [self configOutput];
     //  **********   步骤 - 5   **********
     [self configPreview];
-    [self configSTView];
+    //    [self configSTView];
     /*  **********   步骤 - 6   **********
      *
      */
@@ -165,9 +171,10 @@
     // Set up the preview view.
     self.previewView.session = self.session;
 }
-- (void)configSTView
+- (void)configSTView:(STView *)stView isHidden:(BOOL)isHedden
 {
-    self.stView.backgroundColor = [UIColor clearColor];
+    //    self.stView.backgroundColor = [UIColor clearColor];
+    stView.hidden = isHedden;
 }
 // Start the session running to start the flow of data
 - (void)startRunning
@@ -270,7 +277,8 @@
 - (STView *)stView
 {
     if (!_stView) {
-        _stView = [[STView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.previewView.frame), CGRectGetHeight(self.previewView.frame))];
+        _stView = [[STView alloc]init];
+        _stView.backgroundColor = [UIColor clearColor];
         [self.previewView addSubview:_stView];
     }
     return _stView;

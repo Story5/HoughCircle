@@ -13,8 +13,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.center = self.centerPoint;
         self.centerPoint = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
-        self.radius = 40;
+        self.radius = 40;        
     }
     return self;
 }
@@ -27,45 +28,58 @@
     }
     return self;
 }
-- (void)drawRect:(CGRect)rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self drawPieChartBackGroundWithRedius:self.radius withCenter:self.centerPoint withWidth:2 withColor:[UIColor redColor] andContextRef:context];
-}
-- (void)drawPieChartBackGroundWithRedius:(CGFloat)redius withCenter:(CGPoint)point withWidth:(CGFloat)width withColor:(UIColor *)color andContextRef:(CGContextRef)context
-{
-    //起点
-    CGFloat startAngle = 0;
-    //终点
-    CGFloat  endAngle = M_PI * 2;
-    
-    CGContextSetLineWidth(context, width);//线宽
-    [color setStroke]; // 颜色
-    
-    //路径
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:point radius:redius startAngle:startAngle endAngle:endAngle clockwise:NO];
-    //添加路径
-    CGContextAddPath(context, path.CGPath);
-    //绘制内容
-    CGContextDrawPath(context, kCGPathStroke);
-}
 
-- (void)setCenterPoint:(CGPoint)centerPoint
+- (void)updateframe:(CGRect)frame
 {
-    _centerPoint = centerPoint;
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self drawPieChartBackGroundWithRedius:self.radius withCenter:self.centerPoint withWidth:2 withColor:[UIColor redColor] andContextRef:context];
-    
-//    [self setNeedsDisplay];
+    self.frame = frame;
+    self.layer.borderColor = [UIColor redColor].CGColor;
+    self.layer.borderWidth = 1;
+    self.layer.cornerRadius = self.frame.size.width / 2;
+    self.layer.masksToBounds = YES;
 }
-- (void)setRadius:(CGFloat)radius
-{
-    _radius = radius;
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self drawPieChartBackGroundWithRedius:self.radius withCenter:self.centerPoint withWidth:2 withColor:[UIColor redColor] andContextRef:context];
-    
-    [self setNeedsDisplayInRect:CGRectMake(self.centerPoint.x, self.centerPoint.y, radius, radius)];
-
-}
+//- (void)drawRect:(CGRect)rect
+//{
+//    [super drawRect:rect];
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextAddEllipseInRect(context, CGRectMake(self.centerPoint.x, self.centerPoint.y, self.radius, self.radius));
+//    [[UIColor whiteColor]setStroke];
+//    CGContextDrawPath(context, kCGPathStroke);
+////    [self drawPieChartBackGroundWithRedius:self.radius withCenter:self.centerPoint withWidth:2 withColor:[UIColor redColor] andContextRef:context];
+//}
+//- (void)drawPieChartBackGroundWithRedius:(CGFloat)redius withCenter:(CGPoint)point withWidth:(CGFloat)width withColor:(UIColor *)color andContextRef:(CGContextRef)context
+//{
+//    //起点
+//    CGFloat startAngle = 0;
+//    //终点
+//    CGFloat  endAngle = M_PI * 2;
+//    
+//    CGContextSetLineWidth(context, width);//线宽
+//    [color setStroke]; // 颜色
+//    
+//    //路径
+//    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:point radius:redius startAngle:startAngle endAngle:endAngle clockwise:NO];
+//    //添加路径
+//    CGContextAddPath(context, path.CGPath);
+//    //绘制内容
+//    CGContextDrawPath(context, kCGPathStroke);
+//}
+//
+//- (void)setCenterPoint:(CGPoint)centerPoint
+//{
+//    _centerPoint = centerPoint;
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [self drawPieChartBackGroundWithRedius:self.radius withCenter:self.centerPoint withWidth:2 withColor:[UIColor redColor] andContextRef:context];
+//    
+////    [self setNeedsDisplay];
+//}
+//- (void)setRadius:(CGFloat)radius
+//{
+//    _radius = radius;
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [self drawPieChartBackGroundWithRedius:self.radius withCenter:self.centerPoint withWidth:2 withColor:[UIColor redColor] andContextRef:context];
+//    
+//    [self setNeedsDisplayInRect:CGRectMake(self.centerPoint.x, self.centerPoint.y, radius, radius)];
+//
+//}
 
 @end
