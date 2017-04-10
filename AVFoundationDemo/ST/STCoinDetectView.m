@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AVCamPreviewView.h"
 #import "DetectCircleTool.h"
+#import "STView.h"
 
 
 @interface STCoinDetectView ()<AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -24,6 +25,7 @@
 @property (nonatomic,strong) AVCaptureVideoDataOutput *output;
 @property (nonatomic,strong) AVCamPreviewView *previewView;
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
+@property (nonatomic, strong) STView *stView;
 
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
 
@@ -85,6 +87,7 @@
     [self configOutput];
     //  **********   步骤 - 5   **********
     [self configPreview];
+    [self configSTView];
     /*  **********   步骤 - 6   **********
      *
      */
@@ -151,7 +154,10 @@
     // Set up the preview view.
     self.previewView.session = self.session;
 }
-
+- (void)configSTView
+{
+    self.stView.backgroundColor = [UIColor clearColor];
+}
 // Start the session running to start the flow of data
 - (void)startRunning
 {
@@ -244,6 +250,14 @@
         _detectCircleTool = [[DetectCircleTool alloc] init];
     }
     return _detectCircleTool;
+}
+- (STView *)stView
+{
+    if (!_stView) {
+        _stView = [[STView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.previewView.frame), CGRectGetHeight(self.previewView.frame))];
+        [self.previewView addSubview:_stView];
+    }
+    return _stView;
 }
 
 @end
