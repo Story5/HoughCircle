@@ -34,6 +34,8 @@
 		75E70C0A1E9B505400CCB1B4 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C071E9B505400CCB1B4 /* icon3.png */; };
 		75E70C0B1E9B505400CCB1B4 /* icon3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C081E9B505400CCB1B4 /* icon3@2x.png */; };
 		75E70C0C1E9B505400CCB1B4 /* icon3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C091E9B505400CCB1B4 /* icon3@3x.png */; };
+		75E70C121E9B5F8C00CCB1B4 /* DrawCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */; };
+		75E70C151E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,10 @@
 		75E70C071E9B505400CCB1B4 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
 		75E70C081E9B505400CCB1B4 /* icon3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@2x.png"; sourceTree = "<group>"; };
 		75E70C091E9B505400CCB1B4 /* icon3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@3x.png"; sourceTree = "<group>"; };
+		75E70C101E9B5F8C00CCB1B4 /* DrawCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleView.h; sourceTree = "<group>"; };
+		75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircleView.m; sourceTree = "<group>"; };
+		75E70C131E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate_Flip.h"; sourceTree = "<group>"; };
+		75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate_Flip.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,8 @@
 			children = (
 				752BB1851E97689E007BE3DD /* CaptureImage */,
 				752BB18A1E97689E007BE3DD /* DetectCircle */,
+				75E70C131E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.h */,
+				75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */,
 			);
 			path = StoryXcode;
 			sourceTree = "<group>";
@@ -161,6 +169,8 @@
 				752BB1871E97689E007BE3DD /* AVCamPreviewView.m */,
 				75E70BDE1E9B0D1A00CCB1B4 /* CoinDetectView.h */,
 				75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */,
+				75E70C101E9B5F8C00CCB1B4 /* DrawCircleView.h */,
+				75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */,
 				752BB1881E97689E007BE3DD /* SXViewController.h */,
 				752BB1891E97689E007BE3DD /* SXViewController.m */,
 			);
@@ -313,11 +323,13 @@
 				50D6A2961E9B5AA0006ACDE6 /* STView.m in Sources */,
 				752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */,
 				75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */,
+				75E70C121E9B5F8C00CCB1B4 /* DrawCircleView.m in Sources */,
 				752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */,
 				75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */,
 				752BB1631E95ECEC007BE3DD /* main.m in Sources */,
 				75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */,
 				75E70BEE1E9B33CA00CCB1B4 /* STCoinDetectView.m in Sources */,
+				75E70C151E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
