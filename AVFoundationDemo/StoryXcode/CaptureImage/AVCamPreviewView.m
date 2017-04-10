@@ -11,7 +11,6 @@
 #import "AVCamPreviewView.h"
 
 @implementation AVCamPreviewView
-
 + (Class)layerClass
 {
 	return [AVCaptureVideoPreviewLayer class];

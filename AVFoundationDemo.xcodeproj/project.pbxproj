@@ -18,6 +18,8 @@
 		752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1891E97689E007BE3DD /* SXViewController.m */; };
 		752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */; };
 		752BB1911E9768FA007BE3DD /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752BB1901E9768FA007BE3DD /* opencv2.framework */; };
+		75E70BD81E9793FA00CCB1B4 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70BD71E9793FA00CCB1B4 /* flag.png */; };
+		75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,9 @@
 		752BB18D1E9768B8007BE3DD /* DetectCircleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectCircleTool.h; sourceTree = "<group>"; };
 		752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DetectCircleTool.mm; sourceTree = "<group>"; };
 		752BB1901E9768FA007BE3DD /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		75E70BD71E9793FA00CCB1B4 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag.png; sourceTree = "<group>"; };
+		75E70BDE1E9B0D1A00CCB1B4 /* CoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectView.h; sourceTree = "<group>"; };
+		75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +79,7 @@
 		752BB1601E95ECEC007BE3DD /* AVFoundationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				75E70BD71E9793FA00CCB1B4 /* flag.png */,
 				752BB1641E95ECEC007BE3DD /* AppDelegate.h */,
 				752BB1651E95ECEC007BE3DD /* AppDelegate.m */,
 				752BB17E1E975BE5007BE3DD /* StoryXcode */,
@@ -119,6 +125,8 @@
 			children = (
 				752BB1861E97689E007BE3DD /* AVCamPreviewView.h */,
 				752BB1871E97689E007BE3DD /* AVCamPreviewView.m */,
+				75E70BDE1E9B0D1A00CCB1B4 /* CoinDetectView.h */,
+				75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */,
 				752BB1881E97689E007BE3DD /* SXViewController.h */,
 				752BB1891E97689E007BE3DD /* SXViewController.m */,
 			);
@@ -196,6 +204,7 @@
 				752BB1711E95ECEC007BE3DD /* LaunchScreen.storyboard in Resources */,
 				752BB16E1E95ECEC007BE3DD /* Assets.xcassets in Resources */,
 				752BB16C1E95ECEC007BE3DD /* Main.storyboard in Resources */,
+				75E70BD81E9793FA00CCB1B4 /* flag.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +220,7 @@
 				752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */,
 				752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */,
 				752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */,
+				75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */,
 				752BB1631E95ECEC007BE3DD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

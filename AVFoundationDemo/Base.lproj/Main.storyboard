@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fyF-la-8fa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fyF-la-8fa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,22 +40,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GID-n5-Agg" customClass="AVCamPreviewView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-Y2-1g8">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="GID-n5-Agg" firstAttribute="centerX" secondItem="lI6-Ca-ZTe" secondAttribute="centerX" id="MHq-24-EKf"/>
-                            <constraint firstItem="GID-n5-Agg" firstAttribute="width" secondItem="lI6-Ca-ZTe" secondAttribute="width" id="ayE-vB-BsH"/>
-                            <constraint firstItem="GID-n5-Agg" firstAttribute="centerY" secondItem="lI6-Ca-ZTe" secondAttribute="centerY" id="qaj-gL-9cs"/>
-                            <constraint firstItem="GID-n5-Agg" firstAttribute="height" secondItem="lI6-Ca-ZTe" secondAttribute="height" id="zgk-RY-5hL"/>
+                            <constraint firstItem="ctR-Y2-1g8" firstAttribute="width" secondItem="lI6-Ca-ZTe" secondAttribute="width" id="85o-In-Yls"/>
+                            <constraint firstItem="ctR-Y2-1g8" firstAttribute="height" secondItem="lI6-Ca-ZTe" secondAttribute="height" id="f6q-Uw-AzJ"/>
+                            <constraint firstItem="ctR-Y2-1g8" firstAttribute="centerX" secondItem="lI6-Ca-ZTe" secondAttribute="centerX" id="fyX-zb-SkO"/>
+                            <constraint firstItem="ctR-Y2-1g8" firstAttribute="centerY" secondItem="lI6-Ca-ZTe" secondAttribute="centerY" id="utz-aa-WVE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="uKe-z4-VUJ"/>
                     <connections>
-                        <outlet property="previewView" destination="GID-n5-Agg" id="cmK-Rj-jax"/>
+                        <outlet property="imageView" destination="ctR-Y2-1g8" id="rcJ-bF-NXx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51K-Zz-u05" userLabel="First Responder" sceneMemberID="firstResponder"/>
