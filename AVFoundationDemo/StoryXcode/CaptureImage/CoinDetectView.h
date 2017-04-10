@@ -10,4 +10,7 @@
 
 @interface CoinDetectView : UIView
 
+- (void)startRunning;
+- (void)stopRunning;
+
 @end

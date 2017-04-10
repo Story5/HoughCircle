@@ -158,6 +158,11 @@
     [self.session startRunning];
 }
 
+- (void)stopRunning
+{
+    [self.session stopRunning];
+}
+
 // Create a UIImage from sample buffer data
 - (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
 {
