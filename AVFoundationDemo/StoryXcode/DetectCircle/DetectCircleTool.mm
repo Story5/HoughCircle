@@ -6,11 +6,11 @@
 //  Copyright © 2017 Story5. All rights reserved.
 //
 
-#import "DetectCircleTool.h"
-
 #import <opencv2/opencv.hpp>
 #import <opencv2/imgcodecs/ios.h>
 #import <opencv2/imgproc/imgproc.hpp>
+
+#import "DetectCircleTool.h"
 
 @implementation DetectCircleTool
 
