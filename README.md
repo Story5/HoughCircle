@@ -20,3 +20,7 @@ AVFoundation 框架基于以下几个类实现图像捕捉 ，通过这些类可
   * AVCaptureVideoOutput 为实时预览图提供原始帧
 * AVCaptureSession 管理输入与输出之间的数据流，以及在出现问题时生成运行时错误。
 * AVCaptureVideoPreviewLayer 是 CALayer 的子类，可被用于自动显示相机产生的实时图像。它还有几个工具性质的方法，可将 layer 上的坐标转化到设备上。它看起来像输出，但其实不是。另外，它拥有 session (outputs 被 session 所拥有)。
+
+## 优化显示
+
+用主线程刷新画图

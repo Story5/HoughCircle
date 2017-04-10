@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4EF8593063E3E3FD411B50ED8CC706579DB91BE6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4EF8593063E3E3FD411B50ED8CC706579DB91BE6" : 9223372036854775807,
+    "49C2CC31882AFB41946814247B0E4B30308A1CF0" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6DB9AA98-2D52-43BC-B710-5279F7E6AB30",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4EF8593063E3E3FD411B50ED8CC706579DB91BE6" : "AVFoundationDemo\/",
+    "49C2CC31882AFB41946814247B0E4B30308A1CF0" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AVFoundationDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AVFoundationDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.oschina.net:itShuTong\/Study.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "49C2CC31882AFB41946814247B0E4B30308A1CF0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/GGSDU\/AVFoundationDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4EF8593063E3E3FD411B50ED8CC706579DB91BE6"
+    }
+  ]
+}
