@@ -67,21 +67,18 @@
     NSLog(@"image  = %@",self.detectCircleTool.covertImage);
     dispatch_async(dispatch_get_main_queue(), ^{
         if (isnan(self.detectCircleTool.center.x) || isnan(self.detectCircleTool.center.y)) {
-            //                [self stopRunning];
-            [self configSTView:self.stView isHidden:YES];
+            self.stView.centerPoint = CGPointMake(0, 0);
+            self.stView.radius = 0;
         } else {
-            
-            
             if (detected) {
                 self.stView.centerPoint = self.detectCircleTool.center;
                 self.stView.radius = self.detectCircleTool.radius;
             } else {
                 self.stView.centerPoint = CGPointMake(0, 0);
                 self.stView.radius = 0;
-                
             }
-            [self.stView updateframe:CGRectMake(self.detectCircleTool.center.x - self.detectCircleTool.radius, self.detectCircleTool.center.y - self.detectCircleTool.radius, self.detectCircleTool.radius*2, self.detectCircleTool.radius*2)];
         }
+        [self.stView updateframe:CGRectMake(self.detectCircleTool.center.x - self.detectCircleTool.radius, self.detectCircleTool.center.y - self.detectCircleTool.radius, self.detectCircleTool.radius*2, self.detectCircleTool.radius*2)];
     });
 }
 
@@ -171,11 +168,7 @@
     // Set up the preview view.
     self.previewView.session = self.session;
 }
-- (void)configSTView:(STView *)stView isHidden:(BOOL)isHedden
-{
-    //    self.stView.backgroundColor = [UIColor clearColor];
-    stView.hidden = isHedden;
-}
+
 // Start the session running to start the flow of data
 - (void)startRunning
 {
