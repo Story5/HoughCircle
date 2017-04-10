@@ -25,6 +25,8 @@
 @property (nonatomic,strong) AVCamPreviewView *previewView;
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 
+@property (nonatomic,strong) UIImageView *imageView;
+
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
 
 @end
@@ -41,11 +43,14 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-    [self setAVCapture];
-    
-}
+//- (void)drawRect:(CGRect)rect {
+//    // Drawing code
+//    [self setAVCapture];
+//    
+//    
+//    UIImage *image = [UIImage imageNamed:@"flag.png"];
+//    [image drawInRect:CGRectMake(100, 100, 200, 200)];
+//}
 
 #pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate
 // output
@@ -85,9 +90,12 @@
     [self configOutput];
     //  **********   步骤 - 5   **********
     [self configPreview];
-    /*  **********   步骤 - 6   **********
-     *
-     */
+    
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    self.imageView.center = self.center;
+    self.imageView.image = [UIImage imageNamed:@"flag.png"];
+    [self addSubview:self.imageView];
+    //  **********   步骤 - 6   **********
     [self startRunning];
     
     // Assign session to an ivar.
@@ -158,6 +166,7 @@
     [self.session startRunning];
 }
 
+// Stop
 - (void)stopRunning
 {
     [self.session stopRunning];
