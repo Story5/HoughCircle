@@ -16,7 +16,7 @@
 
 @end
 
-@implementation SXViewController
+@implementation FishMeasureViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
