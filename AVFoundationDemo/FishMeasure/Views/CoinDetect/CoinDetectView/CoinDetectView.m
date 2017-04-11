@@ -11,7 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AVCamPreviewView.h"
 #import "CameraControlView.h"
-
+#import "UseGuideView.h"
 #import "DrawCircleView.h"
 
 #import "UIImage+Rotate_Flip.h"
@@ -32,6 +32,7 @@
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 
 @property (nonatomic,strong) CameraControlView *cameraControlView;
+@property (nonatomic,strong) UseGuideView *guideView;
 
 @property (nonatomic,strong) DrawCircleView *drawCircleView;
 
@@ -68,7 +69,7 @@
 
 - (void)cameraControlView:(CameraControlView *)cameraControleView clickGuideButton:(UIButton *)aSender
 {
-    
+    [self addSubview:self.guideView];
 }
 
 - (void)cameraControlView:(CameraControlView *)cameraControleView clickFlashLightButton:(UIButton *)aSender
@@ -324,6 +325,14 @@
         [self addSubview:_cameraControlView];
     }
     return _cameraControlView;
+}
+
+- (UseGuideView *)guideView
+{
+    if (_guideView == nil) {
+        _guideView = [[UseGuideView alloc] initWithFrame:self.bounds];
+    }
+    return _guideView;
 }
 
 - (DrawCircleView *)drawCircleView
