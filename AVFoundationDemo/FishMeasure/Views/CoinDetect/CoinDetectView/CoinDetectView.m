@@ -136,11 +136,11 @@
     //  **********   步骤 - 5   **********
     [self configPreview];
     
-    // 配置拍照按钮控件
-    [self configCameraControlView];
-    
     // 配置画圆视图
     [self configCircleImageView];
+    
+    // 配置拍照按钮控件
+    [self configCameraControlView];
     
     //  **********   步骤 - 6   **********
     [self startRunning];
@@ -321,7 +321,7 @@
         NSInteger bottomGap = 50;
         _cameraControlView = [[CameraControlView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - height - bottomGap, self.bounds.size.width, height)];
         _cameraControlView.delegate = self;
-        [self.previewView addSubview:_cameraControlView];
+        [self addSubview:_cameraControlView];
     }
     return _cameraControlView;
 }
