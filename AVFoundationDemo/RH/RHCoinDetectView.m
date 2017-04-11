@@ -27,6 +27,7 @@
 
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
 @property (nonatomic,strong) UIImageView *imgView;
+@property (nonatomic,strong) UIButton *takePhotoBtn;
 @end
 
 @implementation RHCoinDetectView
@@ -298,5 +299,4 @@
     }
     return _imgView;
 }
-
 @end
