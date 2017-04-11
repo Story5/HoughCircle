@@ -136,8 +136,7 @@
     
     dispatch_sync(dispatch_get_main_queue(), ^{
         [self.cameraControlView enableTakePicture:detected];
-        self.drawCircleView.coinDetectModel.circleCenter = center;
-        self.drawCircleView.coinDetectModel.circleRadius = radius;
+        self.drawCircleView.coinDetectModel = self.coinDetectModel;
         [self.drawCircleView setNeedsDisplay];
     });
 }

@@ -45,7 +45,22 @@
     self.rulerCalculator.startPoint = self.startPoint;
     self.rulerCalculator.endPoint = self.endPoint;
     [self drawRulerWithRect:rect];
+    
+    
+    NSString *measureText = [NSString stringWithFormat:@"%.2f",self.measureLength];
+    [self drawMeasureText:measureText];
 }
+
+#pragma mark - public
+- (CGFloat)measureLength
+{
+    CGFloat xDifference = self.startPoint.x - self.endPoint.x;
+    CGFloat yDifference = self.startPoint.y - self.endPoint.y;
+    CGFloat length = sqrtf((powf(xDifference, 2) + powf(yDifference, 2)));
+    _measureLength = length;
+    return _measureLength;
+}
+
 #pragma mark - touch
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -194,6 +209,11 @@
     // 画尺子头尾三角形
     [self drawTriangleWithContext:context startPoint:self.startPoint width:self.rulerWidth flip:false];
     [self drawTriangleWithContext:context startPoint:self.endPoint width:self.rulerWidth flip:true];
+}
+
+- (void)drawMeasureText:(NSString *)text
+{
+    [text drawAtPoint:CGPointMake(10, self.bounds.size.height - 50) withAttributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
 }
 
 // MARK: 画标尺

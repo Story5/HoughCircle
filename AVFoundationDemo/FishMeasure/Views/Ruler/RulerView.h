@@ -10,4 +10,6 @@
 
 @interface RulerView : UIView
 
+@property (nonatomic,assign) CGFloat measureLength;
+
 @end
