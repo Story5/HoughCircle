@@ -7,12 +7,10 @@
 //
 
 #import "FishMeasureViewController.h"
-#import "CoinDetectView.h"
 
 @interface FishMeasureViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (nonatomic,strong) CoinDetectView *coinDetectView;
+@property (nonatomic,strong) UIImageView *imageView;
 
 @end
 
@@ -22,37 +20,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"%s",__func__);
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor greenColor];
  
-    self.coinDetectView = [[CoinDetectView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:self.coinDetectView];
+    self.imageView.image = self.fishImage;
 }
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self.coinDetectView startRunning];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    [self.coinDetectView stopRunning];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    
-    [self.coinDetectView stopRunning];
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - setter
+- (void)setFishImage:(UIImage *)fishImage
+{
+    _fishImage = fishImage;
+    self.imageView.image = _fishImage;
+}
+
+- (UIImageView *)imageView
+{
+    if (_imageView == nil) {
+        _imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+        [self.view addSubview:_imageView];
+    }
+    return _imageView;
 }
 
 @end

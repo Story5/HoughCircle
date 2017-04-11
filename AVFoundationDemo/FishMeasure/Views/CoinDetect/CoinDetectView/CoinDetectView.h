@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class CoinDetectView;
+
+@protocol CoinDetectViewDelegate <NSObject>
+
+- (void)coinDetectView:(CoinDetectView *)coinDetectView getFishImage:(UIImage *)image;
+
+@end
+
 @interface CoinDetectView : UIView
+
+@property (nonatomic,strong) id<CoinDetectViewDelegate>delegate;
 
 - (void)startRunning;
 - (void)stopRunning;

@@ -50,7 +50,7 @@
         <!--SX-->
         <scene sceneID="R3r-Hb-gDX">
             <objects>
-                <viewController id="1qn-sY-Dtx" customClass="FishMeasureViewController" sceneMemberID="viewController">
+                <viewController id="1qn-sY-Dtx" customClass="CoinDetectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ca2-Gd-Sws"/>
                         <viewControllerLayoutGuide type="bottom" id="xCT-4d-puV"/>
@@ -58,23 +58,9 @@
                     <view key="view" contentMode="scaleToFill" id="lI6-Ca-ZTe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-Y2-1g8">
-                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="ctR-Y2-1g8" firstAttribute="width" secondItem="lI6-Ca-ZTe" secondAttribute="width" id="85o-In-Yls"/>
-                            <constraint firstItem="ctR-Y2-1g8" firstAttribute="height" secondItem="lI6-Ca-ZTe" secondAttribute="height" id="f6q-Uw-AzJ"/>
-                            <constraint firstItem="ctR-Y2-1g8" firstAttribute="centerX" secondItem="lI6-Ca-ZTe" secondAttribute="centerX" id="fyX-zb-SkO"/>
-                            <constraint firstItem="ctR-Y2-1g8" firstAttribute="centerY" secondItem="lI6-Ca-ZTe" secondAttribute="centerY" id="utz-aa-WVE"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SX" image="icon1.png" selectedImage="icon1.png" id="uKe-z4-VUJ"/>
-                    <connections>
-                        <outlet property="imageView" destination="ctR-Y2-1g8" id="rcJ-bF-NXx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51K-Zz-u05" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

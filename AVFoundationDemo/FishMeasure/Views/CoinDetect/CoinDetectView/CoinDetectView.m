@@ -9,6 +9,7 @@
 #import "CoinDetectView.h"
 
 #import <AVFoundation/AVFoundation.h>
+#import <ImageIO/ImageIO.h>
 #import "AVCamPreviewView.h"
 #import "CameraControlView.h"
 #import "UseGuideView.h"
@@ -26,8 +27,10 @@
 //@property (nonatomic,strong) AVCaptureInput *input;
 @property (nonatomic,strong) AVCaptureDeviceInput *input;
 
+// 可以捕捉静态图像
+@property (nonatomic,strong) AVCaptureStillImageOutput *stillImageOutput;
 // 可以逐帧处理捕获的视频
-@property (nonatomic,strong) AVCaptureVideoDataOutput *output;
+@property (nonatomic,strong) AVCaptureVideoDataOutput *videoDataOutput;
 @property (nonatomic,strong) AVCamPreviewView *previewView;
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 
@@ -38,6 +41,8 @@
 
 @property (nonatomic,strong) CGGeometryConvertTool *covertTool;
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
+
+@property (nonatomic,strong) UIImage *captureImage;
 
 @end
 
@@ -64,7 +69,36 @@
 #pragma mark - CameraControlViewDelegate
 - (void)cameraControlView:(CameraControlView *)cameraControleView clickTakePictureButton:(UIButton *)aSender
 {
+    [self stopRunning];
     
+    if ([self.delegate respondsToSelector:@selector(coinDetectView:getFishImage:)]) {
+        [self.delegate coinDetectView:self getFishImage:self.captureImage];
+    }
+//    AVCaptureConnection *videoConnection = [self getConnection];
+//    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:
+//     ^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
+//         CFDictionaryRef exifAttachments =
+//         CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
+//         if (exifAttachments) {
+//             // Do something with the attachments.
+//         }
+//         // Continue as appropriate.
+//         if (imageSampleBuffer == nil) {
+//             NSLog(@"图像缓冲区中没有图像");
+//             return ;
+//         }
+//         NSData *data = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
+//         UIImage *image = [UIImage imageWithData:data];
+//         CGRect rect = _previewView.bounds;
+//         CGFloat offset = (self.bounds.size.height - rect.size.height) * 0.5;
+//         
+//         UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0);
+//         [image drawInRect:CGRectInset(rect, 0, -offset)];
+//         UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+//         UIGraphicsEndImageContext();
+//         
+//         UIImageWriteToSavedPhotosAlbum(resultImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+//     }];
 }
 
 - (void)cameraControlView:(CameraControlView *)cameraControleView clickGuideButton:(UIButton *)aSender
@@ -102,6 +136,7 @@
         NSLog(@"covert radius = %d",radius);
         
         dispatch_sync(dispatch_get_main_queue(), ^{
+            self.captureImage = image;
             [self.cameraControlView setTakePictureButtonEnable:true];
             self.drawCircleView.circleCenter = center;
             self.drawCircleView.circleRadius = radius;
@@ -110,6 +145,7 @@
         });
     } else {
         dispatch_sync(dispatch_get_main_queue(), ^{
+            self.captureImage = nil;
             [self.cameraControlView setTakePictureButtonEnable:false];
             self.drawCircleView.circleCenter = CGPointZero;
             self.drawCircleView.circleRadius = 0;
@@ -135,7 +171,8 @@
     //  **********   步骤 - 3   **********
     [self configInput];
     //  **********   步骤 - 4   **********
-    [self configOutput];
+//    [self configStillImageOutput];
+    [self configVideoDataOutput];
     //  **********   步骤 - 5   **********
     [self configPreview];
     
@@ -185,18 +222,26 @@
     [self.session addInput:self.input];
 }
 
+//- (void)configStillImageOutput
+//{
+//    self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+//    NSDictionary *outputSettings = @{ AVVideoCodecKey : AVVideoCodecJPEG};
+//    [self.stillImageOutput setOutputSettings:outputSettings];
+//    [self.session addInput:self.input];
+//}
+
 // Create a VideoDataOutput and add it to the session
-- (void)configOutput
+- (void)configVideoDataOutput
 {
-    self.output = [[AVCaptureVideoDataOutput alloc] init];
-    [self.session addOutput:self.output];
+    self.videoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
+    [self.session addOutput:self.videoDataOutput];
     
     // Configure your output.
     dispatch_queue_t queue = dispatch_queue_create("myQueue", NULL);
-    [self.output setSampleBufferDelegate:self queue:queue];
+    [self.videoDataOutput setSampleBufferDelegate:self queue:queue];
     
     // Specify the pixel format
-    self.output.videoSettings = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
+    self.videoDataOutput.videoSettings = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
                                                             forKey:(id)kCVPixelBufferPixelFormatTypeKey];
     
     // If you wish to cap the frame rate to a known value, such as 15 fps, set
@@ -223,13 +268,17 @@
 // Start the session running to start the flow of data
 - (void)startRunning
 {
-    [self.session startRunning];
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+      [self.session startRunning];
+    });
 }
 
 // Stop
 - (void)stopRunning
 {
-    [self.session stopRunning];
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [self.session stopRunning];
+    });
 }
 
 // open or close torch
@@ -248,6 +297,21 @@
         
         [self.device unlockForConfiguration];
     }
+}
+
+- (AVCaptureConnection *)getConnection
+{
+    AVCaptureConnection *videoConnection = nil;
+    for (AVCaptureConnection *connection in self.stillImageOutput.connections) {
+        for (AVCaptureInputPort *port in [connection inputPorts]) {
+            if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
+                videoConnection = connection;
+                break;
+            }
+        }
+        if (videoConnection) break;
+    }
+    return videoConnection;
 }
 
 // Create a UIImage from sample buffer data

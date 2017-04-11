@@ -16,6 +16,8 @@
 		752BB16E1E95ECEC007BE3DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16D1E95ECEC007BE3DD /* Assets.xcassets */; };
 		752BB1711E95ECEC007BE3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16F1E95ECEC007BE3DD /* LaunchScreen.storyboard */; };
 		752BB17A1E95EFEB007BE3DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752BB1791E95EFEB007BE3DD /* AVFoundation.framework */; };
+		7532CE041E9CAC41005B7845 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7532CE031E9CAC41005B7845 /* ImageIO.framework */; };
+		7532CE071E9CB7AB005B7845 /* CoinDetectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE061E9CB7AB005B7845 /* CoinDetectViewController.m */; };
 		75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */; };
 		75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */; };
 		75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BEA1E9B33A900CCB1B4 /* RHCoinDetectView.m */; };
@@ -73,6 +75,9 @@
 		752BB1701E95ECEC007BE3DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		752BB1721E95ECEC007BE3DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752BB1791E95EFEB007BE3DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7532CE031E9CAC41005B7845 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		7532CE051E9CB7AB005B7845 /* CoinDetectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectViewController.h; sourceTree = "<group>"; };
+		7532CE061E9CB7AB005B7845 /* CoinDetectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectViewController.m; sourceTree = "<group>"; };
 		75E70BE21E9B2F4400CCB1B4 /* RHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHViewController.h; sourceTree = "<group>"; };
 		75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHViewController.m; sourceTree = "<group>"; };
 		75E70BE61E9B2F5F00CCB1B4 /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
@@ -134,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7532CE041E9CAC41005B7845 /* ImageIO.framework in Frameworks */,
 				50D6A2931E9B31E1006ACDE6 /* opencv2.framework in Frameworks */,
 				0444EFDA1E978E3B00224B7E /* opencv2.framework in Frameworks */,
 				752BB17A1E95EFEB007BE3DD /* AVFoundation.framework in Frameworks */,
@@ -189,6 +195,7 @@
 		752BB1781E95EFEB007BE3DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7532CE031E9CAC41005B7845 /* ImageIO.framework */,
 				50D6A2921E9B31E1006ACDE6 /* opencv2.framework */,
 				0444EFD91E978E3B00224B7E /* opencv2.framework */,
 				752BB1791E95EFEB007BE3DD /* AVFoundation.framework */,
@@ -248,6 +255,8 @@
 		75E70C1B1E9C6E7E00CCB1B4 /* FishMeasure */ = {
 			isa = PBXGroup;
 			children = (
+				7532CE051E9CB7AB005B7845 /* CoinDetectViewController.h */,
+				7532CE061E9CB7AB005B7845 /* CoinDetectViewController.m */,
 				75E70C341E9C6F1200CCB1B4 /* FishMeasureViewController.h */,
 				75E70C351E9C6F1200CCB1B4 /* FishMeasureViewController.m */,
 				75E70C361E9C6F1200CCB1B4 /* Tools */,
@@ -485,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */,
+				7532CE071E9CB7AB005B7845 /* CoinDetectViewController.m in Sources */,
 				75E70C581E9C6F1300CCB1B4 /* FishMeasureViewController.m in Sources */,
 				75E70C801E9C74F600CCB1B4 /* AVCamPreviewView.m in Sources */,
 				75E70C8E1E9C7F2A00CCB1B4 /* CameraControlView.m in Sources */,
