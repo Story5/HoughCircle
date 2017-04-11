@@ -10,6 +10,12 @@
 
 #define UseGuideImage_Count 3
 
+@interface UseGuideView ()
+
+@property (nonatomic,strong) UIScrollView *scrollView;
+
+@end
+
 @implementation UseGuideView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -26,6 +32,7 @@
 - (void)closeButtonClicked:(UIButton *)aSender
 {
     NSLog(@"%s",__func__);
+    self.scrollView.contentOffset = CGPointZero;
     [self removeFromSuperview];
 }
 
@@ -51,20 +58,20 @@
 
 - (void)configScrollView
 {
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-    [self addSubview:scrollView];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+    [self addSubview:self.scrollView];
     
     for (int i = 0; i < UseGuideImage_Count; i ++) {
         
         NSString *imageName = [NSString stringWithFormat:@"UseGuide%d_%@",i+1,[self guideImageSuffix]];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * scrollView.bounds.size.width, 0, scrollView.bounds.size.width, scrollView.bounds.size.height)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * self.scrollView.bounds.size.width, 0, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height)];
         imageView.image = [UIImage imageNamed:imageName];
-        [scrollView addSubview:imageView];
+        [self.scrollView addSubview:imageView];
     }
     
-    scrollView.bounces = NO;
-    scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(scrollView.bounds.size.width * 3, scrollView.bounds.size.height);
+    self.scrollView.bounces = NO;
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width * 3, self.scrollView.bounds.size.height);
 }
 
 /*

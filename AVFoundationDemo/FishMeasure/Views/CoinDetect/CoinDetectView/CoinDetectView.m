@@ -102,6 +102,7 @@
         NSLog(@"covert radius = %d",radius);
         
         dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.cameraControlView setTakePictureButtonEnable:true];
             self.drawCircleView.circleCenter = center;
             self.drawCircleView.circleRadius = radius;
             [self.drawCircleView setNeedsDisplay];
@@ -109,6 +110,7 @@
         });
     } else {
         dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.cameraControlView setTakePictureButtonEnable:false];
             self.drawCircleView.circleCenter = CGPointZero;
             self.drawCircleView.circleRadius = 0;
             [self.drawCircleView setNeedsDisplay];
