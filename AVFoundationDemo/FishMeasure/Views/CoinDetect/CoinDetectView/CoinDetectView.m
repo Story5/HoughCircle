@@ -200,6 +200,24 @@
     [self.session stopRunning];
 }
 
+// open or close torch
+- (void)setFlashLightMode:(BOOL)mode
+{
+    if ([self.device hasTorch]) {
+        
+        [self.device lockForConfiguration:nil];
+        if (mode) {
+            // 打开闪光灯
+            [self.device setTorchMode:AVCaptureTorchModeOn];
+        } else {
+            // 关闭闪光灯
+            [self.device setTorchMode:AVCaptureTorchModeOff];
+        }
+        
+        [self.device unlockForConfiguration];
+    }
+}
+
 // Create a UIImage from sample buffer data
 - (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
 {
