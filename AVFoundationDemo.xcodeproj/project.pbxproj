@@ -17,7 +17,7 @@
 		752BB1711E95ECEC007BE3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16F1E95ECEC007BE3DD /* LaunchScreen.storyboard */; };
 		752BB17A1E95EFEB007BE3DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752BB1791E95EFEB007BE3DD /* AVFoundation.framework */; };
 		752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1871E97689E007BE3DD /* AVCamPreviewView.m */; };
-		752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1891E97689E007BE3DD /* SXViewController.m */; };
+		752BB18C1E97689E007BE3DD /* FishMeasureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1891E97689E007BE3DD /* FishMeasureViewController.m */; };
 		752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */; };
 		75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */; };
 		75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */; };
@@ -37,7 +37,7 @@
 		75E70C121E9B5F8C00CCB1B4 /* DrawCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */; };
 		75E70C151E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */; };
 		75E70C181E9B729000CCB1B4 /* CGGeometryConvertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C171E9B729000CCB1B4 /* CGGeometryConvertTool.m */; };
-		75E70C1A1E9B8E2B00CCB1B4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C191E9B8E2B00CCB1B4 /* icon.png */; };
+		75E70C1A1E9B8E2B00CCB1B4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C191E9B8E2B00CCB1B4 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +56,8 @@
 		752BB1791E95EFEB007BE3DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		752BB1861E97689E007BE3DD /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
 		752BB1871E97689E007BE3DD /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
-		752BB1881E97689E007BE3DD /* SXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXViewController.h; sourceTree = "<group>"; };
-		752BB1891E97689E007BE3DD /* SXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXViewController.m; sourceTree = "<group>"; };
+		752BB1881E97689E007BE3DD /* FishMeasureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishMeasureViewController.h; sourceTree = "<group>"; };
+		752BB1891E97689E007BE3DD /* FishMeasureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FishMeasureViewController.m; sourceTree = "<group>"; };
 		752BB18D1E9768B8007BE3DD /* DetectCircleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectCircleTool.h; sourceTree = "<group>"; };
 		752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DetectCircleTool.mm; sourceTree = "<group>"; };
 		75E70BDE1E9B0D1A00CCB1B4 /* CoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectView.h; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate_Flip.m"; sourceTree = "<group>"; };
 		75E70C161E9B729000CCB1B4 /* CGGeometryConvertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometryConvertTool.h; sourceTree = "<group>"; };
 		75E70C171E9B729000CCB1B4 /* CGGeometryConvertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGeometryConvertTool.m; sourceTree = "<group>"; };
-		75E70C191E9B8E2B00CCB1B4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		75E70C191E9B8E2B00CCB1B4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +178,8 @@
 				75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */,
 				75E70C101E9B5F8C00CCB1B4 /* DrawCircleView.h */,
 				75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */,
-				752BB1881E97689E007BE3DD /* SXViewController.h */,
-				752BB1891E97689E007BE3DD /* SXViewController.m */,
+				752BB1881E97689E007BE3DD /* FishMeasureViewController.h */,
+				752BB1891E97689E007BE3DD /* FishMeasureViewController.m */,
 			);
 			path = CaptureImage;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 		75E70BF31E9B375400CCB1B4 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				75E70C191E9B8E2B00CCB1B4 /* icon.png */,
+				75E70C191E9B8E2B00CCB1B4 /* logo.png */,
 				75E70BF41E9B375400CCB1B4 /* flag.png */,
 				75E70BF51E9B375400CCB1B4 /* TabBarIcon */,
 			);
@@ -310,7 +310,7 @@
 				75E70C0C1E9B505400CCB1B4 /* icon3@3x.png in Resources */,
 				75E70C051E9B4EA800CCB1B4 /* icon2@2x.png in Resources */,
 				75E70C0A1E9B505400CCB1B4 /* icon3.png in Resources */,
-				75E70C1A1E9B8E2B00CCB1B4 /* icon.png in Resources */,
+				75E70C1A1E9B8E2B00CCB1B4 /* logo.png in Resources */,
 				75E70BFB1E9B375400CCB1B4 /* icon1.png in Resources */,
 				752BB16C1E95ECEC007BE3DD /* Main.storyboard in Resources */,
 				75E70C0B1E9B505400CCB1B4 /* icon3@2x.png in Resources */,
@@ -330,7 +330,7 @@
 				752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */,
 				752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */,
 				50D6A2961E9B5AA0006ACDE6 /* STView.m in Sources */,
-				752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */,
+				752BB18C1E97689E007BE3DD /* FishMeasureViewController.m in Sources */,
 				75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */,
 				75E70C121E9B5F8C00CCB1B4 /* DrawCircleView.m in Sources */,
 				752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */,

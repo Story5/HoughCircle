@@ -29,7 +29,7 @@
 
 - (void)drawIcon
 {
-    UIImage *image = [UIImage imageNamed:@"icon.png"];
+    UIImage *image = [UIImage imageNamed:@"logo.png"];
     [image drawInRect:CGRectMake(10, 20, 40, 40)];
 }
 

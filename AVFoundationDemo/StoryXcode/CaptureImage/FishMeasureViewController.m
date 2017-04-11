@@ -6,10 +6,10 @@
 //  Copyright © 2017 Story5. All rights reserved.
 //
 
-#import "SXViewController.h"
+#import "FishMeasureViewController.h"
 #import "CoinDetectView.h"
 
-@interface SXViewController ()
+@interface FishMeasureViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic,strong) CoinDetectView *coinDetectView;

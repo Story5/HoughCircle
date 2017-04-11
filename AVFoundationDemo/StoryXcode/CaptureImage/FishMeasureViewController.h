@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SXViewController : UIViewController
+@interface FishMeasureViewController : UIViewController
 
 
 @end
