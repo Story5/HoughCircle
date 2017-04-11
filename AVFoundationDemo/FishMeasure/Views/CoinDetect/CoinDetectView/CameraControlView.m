@@ -37,6 +37,7 @@
 #pragma mark - button click
 - (void)clickTakePictureButton:(UIButton *)aSender
 {
+    NSLog(@"%s",__func__);
     if ([self.delegate respondsToSelector:@selector(cameraControlView:clickTakePictureButton:)]) {
         [self.delegate cameraControlView:self clickTakePictureButton:aSender];
     }
@@ -44,6 +45,7 @@
 
 - (void)clickGuideButton:(UIButton *)aSender
 {
+    NSLog(@"%s",__func__);
     if ([self.delegate respondsToSelector:@selector(cameraControlView:clickGuideButton:)]) {
         [self.delegate cameraControlView:self clickGuideButton:aSender];
     }
@@ -51,6 +53,7 @@
 
 - (void)clickFlashButton:(UIButton *)aSender
 {
+    NSLog(@"%s",__func__);
     aSender.selected = !aSender.selected;
     if ([self.delegate respondsToSelector:@selector(cameraControlView:clickFlashLightButton:)]) {
         [self.delegate cameraControlView:self clickFlashLightButton:aSender];
