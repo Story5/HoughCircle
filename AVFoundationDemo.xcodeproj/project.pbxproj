@@ -16,10 +16,6 @@
 		752BB16E1E95ECEC007BE3DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16D1E95ECEC007BE3DD /* Assets.xcassets */; };
 		752BB1711E95ECEC007BE3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16F1E95ECEC007BE3DD /* LaunchScreen.storyboard */; };
 		752BB17A1E95EFEB007BE3DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752BB1791E95EFEB007BE3DD /* AVFoundation.framework */; };
-		752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1871E97689E007BE3DD /* AVCamPreviewView.m */; };
-		752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BB1891E97689E007BE3DD /* SXViewController.m */; };
-		752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */; };
-		75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */; };
 		75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */; };
 		75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */; };
 		75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BEA1E9B33A900CCB1B4 /* RHCoinDetectView.m */; };
@@ -34,8 +30,32 @@
 		75E70C0A1E9B505400CCB1B4 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C071E9B505400CCB1B4 /* icon3.png */; };
 		75E70C0B1E9B505400CCB1B4 /* icon3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C081E9B505400CCB1B4 /* icon3@2x.png */; };
 		75E70C0C1E9B505400CCB1B4 /* icon3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C091E9B505400CCB1B4 /* icon3@3x.png */; };
-		75E70C121E9B5F8C00CCB1B4 /* DrawCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */; };
-		75E70C151E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */; };
+		75E70C581E9C6F1300CCB1B4 /* FishMeasureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C351E9C6F1200CCB1B4 /* FishMeasureViewController.m */; };
+		75E70C591E9C6F1300CCB1B4 /* CGGeometryConvertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C381E9C6F1200CCB1B4 /* CGGeometryConvertTool.m */; };
+		75E70C5A1E9C6F1300CCB1B4 /* DetectCircleTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C3B1E9C6F1200CCB1B4 /* DetectCircleTool.mm */; };
+		75E70C5B1E9C6F1300CCB1B4 /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C3D1E9C6F1200CCB1B4 /* UIImage+Rotate_Flip.m */; };
+		75E70C601E9C6F1300CCB1B4 /* UseGuide1_1242x2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C4B1E9C6F1200CCB1B4 /* UseGuide1_1242x2208.png */; };
+		75E70C611E9C6F1300CCB1B4 /* UseGuide2_1242x2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C4C1E9C6F1200CCB1B4 /* UseGuide2_1242x2208.png */; };
+		75E70C621E9C6F1300CCB1B4 /* UseGuide3_1242x2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C4D1E9C6F1200CCB1B4 /* UseGuide3_1242x2208.png */; };
+		75E70C631E9C6F1300CCB1B4 /* UseGuide1_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C4F1E9C6F1200CCB1B4 /* UseGuide1_640x1136.png */; };
+		75E70C641E9C6F1300CCB1B4 /* UseGuide2_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C501E9C6F1300CCB1B4 /* UseGuide2_640x1136.png */; };
+		75E70C651E9C6F1300CCB1B4 /* UseGuide3_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C511E9C6F1300CCB1B4 /* UseGuide3_640x1136.png */; };
+		75E70C661E9C6F1300CCB1B4 /* UseGuide1_750x1334.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C531E9C6F1300CCB1B4 /* UseGuide1_750x1334.png */; };
+		75E70C671E9C6F1300CCB1B4 /* UseGuide2_750x1334.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C541E9C6F1300CCB1B4 /* UseGuide2_750x1334.png */; };
+		75E70C681E9C6F1300CCB1B4 /* UseGuide3_750x1334.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C551E9C6F1300CCB1B4 /* UseGuide3_750x1334.png */; };
+		75E70C691E9C6F1300CCB1B4 /* UseGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C571E9C6F1300CCB1B4 /* UseGuideView.m */; };
+		75E70C801E9C74F600CCB1B4 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C701E9C74F600CCB1B4 /* AVCamPreviewView.m */; };
+		75E70C811E9C74F600CCB1B4 /* CoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C721E9C74F600CCB1B4 /* CoinDetectView.m */; };
+		75E70C821E9C74F600CCB1B4 /* Flashlight_Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C741E9C74F600CCB1B4 /* Flashlight_Off@2x.png */; };
+		75E70C831E9C74F600CCB1B4 /* Flashlight_Off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C751E9C74F600CCB1B4 /* Flashlight_Off@3x.png */; };
+		75E70C841E9C74F600CCB1B4 /* Flashlight_On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C761E9C74F600CCB1B4 /* Flashlight_On@2x.png */; };
+		75E70C851E9C74F600CCB1B4 /* Flashlight_On@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C771E9C74F600CCB1B4 /* Flashlight_On@3x.png */; };
+		75E70C861E9C74F600CCB1B4 /* Instructions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C781E9C74F600CCB1B4 /* Instructions@2x.png */; };
+		75E70C871E9C74F600CCB1B4 /* Instructions@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C791E9C74F600CCB1B4 /* Instructions@3x.png */; };
+		75E70C881E9C74F600CCB1B4 /* TakePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7A1E9C74F600CCB1B4 /* TakePicture.png */; };
+		75E70C891E9C74F600CCB1B4 /* TakePicture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */; };
+		75E70C8A1E9C74F600CCB1B4 /* DrawCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C7E1E9C74F600CCB1B4 /* DrawCircleView.m */; };
+		75E70C8B1E9C74F600CCB1B4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7F1E9C74F600CCB1B4 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,14 +72,6 @@
 		752BB1701E95ECEC007BE3DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		752BB1721E95ECEC007BE3DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752BB1791E95EFEB007BE3DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		752BB1861E97689E007BE3DD /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
-		752BB1871E97689E007BE3DD /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
-		752BB1881E97689E007BE3DD /* SXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXViewController.h; sourceTree = "<group>"; };
-		752BB1891E97689E007BE3DD /* SXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXViewController.m; sourceTree = "<group>"; };
-		752BB18D1E9768B8007BE3DD /* DetectCircleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectCircleTool.h; sourceTree = "<group>"; };
-		752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DetectCircleTool.mm; sourceTree = "<group>"; };
-		75E70BDE1E9B0D1A00CCB1B4 /* CoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectView.h; sourceTree = "<group>"; };
-		75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectView.m; sourceTree = "<group>"; };
 		75E70BE21E9B2F4400CCB1B4 /* RHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHViewController.h; sourceTree = "<group>"; };
 		75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHViewController.m; sourceTree = "<group>"; };
 		75E70BE61E9B2F5F00CCB1B4 /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
@@ -78,10 +90,40 @@
 		75E70C071E9B505400CCB1B4 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
 		75E70C081E9B505400CCB1B4 /* icon3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@2x.png"; sourceTree = "<group>"; };
 		75E70C091E9B505400CCB1B4 /* icon3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@3x.png"; sourceTree = "<group>"; };
-		75E70C101E9B5F8C00CCB1B4 /* DrawCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleView.h; sourceTree = "<group>"; };
-		75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircleView.m; sourceTree = "<group>"; };
-		75E70C131E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate_Flip.h"; sourceTree = "<group>"; };
-		75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate_Flip.m"; sourceTree = "<group>"; };
+		75E70C341E9C6F1200CCB1B4 /* FishMeasureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishMeasureViewController.h; sourceTree = "<group>"; };
+		75E70C351E9C6F1200CCB1B4 /* FishMeasureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FishMeasureViewController.m; sourceTree = "<group>"; };
+		75E70C371E9C6F1200CCB1B4 /* CGGeometryConvertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometryConvertTool.h; sourceTree = "<group>"; };
+		75E70C381E9C6F1200CCB1B4 /* CGGeometryConvertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGeometryConvertTool.m; sourceTree = "<group>"; };
+		75E70C3A1E9C6F1200CCB1B4 /* DetectCircleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectCircleTool.h; sourceTree = "<group>"; };
+		75E70C3B1E9C6F1200CCB1B4 /* DetectCircleTool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DetectCircleTool.mm; sourceTree = "<group>"; };
+		75E70C3C1E9C6F1200CCB1B4 /* UIImage+Rotate_Flip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate_Flip.h"; sourceTree = "<group>"; };
+		75E70C3D1E9C6F1200CCB1B4 /* UIImage+Rotate_Flip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate_Flip.m"; sourceTree = "<group>"; };
+		75E70C4B1E9C6F1200CCB1B4 /* UseGuide1_1242x2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UseGuide1_1242x2208.png; sourceTree = "<group>"; };
+		75E70C4C1E9C6F1200CCB1B4 /* UseGuide2_1242x2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UseGuide2_1242x2208.png; sourceTree = "<group>"; };
+		75E70C4D1E9C6F1200CCB1B4 /* UseGuide3_1242x2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UseGuide3_1242x2208.png; sourceTree = "<group>"; };
+		75E70C4F1E9C6F1200CCB1B4 /* UseGuide1_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UseGuide1_640x1136.png; sourceTree = "<group>"; };
+		75E70C501E9C6F1300CCB1B4 /* UseGuide2_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UseGuide2_640x1136.png; sourceTree = "<group>"; };
+		75E70C511E9C6F1300CCB1B4 /* UseGuide3_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UseGuide3_640x1136.png; sourceTree = "<group>"; };
+		75E70C531E9C6F1300CCB1B4 /* UseGuide1_750x1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UseGuide1_750x1334.png; sourceTree = "<group>"; };
+		75E70C541E9C6F1300CCB1B4 /* UseGuide2_750x1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UseGuide2_750x1334.png; sourceTree = "<group>"; };
+		75E70C551E9C6F1300CCB1B4 /* UseGuide3_750x1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UseGuide3_750x1334.png; sourceTree = "<group>"; };
+		75E70C561E9C6F1300CCB1B4 /* UseGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseGuideView.h; sourceTree = "<group>"; };
+		75E70C571E9C6F1300CCB1B4 /* UseGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseGuideView.m; sourceTree = "<group>"; };
+		75E70C6F1E9C74F600CCB1B4 /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
+		75E70C701E9C74F600CCB1B4 /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
+		75E70C711E9C74F600CCB1B4 /* CoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectView.h; sourceTree = "<group>"; };
+		75E70C721E9C74F600CCB1B4 /* CoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectView.m; sourceTree = "<group>"; };
+		75E70C741E9C74F600CCB1B4 /* Flashlight_Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flashlight_Off@2x.png"; sourceTree = "<group>"; };
+		75E70C751E9C74F600CCB1B4 /* Flashlight_Off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flashlight_Off@3x.png"; sourceTree = "<group>"; };
+		75E70C761E9C74F600CCB1B4 /* Flashlight_On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flashlight_On@2x.png"; sourceTree = "<group>"; };
+		75E70C771E9C74F600CCB1B4 /* Flashlight_On@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flashlight_On@3x.png"; sourceTree = "<group>"; };
+		75E70C781E9C74F600CCB1B4 /* Instructions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instructions@2x.png"; sourceTree = "<group>"; };
+		75E70C791E9C74F600CCB1B4 /* Instructions@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instructions@3x.png"; sourceTree = "<group>"; };
+		75E70C7A1E9C74F600CCB1B4 /* TakePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TakePicture.png; sourceTree = "<group>"; };
+		75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TakePicture@2x.png"; sourceTree = "<group>"; };
+		75E70C7D1E9C74F600CCB1B4 /* DrawCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleView.h; sourceTree = "<group>"; };
+		75E70C7E1E9C74F600CCB1B4 /* DrawCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircleView.m; sourceTree = "<group>"; };
+		75E70C7F1E9C74F600CCB1B4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +160,10 @@
 		752BB1601E95ECEC007BE3DD /* AVFoundationDemo */ = {
 			isa = PBXGroup;
 			children = (
-				75E70BF31E9B375400CCB1B4 /* Image */,
 				752BB1641E95ECEC007BE3DD /* AppDelegate.h */,
 				752BB1651E95ECEC007BE3DD /* AppDelegate.m */,
-				752BB17E1E975BE5007BE3DD /* StoryXcode */,
+				75E70BF31E9B375400CCB1B4 /* Image */,
+				75E70C1B1E9C6E7E00CCB1B4 /* FishMeasure */,
 				75E70BE11E9B2F4400CCB1B4 /* RH */,
 				75E70BE41E9B2F4400CCB1B4 /* ST */,
 				752BB16A1E95ECEC007BE3DD /* Main.storyboard */,
@@ -149,41 +191,6 @@
 				752BB1791E95EFEB007BE3DD /* AVFoundation.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		752BB17E1E975BE5007BE3DD /* StoryXcode */ = {
-			isa = PBXGroup;
-			children = (
-				752BB1851E97689E007BE3DD /* CaptureImage */,
-				752BB18A1E97689E007BE3DD /* DetectCircle */,
-				75E70C131E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.h */,
-				75E70C141E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m */,
-			);
-			path = StoryXcode;
-			sourceTree = "<group>";
-		};
-		752BB1851E97689E007BE3DD /* CaptureImage */ = {
-			isa = PBXGroup;
-			children = (
-				752BB1861E97689E007BE3DD /* AVCamPreviewView.h */,
-				752BB1871E97689E007BE3DD /* AVCamPreviewView.m */,
-				75E70BDE1E9B0D1A00CCB1B4 /* CoinDetectView.h */,
-				75E70BDF1E9B0D1A00CCB1B4 /* CoinDetectView.m */,
-				75E70C101E9B5F8C00CCB1B4 /* DrawCircleView.h */,
-				75E70C111E9B5F8C00CCB1B4 /* DrawCircleView.m */,
-				752BB1881E97689E007BE3DD /* SXViewController.h */,
-				752BB1891E97689E007BE3DD /* SXViewController.m */,
-			);
-			path = CaptureImage;
-			sourceTree = "<group>";
-		};
-		752BB18A1E97689E007BE3DD /* DetectCircle */ = {
-			isa = PBXGroup;
-			children = (
-				752BB18D1E9768B8007BE3DD /* DetectCircleTool.h */,
-				752BB18E1E9768B8007BE3DD /* DetectCircleTool.mm */,
-			);
-			path = DetectCircle;
 			sourceTree = "<group>";
 		};
 		75E70BE11E9B2F4400CCB1B4 /* RH */ = {
@@ -233,6 +240,143 @@
 				75E70C091E9B505400CCB1B4 /* icon3@3x.png */,
 			);
 			path = TabBarIcon;
+			sourceTree = "<group>";
+		};
+		75E70C1B1E9C6E7E00CCB1B4 /* FishMeasure */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C341E9C6F1200CCB1B4 /* FishMeasureViewController.h */,
+				75E70C351E9C6F1200CCB1B4 /* FishMeasureViewController.m */,
+				75E70C361E9C6F1200CCB1B4 /* Tools */,
+				75E70C3E1E9C6F1200CCB1B4 /* Views */,
+			);
+			path = FishMeasure;
+			sourceTree = "<group>";
+		};
+		75E70C361E9C6F1200CCB1B4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C371E9C6F1200CCB1B4 /* CGGeometryConvertTool.h */,
+				75E70C381E9C6F1200CCB1B4 /* CGGeometryConvertTool.m */,
+				75E70C391E9C6F1200CCB1B4 /* DetectCircle */,
+				75E70C3C1E9C6F1200CCB1B4 /* UIImage+Rotate_Flip.h */,
+				75E70C3D1E9C6F1200CCB1B4 /* UIImage+Rotate_Flip.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		75E70C391E9C6F1200CCB1B4 /* DetectCircle */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C3A1E9C6F1200CCB1B4 /* DetectCircleTool.h */,
+				75E70C3B1E9C6F1200CCB1B4 /* DetectCircleTool.mm */,
+			);
+			path = DetectCircle;
+			sourceTree = "<group>";
+		};
+		75E70C3E1E9C6F1200CCB1B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C6D1E9C74F600CCB1B4 /* CoinDetect */,
+				75E70C481E9C6F1200CCB1B4 /* UseGuide */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75E70C481E9C6F1200CCB1B4 /* UseGuide */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C491E9C6F1200CCB1B4 /* UseGuideImage */,
+				75E70C561E9C6F1300CCB1B4 /* UseGuideView.h */,
+				75E70C571E9C6F1300CCB1B4 /* UseGuideView.m */,
+			);
+			path = UseGuide;
+			sourceTree = "<group>";
+		};
+		75E70C491E9C6F1200CCB1B4 /* UseGuideImage */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C4A1E9C6F1200CCB1B4 /* 1242x2208 */,
+				75E70C4E1E9C6F1200CCB1B4 /* 640x1136 */,
+				75E70C521E9C6F1300CCB1B4 /* 750x1334 */,
+			);
+			path = UseGuideImage;
+			sourceTree = "<group>";
+		};
+		75E70C4A1E9C6F1200CCB1B4 /* 1242x2208 */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C4B1E9C6F1200CCB1B4 /* UseGuide1_1242x2208.png */,
+				75E70C4C1E9C6F1200CCB1B4 /* UseGuide2_1242x2208.png */,
+				75E70C4D1E9C6F1200CCB1B4 /* UseGuide3_1242x2208.png */,
+			);
+			path = 1242x2208;
+			sourceTree = "<group>";
+		};
+		75E70C4E1E9C6F1200CCB1B4 /* 640x1136 */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C4F1E9C6F1200CCB1B4 /* UseGuide1_640x1136.png */,
+				75E70C501E9C6F1300CCB1B4 /* UseGuide2_640x1136.png */,
+				75E70C511E9C6F1300CCB1B4 /* UseGuide3_640x1136.png */,
+			);
+			path = 640x1136;
+			sourceTree = "<group>";
+		};
+		75E70C521E9C6F1300CCB1B4 /* 750x1334 */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C531E9C6F1300CCB1B4 /* UseGuide1_750x1334.png */,
+				75E70C541E9C6F1300CCB1B4 /* UseGuide2_750x1334.png */,
+				75E70C551E9C6F1300CCB1B4 /* UseGuide3_750x1334.png */,
+			);
+			path = 750x1334;
+			sourceTree = "<group>";
+		};
+		75E70C6D1E9C74F600CCB1B4 /* CoinDetect */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C6E1E9C74F600CCB1B4 /* CoinDetectView */,
+				75E70C7C1E9C74F600CCB1B4 /* DrawCircleView */,
+			);
+			path = CoinDetect;
+			sourceTree = "<group>";
+		};
+		75E70C6E1E9C74F600CCB1B4 /* CoinDetectView */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C6F1E9C74F600CCB1B4 /* AVCamPreviewView.h */,
+				75E70C701E9C74F600CCB1B4 /* AVCamPreviewView.m */,
+				75E70C711E9C74F600CCB1B4 /* CoinDetectView.h */,
+				75E70C721E9C74F600CCB1B4 /* CoinDetectView.m */,
+				75E70C731E9C74F600CCB1B4 /* Image */,
+			);
+			path = CoinDetectView;
+			sourceTree = "<group>";
+		};
+		75E70C731E9C74F600CCB1B4 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C741E9C74F600CCB1B4 /* Flashlight_Off@2x.png */,
+				75E70C751E9C74F600CCB1B4 /* Flashlight_Off@3x.png */,
+				75E70C761E9C74F600CCB1B4 /* Flashlight_On@2x.png */,
+				75E70C771E9C74F600CCB1B4 /* Flashlight_On@3x.png */,
+				75E70C781E9C74F600CCB1B4 /* Instructions@2x.png */,
+				75E70C791E9C74F600CCB1B4 /* Instructions@3x.png */,
+				75E70C7A1E9C74F600CCB1B4 /* TakePicture.png */,
+				75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		75E70C7C1E9C74F600CCB1B4 /* DrawCircleView */ = {
+			isa = PBXGroup;
+			children = (
+				75E70C7D1E9C74F600CCB1B4 /* DrawCircleView.h */,
+				75E70C7E1E9C74F600CCB1B4 /* DrawCircleView.m */,
+				75E70C7F1E9C74F600CCB1B4 /* logo.png */,
+			);
+			path = DrawCircleView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,15 +438,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E70C641E9C6F1300CCB1B4 /* UseGuide2_640x1136.png in Resources */,
 				752BB1711E95ECEC007BE3DD /* LaunchScreen.storyboard in Resources */,
+				75E70C671E9C6F1300CCB1B4 /* UseGuide2_750x1334.png in Resources */,
+				75E70C661E9C6F1300CCB1B4 /* UseGuide1_750x1334.png in Resources */,
+				75E70C881E9C74F600CCB1B4 /* TakePicture.png in Resources */,
 				75E70BFC1E9B375400CCB1B4 /* icon1@2x.png in Resources */,
+				75E70C621E9C6F1300CCB1B4 /* UseGuide3_1242x2208.png in Resources */,
+				75E70C871E9C74F600CCB1B4 /* Instructions@3x.png in Resources */,
+				75E70C631E9C6F1300CCB1B4 /* UseGuide1_640x1136.png in Resources */,
 				75E70BFA1E9B375400CCB1B4 /* flag.png in Resources */,
+				75E70C611E9C6F1300CCB1B4 /* UseGuide2_1242x2208.png in Resources */,
+				75E70C841E9C74F600CCB1B4 /* Flashlight_On@2x.png in Resources */,
 				75E70C061E9B4EA800CCB1B4 /* icon2@3x.png in Resources */,
 				752BB16E1E95ECEC007BE3DD /* Assets.xcassets in Resources */,
 				75E70C0C1E9B505400CCB1B4 /* icon3@3x.png in Resources */,
+				75E70C651E9C6F1300CCB1B4 /* UseGuide3_640x1136.png in Resources */,
+				75E70C8B1E9C74F600CCB1B4 /* logo.png in Resources */,
 				75E70C051E9B4EA800CCB1B4 /* icon2@2x.png in Resources */,
+				75E70C601E9C6F1300CCB1B4 /* UseGuide1_1242x2208.png in Resources */,
+				75E70C681E9C6F1300CCB1B4 /* UseGuide3_750x1334.png in Resources */,
+				75E70C821E9C74F600CCB1B4 /* Flashlight_Off@2x.png in Resources */,
+				75E70C851E9C74F600CCB1B4 /* Flashlight_On@3x.png in Resources */,
+				75E70C861E9C74F600CCB1B4 /* Instructions@2x.png in Resources */,
 				75E70C0A1E9B505400CCB1B4 /* icon3.png in Resources */,
 				75E70BFB1E9B375400CCB1B4 /* icon1.png in Resources */,
+				75E70C891E9C74F600CCB1B4 /* TakePicture@2x.png in Resources */,
+				75E70C831E9C74F600CCB1B4 /* Flashlight_Off@3x.png in Resources */,
 				752BB16C1E95ECEC007BE3DD /* Main.storyboard in Resources */,
 				75E70C0B1E9B505400CCB1B4 /* icon3@2x.png in Resources */,
 				75E70BFD1E9B375400CCB1B4 /* icon1@3x.png in Resources */,
@@ -318,18 +480,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */,
+				75E70C581E9C6F1300CCB1B4 /* FishMeasureViewController.m in Sources */,
+				75E70C801E9C74F600CCB1B4 /* AVCamPreviewView.m in Sources */,
+				75E70C8A1E9C74F600CCB1B4 /* DrawCircleView.m in Sources */,
+				75E70C691E9C6F1300CCB1B4 /* UseGuideView.m in Sources */,
 				752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */,
-				752BB18F1E9768B8007BE3DD /* DetectCircleTool.mm in Sources */,
 				50D6A2961E9B5AA0006ACDE6 /* STView.m in Sources */,
-				752BB18C1E97689E007BE3DD /* SXViewController.m in Sources */,
 				75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */,
-				75E70C121E9B5F8C00CCB1B4 /* DrawCircleView.m in Sources */,
-				752BB18B1E97689E007BE3DD /* AVCamPreviewView.m in Sources */,
-				75E70BE01E9B0D1A00CCB1B4 /* CoinDetectView.m in Sources */,
 				752BB1631E95ECEC007BE3DD /* main.m in Sources */,
+				75E70C5B1E9C6F1300CCB1B4 /* UIImage+Rotate_Flip.m in Sources */,
+				75E70C5A1E9C6F1300CCB1B4 /* DetectCircleTool.mm in Sources */,
 				75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */,
 				75E70BEE1E9B33CA00CCB1B4 /* STCoinDetectView.m in Sources */,
-				75E70C151E9B6A7900CCB1B4 /* UIImage+Rotate_Flip.m in Sources */,
+				75E70C811E9C74F600CCB1B4 /* CoinDetectView.m in Sources */,
+				75E70C591E9C6F1300CCB1B4 /* CGGeometryConvertTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +620,7 @@
 					"$(PROJECT_DIR)/AVFoundationDemo",
 				);
 				INFOPLIST_FILE = AVFoundationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Story5.AVFoundationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -473,6 +638,7 @@
 					"$(PROJECT_DIR)/AVFoundationDemo",
 				);
 				INFOPLIST_FILE = AVFoundationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Story5.AVFoundationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

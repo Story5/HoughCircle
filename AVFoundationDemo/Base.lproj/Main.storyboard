@@ -50,7 +50,7 @@
         <!--SX-->
         <scene sceneID="R3r-Hb-gDX">
             <objects>
-                <viewController id="1qn-sY-Dtx" customClass="SXViewController" sceneMemberID="viewController">
+                <viewController id="1qn-sY-Dtx" customClass="FishMeasureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ca2-Gd-Sws"/>
                         <viewControllerLayoutGuide type="bottom" id="xCT-4d-puV"/>

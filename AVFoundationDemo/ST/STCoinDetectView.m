@@ -1,4 +1,4 @@
-//
+
 //  STCoinDetectView.m
 //  AVFoundationDemo
 //
@@ -7,9 +7,10 @@
 //
 
 #import "STCoinDetectView.h"
-
+#import "UIImage+Rotate_Flip.h"
 #import <AVFoundation/AVFoundation.h>
 #import "AVCamPreviewView.h"
+#import "CGGeometryConvertTool.h"
 #import "DetectCircleTool.h"
 #import "STView.h"
 
@@ -27,6 +28,7 @@
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic, strong) STView *stView;
 
+@property (nonatomic,strong) CGGeometryConvertTool *covertTool;
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
 
 @end
@@ -56,33 +58,39 @@
     // Create a UIImage from the sample buffer data
     //    CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
-    UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
-    
+    UIImage *sourceImage = [self imageFromSampleBuffer:sampleBuffer];
+    UIImage *image = [sourceImage rotateImageWithRadian:M_PI_2 cropMode:enSvCropExpand];
+    self.covertTool.sourceSize = image.size;
     
     BOOL detected = [self.detectCircleTool detectCircleInImage:image];
     
-    if (detected) {
-        NSLog(@"center = %@",NSStringFromCGPoint(self.detectCircleTool.center));
-        NSLog(@"radius = %d",self.detectCircleTool.radius);
-        NSLog(@"image  = %@",self.detectCircleTool.covertImage);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self stopRunning];
-            self.stView.centerPoint = CGPointMake(arc4random_uniform(414), arc4random_uniform(500));
-            self.stView.radius = self.detectCircleTool.radius;
-            //            }
-            [self startRunning];
-        });
-        
-        //        [self.stView setNeedsDisplay];
-        //
-        
-    }
+    //    if (detected) {
+    NSLog(@"center = %@",NSStringFromCGPoint(self.detectCircleTool.center));
+    NSLog(@"radius = %d",self.detectCircleTool.radius);
+    NSLog(@"image  = %@",self.detectCircleTool.covertImage);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (isnan(self.detectCircleTool.center.x) || isnan(self.detectCircleTool.center.y)) {
+            self.stView.centerPoint = CGPointMake(0, 0);
+            self.stView.radius = 0;
+        } else {
+            if (detected) {
+                CGPoint center = [self.covertTool convertPoint:self.detectCircleTool.center];
+                int radius = [self.covertTool covertIntLength:self.detectCircleTool.radius];
+                self.stView.centerPoint = center;
+                self.stView.radius = radius;
+            } else {
+                self.stView.centerPoint = CGPointMake(0, 0);
+                self.stView.radius = 0;
+            }
+        }
+        [self.stView updateframe:CGRectMake(self.detectCircleTool.center.x - self.detectCircleTool.radius, self.detectCircleTool.center.y - self.detectCircleTool.radius, self.detectCircleTool.radius*2, self.detectCircleTool.radius*2)];
+    });
 }
 
 // drop
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
-    
+    //    [self stopRunning];
 }
 
 #pragma mark - set AVCapture
@@ -98,7 +106,7 @@
     [self configOutput];
     //  **********   步骤 - 5   **********
     [self configPreview];
-    [self configSTView];
+    //    [self configSTView];
     /*  **********   步骤 - 6   **********
      *
      */
@@ -115,7 +123,7 @@
     // Configure the session to produce lower resolution video frames, if your
     // processing algorithm can cope. We'll specify medium quality for the
     // chosen device.
-    self.session.sessionPreset = AVCaptureSessionPresetMedium;
+    self.session.sessionPreset = AVCaptureSessionPresetHigh;
 }
 
 // Find a suitable AVCaptureDevice
@@ -165,10 +173,7 @@
     // Set up the preview view.
     self.previewView.session = self.session;
 }
-- (void)configSTView
-{
-    self.stView.backgroundColor = [UIColor clearColor];
-}
+
 // Start the session running to start the flow of data
 - (void)startRunning
 {
@@ -260,6 +265,15 @@
     return _previewView;
 }
 
+- (CGGeometryConvertTool *)covertTool
+{
+    if (_covertTool == nil) {
+        _covertTool = [[CGGeometryConvertTool alloc] init];
+        _covertTool.covertSize = self.bounds.size;
+    }
+    return _covertTool;
+}
+
 - (DetectCircleTool *)detectCircleTool
 {
     if (_detectCircleTool == nil) {
@@ -270,7 +284,8 @@
 - (STView *)stView
 {
     if (!_stView) {
-        _stView = [[STView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.previewView.frame), CGRectGetHeight(self.previewView.frame))];
+        _stView = [[STView alloc]init];
+        _stView.backgroundColor = [UIColor clearColor];
         [self.previewView addSubview:_stView];
     }
     return _stView;

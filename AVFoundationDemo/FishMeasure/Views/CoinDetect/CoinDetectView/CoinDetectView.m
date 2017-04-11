@@ -13,6 +13,7 @@
 #import "DrawCircleView.h"
 
 #import "UIImage+Rotate_Flip.h"
+#import "CGGeometryConvertTool.h"
 #import "DetectCircleTool.h"
 
 
@@ -30,6 +31,7 @@
 
 @property (nonatomic,strong) DrawCircleView *drawCircleView;
 
+@property (nonatomic,strong) CGGeometryConvertTool *covertTool;
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
 
 @end
@@ -64,6 +66,7 @@
     //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
     UIImage *sourceImage = [self imageFromSampleBuffer:sampleBuffer];
     UIImage *image = [sourceImage rotateImageWithRadian:M_PI_2 cropMode:enSvCropExpand];
+    self.covertTool.sourceSize = image.size;
     
     BOOL detected = [self.detectCircleTool detectCircleInImage:image];
     
@@ -72,10 +75,24 @@
         NSLog(@"radius = %d",self.detectCircleTool.radius);
         NSLog(@"image  = %@",self.detectCircleTool.covertImage);
         
-        self.drawCircleView.circleCenter = self.detectCircleTool.center;
-        self.drawCircleView.circleRadius = self.detectCircleTool.radius;
-        [self.drawCircleView setNeedsDisplay];
-        [self.session stopRunning];
+        int radius = [self.covertTool covertIntLength:self.detectCircleTool.radius];
+        CGPoint center = [self.covertTool convertPoint:self.detectCircleTool.center];
+        NSLog(@"covert center = %@",NSStringFromCGPoint(center));
+        NSLog(@"covert radius = %d",radius);
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.drawCircleView.circleCenter = center;
+            self.drawCircleView.circleRadius = radius;
+            [self.drawCircleView setNeedsDisplay];
+//            [self.session stopRunning];
+        });
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.drawCircleView.circleCenter = CGPointZero;
+            self.drawCircleView.circleRadius = 0;
+            [self.drawCircleView setNeedsDisplay];
+            //            [self.session stopRunning];
+        });
     }
 }
 
@@ -183,6 +200,24 @@
     [self.session stopRunning];
 }
 
+// open or close torch
+- (void)setFlashLightMode:(BOOL)mode
+{
+    if ([self.device hasTorch]) {
+        
+        [self.device lockForConfiguration:nil];
+        if (mode) {
+            // 打开闪光灯
+            [self.device setTorchMode:AVCaptureTorchModeOn];
+        } else {
+            // 关闭闪光灯
+            [self.device setTorchMode:AVCaptureTorchModeOff];
+        }
+        
+        [self.device unlockForConfiguration];
+    }
+}
+
 // Create a UIImage from sample buffer data
 - (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
 {
@@ -257,6 +292,15 @@
         [self addSubview:_drawCircleView];
     }
     return _drawCircleView;
+}
+
+- (CGGeometryConvertTool *)covertTool
+{
+    if (_covertTool == nil) {
+        _covertTool = [[CGGeometryConvertTool alloc] init];
+        _covertTool.covertSize = self.bounds.size;
+    }
+    return _covertTool;
 }
 
 - (DetectCircleTool *)detectCircleTool

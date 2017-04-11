@@ -22,13 +22,26 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
+    [self drawIcon];
+    
+    [self drawCircle:self.circleCenter radius:self.circleRadius];
+}
+
+- (void)drawIcon
+{
+    UIImage *image = [UIImage imageNamed:@"logo.png"];
+    [image drawInRect:CGRectMake(10, 20, 40, 40)];
+}
+
+- (void)drawCircle:(CGPoint)center radius:(CGFloat)radius
+{
     CGContextRef context = UIGraphicsGetCurrentContext();
-
+    
     CGContextSetRGBStrokeColor(context, 0, 1, 0, 1);
-
-//    CGContextMoveToPoint(context, self.circleCenter.x, self.circleCenter.y);
-    CGContextAddArc(context, self.circleCenter.x, self.circleCenter.y, self.circleRadius, 0, M_PI * 2, 1);
-
+    CGContextSetLineWidth(context, 5);
+    //    CGContextMoveToPoint(context, self.circleCenter.x, self.circleCenter.y);
+    CGContextAddArc(context, center.x, center.y, radius, 0, M_PI * 2, 1);
+    
     CGContextStrokePath(context);
 }
 
