@@ -20,6 +20,8 @@
 		7532CE0E1E9CBA7F005B7845 /* CoinDetectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE0A1E9CBA7F005B7845 /* CoinDetectViewController.m */; };
 		7532CE0F1E9CBA7F005B7845 /* FishMeasureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE0C1E9CBA7F005B7845 /* FishMeasureViewController.m */; };
 		7532CE121E9CBAC0005B7845 /* CoinDetectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE111E9CBAC0005B7845 /* CoinDetectModel.m */; };
+		7532CE181E9CD02A005B7845 /* RulerCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE151E9CD02A005B7845 /* RulerCalculator.m */; };
+		7532CE191E9CD02A005B7845 /* RulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE171E9CD02A005B7845 /* RulerView.m */; };
 		75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */; };
 		75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */; };
 		75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BEA1E9B33A900CCB1B4 /* RHCoinDetectView.m */; };
@@ -83,6 +85,10 @@
 		7532CE0C1E9CBA7F005B7845 /* FishMeasureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FishMeasureViewController.m; sourceTree = "<group>"; };
 		7532CE101E9CBAC0005B7845 /* CoinDetectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectModel.h; sourceTree = "<group>"; };
 		7532CE111E9CBAC0005B7845 /* CoinDetectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectModel.m; sourceTree = "<group>"; };
+		7532CE141E9CD02A005B7845 /* RulerCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulerCalculator.h; sourceTree = "<group>"; };
+		7532CE151E9CD02A005B7845 /* RulerCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulerCalculator.m; sourceTree = "<group>"; };
+		7532CE161E9CD02A005B7845 /* RulerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulerView.h; sourceTree = "<group>"; };
+		7532CE171E9CD02A005B7845 /* RulerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulerView.m; sourceTree = "<group>"; };
 		75E70BE21E9B2F4400CCB1B4 /* RHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHViewController.h; sourceTree = "<group>"; };
 		75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHViewController.m; sourceTree = "<group>"; };
 		75E70BE61E9B2F5F00CCB1B4 /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
@@ -226,6 +232,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		7532CE131E9CD02A005B7845 /* Ruler */ = {
+			isa = PBXGroup;
+			children = (
+				7532CE141E9CD02A005B7845 /* RulerCalculator.h */,
+				7532CE151E9CD02A005B7845 /* RulerCalculator.m */,
+				7532CE161E9CD02A005B7845 /* RulerView.h */,
+				7532CE171E9CD02A005B7845 /* RulerView.m */,
+			);
+			path = Ruler;
+			sourceTree = "<group>";
+		};
 		75E70BE11E9B2F4400CCB1B4 /* RH */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +327,7 @@
 		75E70C3E1E9C6F1200CCB1B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7532CE131E9CD02A005B7845 /* Ruler */,
 				75E70C6D1E9C74F600CCB1B4 /* CoinDetect */,
 				75E70C481E9C6F1200CCB1B4 /* UseGuide */,
 			);
@@ -515,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7532CE0F1E9CBA7F005B7845 /* FishMeasureViewController.m in Sources */,
+				7532CE181E9CD02A005B7845 /* RulerCalculator.m in Sources */,
 				75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */,
 				75E70C801E9C74F600CCB1B4 /* AVCamPreviewView.m in Sources */,
 				75E70C8E1E9C7F2A00CCB1B4 /* CameraControlView.m in Sources */,
@@ -528,6 +547,7 @@
 				75E70C5B1E9C6F1300CCB1B4 /* UIImage+Rotate_Flip.m in Sources */,
 				75E70C5A1E9C6F1300CCB1B4 /* DetectCircleTool.mm in Sources */,
 				75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */,
+				7532CE191E9CD02A005B7845 /* RulerView.m in Sources */,
 				75E70BEE1E9B33CA00CCB1B4 /* STCoinDetectView.m in Sources */,
 				7532CE121E9CBAC0005B7845 /* CoinDetectModel.m in Sources */,
 				75E70C811E9C74F600CCB1B4 /* CoinDetectView.m in Sources */,

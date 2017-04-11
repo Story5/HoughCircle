@@ -8,9 +8,12 @@
 
 #import "FishMeasureViewController.h"
 
+#import "RulerView.h"
+
 @interface FishMeasureViewController ()
 
 @property (nonatomic,strong) UIImageView *imageView;
+@property (nonatomic,strong) RulerView *rulerView;
 
 @end
 
@@ -22,10 +25,8 @@
     NSLog(@"%s",__func__);
     self.view.backgroundColor = [UIColor greenColor];
     
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
-    swipe.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:swipe];
- 
+    [self createUI];
+    
     self.imageView.image = self.coinDetectModel.captureImage;
 }
 
@@ -39,10 +40,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - event
-- (void)swipe:(UISwipeGestureRecognizer *)swipe
+#pragma mark - init ui
+- (void)createUI
 {
-    [self dismissViewControllerAnimated:true completion:nil];
+    self.imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.imageView];
+    
+    self.rulerView = [[RulerView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.rulerView];
 }
 
 #pragma mark - setter
@@ -50,15 +55,6 @@
 {
     _coinDetectModel = coinDetectModel;
     self.imageView.image = _coinDetectModel.captureImage;
-}
-
-- (UIImageView *)imageView
-{
-    if (_imageView == nil) {
-        _imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-        [self.view addSubview:_imageView];
-    }
-    return _imageView;
 }
 
 @end
