@@ -21,6 +21,7 @@
 @interface CameraControlView : UIView
 
 @property (nonatomic,assign) id<CameraControlViewDelegate>delegate;
-- (void)setTakePictureButtonEnable:(BOOL)enabled;
+
+- (void)enableTakePicture:(BOOL)enabled;
 
 @end

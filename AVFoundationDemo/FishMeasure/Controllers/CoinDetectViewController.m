@@ -47,10 +47,10 @@
 }
 
 #pragma mark - CoinDetectViewDelegate
-- (void)coinDetectView:(CoinDetectView *)coinDetectView getFishImage:(UIImage *)image
+- (void)coinDetectView:(CoinDetectView *)coinDetectView captureFishWithModel:(CoinDetectModel *)model
 {
     FishMeasureViewController *fishVC = [[FishMeasureViewController alloc] init];
-    fishVC.fishImage = image;
+    fishVC.coinDetectModel = model;
     [self presentViewController:fishVC animated:true completion:nil];
 }
 

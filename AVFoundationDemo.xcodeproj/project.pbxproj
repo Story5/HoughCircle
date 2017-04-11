@@ -17,7 +17,9 @@
 		752BB1711E95ECEC007BE3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752BB16F1E95ECEC007BE3DD /* LaunchScreen.storyboard */; };
 		752BB17A1E95EFEB007BE3DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752BB1791E95EFEB007BE3DD /* AVFoundation.framework */; };
 		7532CE041E9CAC41005B7845 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7532CE031E9CAC41005B7845 /* ImageIO.framework */; };
-		7532CE071E9CB7AB005B7845 /* CoinDetectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE061E9CB7AB005B7845 /* CoinDetectViewController.m */; };
+		7532CE0E1E9CBA7F005B7845 /* CoinDetectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE0A1E9CBA7F005B7845 /* CoinDetectViewController.m */; };
+		7532CE0F1E9CBA7F005B7845 /* FishMeasureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE0C1E9CBA7F005B7845 /* FishMeasureViewController.m */; };
+		7532CE121E9CBAC0005B7845 /* CoinDetectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE111E9CBAC0005B7845 /* CoinDetectModel.m */; };
 		75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */; };
 		75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */; };
 		75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BEA1E9B33A900CCB1B4 /* RHCoinDetectView.m */; };
@@ -32,7 +34,6 @@
 		75E70C0A1E9B505400CCB1B4 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C071E9B505400CCB1B4 /* icon3.png */; };
 		75E70C0B1E9B505400CCB1B4 /* icon3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C081E9B505400CCB1B4 /* icon3@2x.png */; };
 		75E70C0C1E9B505400CCB1B4 /* icon3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C091E9B505400CCB1B4 /* icon3@3x.png */; };
-		75E70C581E9C6F1300CCB1B4 /* FishMeasureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C351E9C6F1200CCB1B4 /* FishMeasureViewController.m */; };
 		75E70C591E9C6F1300CCB1B4 /* CGGeometryConvertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C381E9C6F1200CCB1B4 /* CGGeometryConvertTool.m */; };
 		75E70C5A1E9C6F1300CCB1B4 /* DetectCircleTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C3B1E9C6F1200CCB1B4 /* DetectCircleTool.mm */; };
 		75E70C5B1E9C6F1300CCB1B4 /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C3D1E9C6F1200CCB1B4 /* UIImage+Rotate_Flip.m */; };
@@ -76,8 +77,12 @@
 		752BB1721E95ECEC007BE3DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752BB1791E95EFEB007BE3DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7532CE031E9CAC41005B7845 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		7532CE051E9CB7AB005B7845 /* CoinDetectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectViewController.h; sourceTree = "<group>"; };
-		7532CE061E9CB7AB005B7845 /* CoinDetectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectViewController.m; sourceTree = "<group>"; };
+		7532CE091E9CBA7F005B7845 /* CoinDetectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectViewController.h; sourceTree = "<group>"; };
+		7532CE0A1E9CBA7F005B7845 /* CoinDetectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectViewController.m; sourceTree = "<group>"; };
+		7532CE0B1E9CBA7F005B7845 /* FishMeasureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishMeasureViewController.h; sourceTree = "<group>"; };
+		7532CE0C1E9CBA7F005B7845 /* FishMeasureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FishMeasureViewController.m; sourceTree = "<group>"; };
+		7532CE101E9CBAC0005B7845 /* CoinDetectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectModel.h; sourceTree = "<group>"; };
+		7532CE111E9CBAC0005B7845 /* CoinDetectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectModel.m; sourceTree = "<group>"; };
 		75E70BE21E9B2F4400CCB1B4 /* RHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHViewController.h; sourceTree = "<group>"; };
 		75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHViewController.m; sourceTree = "<group>"; };
 		75E70BE61E9B2F5F00CCB1B4 /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
@@ -96,8 +101,6 @@
 		75E70C071E9B505400CCB1B4 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
 		75E70C081E9B505400CCB1B4 /* icon3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@2x.png"; sourceTree = "<group>"; };
 		75E70C091E9B505400CCB1B4 /* icon3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@3x.png"; sourceTree = "<group>"; };
-		75E70C341E9C6F1200CCB1B4 /* FishMeasureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishMeasureViewController.h; sourceTree = "<group>"; };
-		75E70C351E9C6F1200CCB1B4 /* FishMeasureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FishMeasureViewController.m; sourceTree = "<group>"; };
 		75E70C371E9C6F1200CCB1B4 /* CGGeometryConvertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometryConvertTool.h; sourceTree = "<group>"; };
 		75E70C381E9C6F1200CCB1B4 /* CGGeometryConvertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGeometryConvertTool.m; sourceTree = "<group>"; };
 		75E70C3A1E9C6F1200CCB1B4 /* DetectCircleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectCircleTool.h; sourceTree = "<group>"; };
@@ -203,6 +206,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7532CE081E9CBA7F005B7845 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7532CE091E9CBA7F005B7845 /* CoinDetectViewController.h */,
+				7532CE0A1E9CBA7F005B7845 /* CoinDetectViewController.m */,
+				7532CE0B1E9CBA7F005B7845 /* FishMeasureViewController.h */,
+				7532CE0C1E9CBA7F005B7845 /* FishMeasureViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7532CE0D1E9CBA7F005B7845 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7532CE101E9CBAC0005B7845 /* CoinDetectModel.h */,
+				7532CE111E9CBAC0005B7845 /* CoinDetectModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		75E70BE11E9B2F4400CCB1B4 /* RH */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,12 +278,10 @@
 		75E70C1B1E9C6E7E00CCB1B4 /* FishMeasure */ = {
 			isa = PBXGroup;
 			children = (
-				7532CE051E9CB7AB005B7845 /* CoinDetectViewController.h */,
-				7532CE061E9CB7AB005B7845 /* CoinDetectViewController.m */,
-				75E70C341E9C6F1200CCB1B4 /* FishMeasureViewController.h */,
-				75E70C351E9C6F1200CCB1B4 /* FishMeasureViewController.m */,
 				75E70C361E9C6F1200CCB1B4 /* Tools */,
 				75E70C3E1E9C6F1200CCB1B4 /* Views */,
+				7532CE0D1E9CBA7F005B7845 /* Models */,
+				7532CE081E9CBA7F005B7845 /* Controllers */,
 			);
 			path = FishMeasure;
 			sourceTree = "<group>";
@@ -493,14 +514,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7532CE0F1E9CBA7F005B7845 /* FishMeasureViewController.m in Sources */,
 				75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */,
-				7532CE071E9CB7AB005B7845 /* CoinDetectViewController.m in Sources */,
-				75E70C581E9C6F1300CCB1B4 /* FishMeasureViewController.m in Sources */,
 				75E70C801E9C74F600CCB1B4 /* AVCamPreviewView.m in Sources */,
 				75E70C8E1E9C7F2A00CCB1B4 /* CameraControlView.m in Sources */,
 				75E70C8A1E9C74F600CCB1B4 /* DrawCircleView.m in Sources */,
 				75E70C691E9C6F1300CCB1B4 /* UseGuideView.m in Sources */,
 				752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */,
+				7532CE0E1E9CBA7F005B7845 /* CoinDetectViewController.m in Sources */,
 				50D6A2961E9B5AA0006ACDE6 /* STView.m in Sources */,
 				75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */,
 				752BB1631E95ECEC007BE3DD /* main.m in Sources */,
@@ -508,6 +529,7 @@
 				75E70C5A1E9C6F1300CCB1B4 /* DetectCircleTool.mm in Sources */,
 				75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */,
 				75E70BEE1E9B33CA00CCB1B4 /* STCoinDetectView.m in Sources */,
+				7532CE121E9CBAC0005B7845 /* CoinDetectModel.m in Sources */,
 				75E70C811E9C74F600CCB1B4 /* CoinDetectView.m in Sources */,
 				75E70C591E9C6F1300CCB1B4 /* CGGeometryConvertTool.m in Sources */,
 			);

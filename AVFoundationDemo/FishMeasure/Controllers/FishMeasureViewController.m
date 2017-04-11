@@ -21,8 +21,17 @@
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"%s",__func__);
     self.view.backgroundColor = [UIColor greenColor];
+    
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipe];
  
-    self.imageView.image = self.fishImage;
+    self.imageView.image = self.coinDetectModel.captureImage;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.imageView.image = self.coinDetectModel.captureImage;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,11 +39,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - setter
-- (void)setFishImage:(UIImage *)fishImage
+#pragma mark - event
+- (void)swipe:(UISwipeGestureRecognizer *)swipe
 {
-    _fishImage = fishImage;
-    self.imageView.image = _fishImage;
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
+#pragma mark - setter
+- (void)setCoinDetectModel:(CoinDetectModel *)coinDetectModel
+{
+    _coinDetectModel = coinDetectModel;
+    self.imageView.image = _coinDetectModel.captureImage;
 }
 
 - (UIImageView *)imageView

@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class CoinDetectModel;
 @class CoinDetectView;
 
 @protocol CoinDetectViewDelegate <NSObject>
 
-- (void)coinDetectView:(CoinDetectView *)coinDetectView getFishImage:(UIImage *)image;
+- (void)coinDetectView:(CoinDetectView *)coinDetectView captureFishWithModel:(CoinDetectModel *)model;
 
 @end
 

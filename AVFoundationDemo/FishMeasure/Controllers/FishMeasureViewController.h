@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoinDetectModel.h"
 
 @interface FishMeasureViewController : UIViewController
 
-@property (nonatomic,strong) UIImage *fishImage;
+@property (nonatomic,strong) CoinDetectModel *coinDetectModel;
 
 @end
 

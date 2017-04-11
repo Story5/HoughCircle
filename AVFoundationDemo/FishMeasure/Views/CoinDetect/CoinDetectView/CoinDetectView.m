@@ -10,11 +10,14 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <ImageIO/ImageIO.h>
+
 #import "AVCamPreviewView.h"
 #import "CameraControlView.h"
+
 #import "UseGuideView.h"
 #import "DrawCircleView.h"
 
+#import "CoinDetectModel.h"
 #import "UIImage+Rotate_Flip.h"
 #import "CGGeometryConvertTool.h"
 #import "DetectCircleTool.h"
@@ -24,11 +27,10 @@
 
 @property (nonatomic,strong) AVCaptureSession *session;
 @property (nonatomic,strong) AVCaptureDevice *device;
-//@property (nonatomic,strong) AVCaptureInput *input;
 @property (nonatomic,strong) AVCaptureDeviceInput *input;
 
 // 可以捕捉静态图像
-@property (nonatomic,strong) AVCaptureStillImageOutput *stillImageOutput;
+//@property (nonatomic,strong) AVCaptureStillImageOutput *stillImageOutput;
 // 可以逐帧处理捕获的视频
 @property (nonatomic,strong) AVCaptureVideoDataOutput *videoDataOutput;
 @property (nonatomic,strong) AVCamPreviewView *previewView;
@@ -42,7 +44,7 @@
 @property (nonatomic,strong) CGGeometryConvertTool *covertTool;
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
 
-@property (nonatomic,strong) UIImage *captureImage;
+@property (nonatomic,strong) CoinDetectModel *coinDetectModel;
 
 @end
 
@@ -71,8 +73,8 @@
 {
     [self stopRunning];
     
-    if ([self.delegate respondsToSelector:@selector(coinDetectView:getFishImage:)]) {
-        [self.delegate coinDetectView:self getFishImage:self.captureImage];
+    if ([self.delegate respondsToSelector:@selector(coinDetectView:captureFishWithModel:)]) {
+        [self.delegate coinDetectView:self captureFishWithModel:self.coinDetectModel];
     }
 //    AVCaptureConnection *videoConnection = [self getConnection];
 //    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:
@@ -124,35 +126,20 @@
     self.covertTool.sourceSize = image.size;
     
     BOOL detected = [self.detectCircleTool detectCircleInImage:image];
+    int radius = [self.covertTool covertIntLength:self.detectCircleTool.radius];
+    CGPoint center = [self.covertTool convertPoint:self.detectCircleTool.center];
     
-    if (detected) {
-        NSLog(@"center = %@",NSStringFromCGPoint(self.detectCircleTool.center));
-        NSLog(@"radius = %d",self.detectCircleTool.radius);
-        NSLog(@"image  = %@",self.detectCircleTool.covertImage);
-        
-        int radius = [self.covertTool covertIntLength:self.detectCircleTool.radius];
-        CGPoint center = [self.covertTool convertPoint:self.detectCircleTool.center];
-        NSLog(@"covert center = %@",NSStringFromCGPoint(center));
-        NSLog(@"covert radius = %d",radius);
-        
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            self.captureImage = image;
-            [self.cameraControlView setTakePictureButtonEnable:true];
-            self.drawCircleView.circleCenter = center;
-            self.drawCircleView.circleRadius = radius;
-            [self.drawCircleView setNeedsDisplay];
-//            [self.session stopRunning];
-        });
-    } else {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            self.captureImage = nil;
-            [self.cameraControlView setTakePictureButtonEnable:false];
-            self.drawCircleView.circleCenter = CGPointZero;
-            self.drawCircleView.circleRadius = 0;
-            [self.drawCircleView setNeedsDisplay];
-            //            [self.session stopRunning];
-        });
-    }
+    self.coinDetectModel.center = center;
+    self.coinDetectModel.radius = radius;
+    self.coinDetectModel.captureImage = image;
+    self.coinDetectModel.detectStatus = detected;
+    
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self.cameraControlView enableTakePicture:detected];
+        self.drawCircleView.circleCenter = center;
+        self.drawCircleView.circleRadius = radius;
+        [self.drawCircleView setNeedsDisplay];
+    });
 }
 
 // drop
@@ -299,20 +286,20 @@
     }
 }
 
-- (AVCaptureConnection *)getConnection
-{
-    AVCaptureConnection *videoConnection = nil;
-    for (AVCaptureConnection *connection in self.stillImageOutput.connections) {
-        for (AVCaptureInputPort *port in [connection inputPorts]) {
-            if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
-                videoConnection = connection;
-                break;
-            }
-        }
-        if (videoConnection) break;
-    }
-    return videoConnection;
-}
+//- (AVCaptureConnection *)getConnection
+//{
+//    AVCaptureConnection *videoConnection = nil;
+//    for (AVCaptureConnection *connection in self.stillImageOutput.connections) {
+//        for (AVCaptureInputPort *port in [connection inputPorts]) {
+//            if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
+//                videoConnection = connection;
+//                break;
+//            }
+//        }
+//        if (videoConnection) break;
+//    }
+//    return videoConnection;
+//}
 
 // Create a UIImage from sample buffer data
 - (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
@@ -425,6 +412,14 @@
         _detectCircleTool = [[DetectCircleTool alloc] init];
     }
     return _detectCircleTool;
+}
+
+- (CoinDetectModel *)coinDetectModel
+{
+    if (_coinDetectModel == nil) {
+        _coinDetectModel = [[CoinDetectModel alloc] init];
+    }
+    return _coinDetectModel;
 }
 
 @end

@@ -35,7 +35,7 @@
 */
 
 #pragma mark - public methods
-- (void)setTakePictureButtonEnable:(BOOL)enabled
+- (void)enableTakePicture:(BOOL)enabled
 {
     self.pictureButton.enabled = enabled;
 }
