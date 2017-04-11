@@ -15,7 +15,7 @@
 #import "CameraControlView.h"
 
 #import "UseGuideView.h"
-#import "DrawCircleView.h"
+#import "CaptureImageView.h"
 
 #import "CoinDetectModel.h"
 #import "UIImage+Rotate_Flip.h"
@@ -39,7 +39,7 @@
 @property (nonatomic,strong) CameraControlView *cameraControlView;
 @property (nonatomic,strong) UseGuideView *guideView;
 
-@property (nonatomic,strong) DrawCircleView *drawCircleView;
+@property (nonatomic,strong) CaptureImageView *drawCircleView;
 
 @property (nonatomic,strong) CGGeometryConvertTool *covertTool;
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
@@ -129,15 +129,15 @@
     int radius = [self.covertTool covertIntLength:self.detectCircleTool.radius];
     CGPoint center = [self.covertTool convertPoint:self.detectCircleTool.center];
     
-    self.coinDetectModel.center = center;
-    self.coinDetectModel.radius = radius;
+    self.coinDetectModel.circleCenter = center;
+    self.coinDetectModel.circleRadius = radius;
     self.coinDetectModel.captureImage = image;
     self.coinDetectModel.detectStatus = detected;
     
     dispatch_sync(dispatch_get_main_queue(), ^{
         [self.cameraControlView enableTakePicture:detected];
-        self.drawCircleView.circleCenter = center;
-        self.drawCircleView.circleRadius = radius;
+        self.drawCircleView.coinDetectModel.circleCenter = center;
+        self.drawCircleView.coinDetectModel.circleRadius = radius;
         [self.drawCircleView setNeedsDisplay];
     });
 }
@@ -388,10 +388,10 @@
     return _guideView;
 }
 
-- (DrawCircleView *)drawCircleView
+- (CaptureImageView *)drawCircleView
 {
     if (_drawCircleView == nil) {
-        _drawCircleView = [[DrawCircleView alloc] initWithFrame:self.bounds];
+        _drawCircleView = [[CaptureImageView alloc] initWithFrame:self.bounds];
         [self addSubview:_drawCircleView];
     }
     return _drawCircleView;

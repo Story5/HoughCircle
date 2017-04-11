@@ -1,36 +1,45 @@
 //
-//  DrawCircleView.m
+//  CaptureImageView.m
 //  AVFoundationDemo
 //
-//  Created by Story5 on 4/10/17.
+//  Created by Story5 on 4/11/17.
 //  Copyright © 2017 Story5. All rights reserved.
 //
 
-#import "DrawCircleView.h"
+#import "CaptureImageView.h"
 
-@implementation DrawCircleView
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.backgroundColor = [UIColor clearColor];
-    }
-    return self;
-}
+@implementation CaptureImageView
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    [self drawIcon];
+    [self drawCaptureImage];
     
-    [self drawCircle:self.circleCenter radius:self.circleRadius];
+    [self drawIcon];
+
+    [self drawCircle];
 }
 
 - (void)drawIcon
 {
     UIImage *image = [UIImage imageNamed:@"logo.png"];
     [image drawInRect:CGRectMake(10, 20, 40, 40)];
+}
+
+- (void)drawCaptureImage
+{
+    if (self.coinDetectModel.captureImage) {
+        UIImage *image = self.coinDetectModel.captureImage;
+        [image drawInRect:self.bounds];
+    }
+}
+
+- (void)drawCircle
+{
+    CGPoint center = self.coinDetectModel.circleCenter;
+    int radius = self.coinDetectModel.circleRadius;
+    [self drawCircle:center radius:radius];
 }
 
 - (void)drawCircle:(CGPoint)center radius:(CGFloat)radius
@@ -43,6 +52,14 @@
     CGContextAddArc(context, center.x, center.y, radius, 0, M_PI * 2, 1);
     
     CGContextStrokePath(context);
+}
+
+- (CoinDetectModel *)coinDetectModel
+{
+    if (_coinDetectModel == nil) {
+        _coinDetectModel = [[CoinDetectModel alloc] init];
+    }
+    return _coinDetectModel;
 }
 
 @end

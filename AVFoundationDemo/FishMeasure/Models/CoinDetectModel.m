@@ -14,8 +14,8 @@
 {
     _detectStatus = detectStatus;
     if (_detectStatus == false) {
-        _center = CGPointZero;
-        _radius = 0;
+        _circleCenter = CGPointZero;
+        _circleRadius = 0;
         _captureImage = nil;
     }
 }

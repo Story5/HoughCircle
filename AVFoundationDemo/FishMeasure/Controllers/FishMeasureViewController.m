@@ -8,11 +8,12 @@
 
 #import "FishMeasureViewController.h"
 
+#import "CaptureImageView.h"
 #import "RulerView.h"
 
 @interface FishMeasureViewController ()
 
-@property (nonatomic,strong) UIImageView *imageView;
+@property (nonatomic,strong) CaptureImageView *imageView;
 @property (nonatomic,strong) RulerView *rulerView;
 
 @end
@@ -27,12 +28,14 @@
     
     [self createUI];
     
-    self.imageView.image = self.coinDetectModel.captureImage;
+    self.imageView.coinDetectModel = self.coinDetectModel;
+    [self.imageView setNeedsDisplay];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.imageView.image = self.coinDetectModel.captureImage;
+    self.imageView.coinDetectModel = self.coinDetectModel;
+    [self.imageView setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +46,7 @@
 #pragma mark - init ui
 - (void)createUI
 {
-    self.imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    self.imageView = [[CaptureImageView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.imageView];
     
     self.rulerView = [[RulerView alloc] initWithFrame:self.view.bounds];
@@ -54,7 +57,8 @@
 - (void)setCoinDetectModel:(CoinDetectModel *)coinDetectModel
 {
     _coinDetectModel = coinDetectModel;
-    self.imageView.image = _coinDetectModel.captureImage;
+    self.imageView.coinDetectModel = _coinDetectModel;
+    [self.imageView setNeedsDisplay];
 }
 
 @end

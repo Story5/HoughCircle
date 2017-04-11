@@ -12,8 +12,8 @@
 @interface CoinDetectModel : NSObject
 
 @property (nonatomic,assign) BOOL detectStatus;
-@property (nonatomic,assign) CGPoint center;
-@property (nonatomic,assign) int radius;
-@property (nonatomic,assign) UIImage *captureImage;
+@property (nonatomic,assign) CGPoint circleCenter;
+@property (nonatomic,assign) int circleRadius;
+@property (nonatomic,strong) UIImage *captureImage;
 
 @end

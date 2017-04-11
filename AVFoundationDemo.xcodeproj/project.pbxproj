@@ -22,6 +22,8 @@
 		7532CE121E9CBAC0005B7845 /* CoinDetectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE111E9CBAC0005B7845 /* CoinDetectModel.m */; };
 		7532CE181E9CD02A005B7845 /* RulerCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE151E9CD02A005B7845 /* RulerCalculator.m */; };
 		7532CE191E9CD02A005B7845 /* RulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE171E9CD02A005B7845 /* RulerView.m */; };
+		7532CE1D1E9CD4B4005B7845 /* CaptureImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE1C1E9CD4B4005B7845 /* CaptureImageView.m */; };
+		7532CE1F1E9CDBC2005B7845 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7532CE1E1E9CDBC2005B7845 /* logo.png */; };
 		75E70BE51E9B2F4400CCB1B4 /* RHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */; };
 		75E70BE81E9B2F5F00CCB1B4 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BE71E9B2F5F00CCB1B4 /* STViewController.m */; };
 		75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70BEA1E9B33A900CCB1B4 /* RHCoinDetectView.m */; };
@@ -59,8 +61,6 @@
 		75E70C871E9C74F600CCB1B4 /* Guide@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C791E9C74F600CCB1B4 /* Guide@3x.png */; };
 		75E70C881E9C74F600CCB1B4 /* TakePicture@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7A1E9C74F600CCB1B4 /* TakePicture@3x.png */; };
 		75E70C891E9C74F600CCB1B4 /* TakePicture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */; };
-		75E70C8A1E9C74F600CCB1B4 /* DrawCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C7E1E9C74F600CCB1B4 /* DrawCircleView.m */; };
-		75E70C8B1E9C74F600CCB1B4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7F1E9C74F600CCB1B4 /* logo.png */; };
 		75E70C8E1E9C7F2A00CCB1B4 /* CameraControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C8D1E9C7F2A00CCB1B4 /* CameraControlView.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +89,9 @@
 		7532CE151E9CD02A005B7845 /* RulerCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulerCalculator.m; sourceTree = "<group>"; };
 		7532CE161E9CD02A005B7845 /* RulerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulerView.h; sourceTree = "<group>"; };
 		7532CE171E9CD02A005B7845 /* RulerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulerView.m; sourceTree = "<group>"; };
+		7532CE1B1E9CD4B4005B7845 /* CaptureImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureImageView.h; sourceTree = "<group>"; };
+		7532CE1C1E9CD4B4005B7845 /* CaptureImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureImageView.m; sourceTree = "<group>"; };
+		7532CE1E1E9CDBC2005B7845 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		75E70BE21E9B2F4400CCB1B4 /* RHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHViewController.h; sourceTree = "<group>"; };
 		75E70BE31E9B2F4400CCB1B4 /* RHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHViewController.m; sourceTree = "<group>"; };
 		75E70BE61E9B2F5F00CCB1B4 /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
@@ -136,9 +139,6 @@
 		75E70C791E9C74F600CCB1B4 /* Guide@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guide@3x.png"; sourceTree = "<group>"; };
 		75E70C7A1E9C74F600CCB1B4 /* TakePicture@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TakePicture@3x.png"; sourceTree = "<group>"; };
 		75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TakePicture@2x.png"; sourceTree = "<group>"; };
-		75E70C7D1E9C74F600CCB1B4 /* DrawCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleView.h; sourceTree = "<group>"; };
-		75E70C7E1E9C74F600CCB1B4 /* DrawCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircleView.m; sourceTree = "<group>"; };
-		75E70C7F1E9C74F600CCB1B4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		75E70C8C1E9C7F2A00CCB1B4 /* CameraControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraControlView.h; sourceTree = "<group>"; };
 		75E70C8D1E9C7F2A00CCB1B4 /* CameraControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraControlView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +243,16 @@
 			path = Ruler;
 			sourceTree = "<group>";
 		};
+		7532CE1A1E9CD48B005B7845 /* CaptureImageView */ = {
+			isa = PBXGroup;
+			children = (
+				7532CE1E1E9CDBC2005B7845 /* logo.png */,
+				7532CE1B1E9CD4B4005B7845 /* CaptureImageView.h */,
+				7532CE1C1E9CD4B4005B7845 /* CaptureImageView.m */,
+			);
+			path = CaptureImageView;
+			sourceTree = "<group>";
+		};
 		75E70BE11E9B2F4400CCB1B4 /* RH */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +337,7 @@
 		75E70C3E1E9C6F1200CCB1B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7532CE1A1E9CD48B005B7845 /* CaptureImageView */,
 				7532CE131E9CD02A005B7845 /* Ruler */,
 				75E70C6D1E9C74F600CCB1B4 /* CoinDetect */,
 				75E70C481E9C6F1200CCB1B4 /* UseGuide */,
@@ -388,7 +399,6 @@
 			isa = PBXGroup;
 			children = (
 				75E70C6E1E9C74F600CCB1B4 /* CoinDetectView */,
-				75E70C7C1E9C74F600CCB1B4 /* DrawCircleView */,
 			);
 			path = CoinDetect;
 			sourceTree = "<group>";
@@ -420,16 +430,6 @@
 				75E70C7A1E9C74F600CCB1B4 /* TakePicture@3x.png */,
 			);
 			path = Image;
-			sourceTree = "<group>";
-		};
-		75E70C7C1E9C74F600CCB1B4 /* DrawCircleView */ = {
-			isa = PBXGroup;
-			children = (
-				75E70C7D1E9C74F600CCB1B4 /* DrawCircleView.h */,
-				75E70C7E1E9C74F600CCB1B4 /* DrawCircleView.m */,
-				75E70C7F1E9C74F600CCB1B4 /* logo.png */,
-			);
-			path = DrawCircleView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,11 +503,11 @@
 				75E70BFA1E9B375400CCB1B4 /* flag.png in Resources */,
 				75E70C611E9C6F1300CCB1B4 /* UseGuide2_1242x2208.png in Resources */,
 				75E70C841E9C74F600CCB1B4 /* FlashLight_On@2x.png in Resources */,
+				7532CE1F1E9CDBC2005B7845 /* logo.png in Resources */,
 				75E70C061E9B4EA800CCB1B4 /* icon2@3x.png in Resources */,
 				752BB16E1E95ECEC007BE3DD /* Assets.xcassets in Resources */,
 				75E70C0C1E9B505400CCB1B4 /* icon3@3x.png in Resources */,
 				75E70C651E9C6F1300CCB1B4 /* UseGuide3_640x1136.png in Resources */,
-				75E70C8B1E9C74F600CCB1B4 /* logo.png in Resources */,
 				75E70C051E9B4EA800CCB1B4 /* icon2@2x.png in Resources */,
 				75E70C601E9C6F1300CCB1B4 /* UseGuide1_1242x2208.png in Resources */,
 				75E70C681E9C6F1300CCB1B4 /* UseGuide3_750x1334.png in Resources */,
@@ -537,8 +537,8 @@
 				75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */,
 				75E70C801E9C74F600CCB1B4 /* AVCamPreviewView.m in Sources */,
 				75E70C8E1E9C7F2A00CCB1B4 /* CameraControlView.m in Sources */,
-				75E70C8A1E9C74F600CCB1B4 /* DrawCircleView.m in Sources */,
 				75E70C691E9C6F1300CCB1B4 /* UseGuideView.m in Sources */,
+				7532CE1D1E9CD4B4005B7845 /* CaptureImageView.m in Sources */,
 				752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */,
 				7532CE0E1E9CBA7F005B7845 /* CoinDetectViewController.m in Sources */,
 				50D6A2961E9B5AA0006ACDE6 /* STView.m in Sources */,
