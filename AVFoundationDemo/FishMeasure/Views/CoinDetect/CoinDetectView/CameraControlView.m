@@ -34,6 +34,12 @@
 }
 */
 
+#pragma mark - public methods
+- (void)setTakePictureButtonEnable:(BOOL)enabled
+{
+    self.pictureButton.enabled = enabled;
+}
+
 #pragma mark - button click
 - (void)clickTakePictureButton:(UIButton *)aSender
 {
@@ -76,6 +82,7 @@
     self.pictureButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.pictureButton.frame = CGRectMake((self.bounds.size.width - height) / 2, 0, height, height);
     [self.pictureButton setImage:takePictureImage forState:UIControlStateNormal];
+    self.pictureButton.enabled = false;
     [self.pictureButton addTarget:self action:@selector(clickTakePictureButton:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.pictureButton];
     

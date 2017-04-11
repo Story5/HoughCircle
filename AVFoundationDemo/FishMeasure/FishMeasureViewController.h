@@ -10,6 +10,7 @@
 
 @interface FishMeasureViewController : UIViewController
 
+@property (nonatomic,strong) UIImage *fishImage;
 
 @end
 
