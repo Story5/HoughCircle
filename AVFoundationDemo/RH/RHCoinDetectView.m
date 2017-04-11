@@ -11,7 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AVCamPreviewView.h"
 #import "DetectCircleTool.h"
-
+#import "UIImage+Rotate_Flip.h"
 
 @interface RHCoinDetectView ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -83,7 +83,8 @@
     // Create a UIImage from the sample buffer data
     //    CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
-    UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
+    UIImage *sourceImage = [self imageFromSampleBuffer:sampleBuffer];
+    UIImage *image = [sourceImage rotateImageWithRadian:M_PI_2 cropMode:enSvCropExpand];
     
     BOOL detected = [self.detectCircleTool detectCircleInImage:image];
     
@@ -95,9 +96,9 @@
 //        [self.previewView layoutIfNeeded];
         
 //        [self drawCircleWithCenter:self.detectCircleTool.center Radius:self.detectCircleTool.radius];
-        [UIView animateWithDuration:0.01 animations:^{
-            self.imgView.frame = CGRectMake(self.detectCircleTool.center.x, self.detectCircleTool.center.y, 80, 80);
-        }];
+        
+            [self.imgView setFrame:CGRectMake(self.detectCircleTool.center.x - 40, self.detectCircleTool.center.y -40, 80, 80)];
+        
     }
 }
 
