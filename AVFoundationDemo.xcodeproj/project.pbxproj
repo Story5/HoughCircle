@@ -466,6 +466,7 @@
 					"$(PROJECT_DIR)/AVFoundationDemo",
 				);
 				INFOPLIST_FILE = AVFoundationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Story5.AVFoundationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,6 +484,7 @@
 					"$(PROJECT_DIR)/AVFoundationDemo",
 				);
 				INFOPLIST_FILE = AVFoundationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Story5.AVFoundationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
