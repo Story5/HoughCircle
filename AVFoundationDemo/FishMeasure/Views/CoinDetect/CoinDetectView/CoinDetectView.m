@@ -10,6 +10,8 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "AVCamPreviewView.h"
+#import "CameraControlView.h"
+
 #import "DrawCircleView.h"
 
 #import "UIImage+Rotate_Flip.h"
@@ -17,7 +19,7 @@
 #import "DetectCircleTool.h"
 
 
-@interface CoinDetectView ()<AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface CoinDetectView ()<AVCaptureVideoDataOutputSampleBufferDelegate,CameraControlViewDelegate>
 
 @property (nonatomic,strong) AVCaptureSession *session;
 @property (nonatomic,strong) AVCaptureDevice *device;
@@ -28,6 +30,8 @@
 @property (nonatomic,strong) AVCaptureVideoDataOutput *output;
 @property (nonatomic,strong) AVCamPreviewView *previewView;
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
+
+@property (nonatomic,strong) CameraControlView *cameraControlView;
 
 @property (nonatomic,strong) DrawCircleView *drawCircleView;
 
@@ -56,6 +60,22 @@
 //    UIImage *image = [UIImage imageNamed:@"flag.png"];
 //    [image drawInRect:CGRectMake(100, 100, 200, 200)];
 //}
+#pragma mark - CameraControlViewDelegate
+- (void)cameraControlView:(CameraControlView *)cameraControleView clickTakePictureButton:(UIButton *)aSender
+{
+    
+}
+
+- (void)cameraControlView:(CameraControlView *)cameraControleView clickGuideButton:(UIButton *)aSender
+{
+    
+}
+
+- (void)cameraControlView:(CameraControlView *)cameraControleView clickFlashLightButton:(UIButton *)aSender
+{
+    NSLog(@"%s __ %d",__func__,aSender.selected);
+    [self setFlashLightMode:aSender.selected];
+}
 
 #pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate
 // output
@@ -116,6 +136,10 @@
     //  **********   步骤 - 5   **********
     [self configPreview];
     
+    // 配置拍照按钮控件
+    [self configCameraControlView];
+    
+    // 配置画圆视图
     [self configCircleImageView];
     
     //  **********   步骤 - 6   **********
@@ -181,6 +205,11 @@
 {
     // Set up the preview view.
     self.previewView.session = self.session;
+}
+
+- (void)configCameraControlView
+{
+    self.cameraControlView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)configCircleImageView
@@ -283,6 +312,18 @@
         [self addSubview:_previewView];
     }
     return _previewView;
+}
+
+- (CameraControlView *)cameraControlView
+{
+    if (_cameraControlView == nil) {
+        NSInteger height = 110;
+        NSInteger bottomGap = 50;
+        _cameraControlView = [[CameraControlView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - height - bottomGap, self.bounds.size.width, height)];
+        _cameraControlView.delegate = self;
+        [self.previewView addSubview:_cameraControlView];
+    }
+    return _cameraControlView;
 }
 
 - (DrawCircleView *)drawCircleView

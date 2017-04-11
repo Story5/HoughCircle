@@ -46,16 +46,17 @@
 		75E70C691E9C6F1300CCB1B4 /* UseGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C571E9C6F1300CCB1B4 /* UseGuideView.m */; };
 		75E70C801E9C74F600CCB1B4 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C701E9C74F600CCB1B4 /* AVCamPreviewView.m */; };
 		75E70C811E9C74F600CCB1B4 /* CoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C721E9C74F600CCB1B4 /* CoinDetectView.m */; };
-		75E70C821E9C74F600CCB1B4 /* Flashlight_Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C741E9C74F600CCB1B4 /* Flashlight_Off@2x.png */; };
-		75E70C831E9C74F600CCB1B4 /* Flashlight_Off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C751E9C74F600CCB1B4 /* Flashlight_Off@3x.png */; };
-		75E70C841E9C74F600CCB1B4 /* Flashlight_On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C761E9C74F600CCB1B4 /* Flashlight_On@2x.png */; };
-		75E70C851E9C74F600CCB1B4 /* Flashlight_On@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C771E9C74F600CCB1B4 /* Flashlight_On@3x.png */; };
-		75E70C861E9C74F600CCB1B4 /* Instructions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C781E9C74F600CCB1B4 /* Instructions@2x.png */; };
-		75E70C871E9C74F600CCB1B4 /* Instructions@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C791E9C74F600CCB1B4 /* Instructions@3x.png */; };
+		75E70C821E9C74F600CCB1B4 /* FlashLight_Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C741E9C74F600CCB1B4 /* FlashLight_Off@2x.png */; };
+		75E70C831E9C74F600CCB1B4 /* FlashLight_Off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C751E9C74F600CCB1B4 /* FlashLight_Off@3x.png */; };
+		75E70C841E9C74F600CCB1B4 /* FlashLight_On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C761E9C74F600CCB1B4 /* FlashLight_On@2x.png */; };
+		75E70C851E9C74F600CCB1B4 /* FlashLight_On@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C771E9C74F600CCB1B4 /* FlashLight_On@3x.png */; };
+		75E70C861E9C74F600CCB1B4 /* Guide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C781E9C74F600CCB1B4 /* Guide@2x.png */; };
+		75E70C871E9C74F600CCB1B4 /* Guide@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C791E9C74F600CCB1B4 /* Guide@3x.png */; };
 		75E70C881E9C74F600CCB1B4 /* TakePicture@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7A1E9C74F600CCB1B4 /* TakePicture@3x.png */; };
 		75E70C891E9C74F600CCB1B4 /* TakePicture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */; };
 		75E70C8A1E9C74F600CCB1B4 /* DrawCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C7E1E9C74F600CCB1B4 /* DrawCircleView.m */; };
 		75E70C8B1E9C74F600CCB1B4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7F1E9C74F600CCB1B4 /* logo.png */; };
+		75E70C8E1E9C7F2A00CCB1B4 /* CameraControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C8D1E9C7F2A00CCB1B4 /* CameraControlView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,17 +114,19 @@
 		75E70C701E9C74F600CCB1B4 /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
 		75E70C711E9C74F600CCB1B4 /* CoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectView.h; sourceTree = "<group>"; };
 		75E70C721E9C74F600CCB1B4 /* CoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectView.m; sourceTree = "<group>"; };
-		75E70C741E9C74F600CCB1B4 /* Flashlight_Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flashlight_Off@2x.png"; sourceTree = "<group>"; };
-		75E70C751E9C74F600CCB1B4 /* Flashlight_Off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flashlight_Off@3x.png"; sourceTree = "<group>"; };
-		75E70C761E9C74F600CCB1B4 /* Flashlight_On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flashlight_On@2x.png"; sourceTree = "<group>"; };
-		75E70C771E9C74F600CCB1B4 /* Flashlight_On@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flashlight_On@3x.png"; sourceTree = "<group>"; };
-		75E70C781E9C74F600CCB1B4 /* Instructions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instructions@2x.png"; sourceTree = "<group>"; };
-		75E70C791E9C74F600CCB1B4 /* Instructions@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instructions@3x.png"; sourceTree = "<group>"; };
+		75E70C741E9C74F600CCB1B4 /* FlashLight_Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_Off@2x.png"; sourceTree = "<group>"; };
+		75E70C751E9C74F600CCB1B4 /* FlashLight_Off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_Off@3x.png"; sourceTree = "<group>"; };
+		75E70C761E9C74F600CCB1B4 /* FlashLight_On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_On@2x.png"; sourceTree = "<group>"; };
+		75E70C771E9C74F600CCB1B4 /* FlashLight_On@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_On@3x.png"; sourceTree = "<group>"; };
+		75E70C781E9C74F600CCB1B4 /* Guide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guide@2x.png"; sourceTree = "<group>"; };
+		75E70C791E9C74F600CCB1B4 /* Guide@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guide@3x.png"; sourceTree = "<group>"; };
 		75E70C7A1E9C74F600CCB1B4 /* TakePicture@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TakePicture@3x.png"; sourceTree = "<group>"; };
 		75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TakePicture@2x.png"; sourceTree = "<group>"; };
 		75E70C7D1E9C74F600CCB1B4 /* DrawCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleView.h; sourceTree = "<group>"; };
 		75E70C7E1E9C74F600CCB1B4 /* DrawCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircleView.m; sourceTree = "<group>"; };
 		75E70C7F1E9C74F600CCB1B4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		75E70C8C1E9C7F2A00CCB1B4 /* CameraControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraControlView.h; sourceTree = "<group>"; };
+		75E70C8D1E9C7F2A00CCB1B4 /* CameraControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraControlView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +353,8 @@
 				75E70C701E9C74F600CCB1B4 /* AVCamPreviewView.m */,
 				75E70C711E9C74F600CCB1B4 /* CoinDetectView.h */,
 				75E70C721E9C74F600CCB1B4 /* CoinDetectView.m */,
+				75E70C8C1E9C7F2A00CCB1B4 /* CameraControlView.h */,
+				75E70C8D1E9C7F2A00CCB1B4 /* CameraControlView.m */,
 			);
 			path = CoinDetectView;
 			sourceTree = "<group>";
@@ -357,12 +362,12 @@
 		75E70C731E9C74F600CCB1B4 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				75E70C741E9C74F600CCB1B4 /* Flashlight_Off@2x.png */,
-				75E70C751E9C74F600CCB1B4 /* Flashlight_Off@3x.png */,
-				75E70C761E9C74F600CCB1B4 /* Flashlight_On@2x.png */,
-				75E70C771E9C74F600CCB1B4 /* Flashlight_On@3x.png */,
-				75E70C781E9C74F600CCB1B4 /* Instructions@2x.png */,
-				75E70C791E9C74F600CCB1B4 /* Instructions@3x.png */,
+				75E70C741E9C74F600CCB1B4 /* FlashLight_Off@2x.png */,
+				75E70C751E9C74F600CCB1B4 /* FlashLight_Off@3x.png */,
+				75E70C761E9C74F600CCB1B4 /* FlashLight_On@2x.png */,
+				75E70C771E9C74F600CCB1B4 /* FlashLight_On@3x.png */,
+				75E70C781E9C74F600CCB1B4 /* Guide@2x.png */,
+				75E70C791E9C74F600CCB1B4 /* Guide@3x.png */,
 				75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */,
 				75E70C7A1E9C74F600CCB1B4 /* TakePicture@3x.png */,
 			);
@@ -445,11 +450,11 @@
 				75E70C881E9C74F600CCB1B4 /* TakePicture@3x.png in Resources */,
 				75E70BFC1E9B375400CCB1B4 /* icon1@2x.png in Resources */,
 				75E70C621E9C6F1300CCB1B4 /* UseGuide3_1242x2208.png in Resources */,
-				75E70C871E9C74F600CCB1B4 /* Instructions@3x.png in Resources */,
+				75E70C871E9C74F600CCB1B4 /* Guide@3x.png in Resources */,
 				75E70C631E9C6F1300CCB1B4 /* UseGuide1_640x1136.png in Resources */,
 				75E70BFA1E9B375400CCB1B4 /* flag.png in Resources */,
 				75E70C611E9C6F1300CCB1B4 /* UseGuide2_1242x2208.png in Resources */,
-				75E70C841E9C74F600CCB1B4 /* Flashlight_On@2x.png in Resources */,
+				75E70C841E9C74F600CCB1B4 /* FlashLight_On@2x.png in Resources */,
 				75E70C061E9B4EA800CCB1B4 /* icon2@3x.png in Resources */,
 				752BB16E1E95ECEC007BE3DD /* Assets.xcassets in Resources */,
 				75E70C0C1E9B505400CCB1B4 /* icon3@3x.png in Resources */,
@@ -458,13 +463,13 @@
 				75E70C051E9B4EA800CCB1B4 /* icon2@2x.png in Resources */,
 				75E70C601E9C6F1300CCB1B4 /* UseGuide1_1242x2208.png in Resources */,
 				75E70C681E9C6F1300CCB1B4 /* UseGuide3_750x1334.png in Resources */,
-				75E70C821E9C74F600CCB1B4 /* Flashlight_Off@2x.png in Resources */,
-				75E70C851E9C74F600CCB1B4 /* Flashlight_On@3x.png in Resources */,
-				75E70C861E9C74F600CCB1B4 /* Instructions@2x.png in Resources */,
+				75E70C821E9C74F600CCB1B4 /* FlashLight_Off@2x.png in Resources */,
+				75E70C851E9C74F600CCB1B4 /* FlashLight_On@3x.png in Resources */,
+				75E70C861E9C74F600CCB1B4 /* Guide@2x.png in Resources */,
 				75E70C0A1E9B505400CCB1B4 /* icon3.png in Resources */,
 				75E70BFB1E9B375400CCB1B4 /* icon1.png in Resources */,
 				75E70C891E9C74F600CCB1B4 /* TakePicture@2x.png in Resources */,
-				75E70C831E9C74F600CCB1B4 /* Flashlight_Off@3x.png in Resources */,
+				75E70C831E9C74F600CCB1B4 /* FlashLight_Off@3x.png in Resources */,
 				752BB16C1E95ECEC007BE3DD /* Main.storyboard in Resources */,
 				75E70C0B1E9B505400CCB1B4 /* icon3@2x.png in Resources */,
 				75E70BFD1E9B375400CCB1B4 /* icon1@3x.png in Resources */,
@@ -482,6 +487,7 @@
 				75E70BEB1E9B33A900CCB1B4 /* RHCoinDetectView.m in Sources */,
 				75E70C581E9C6F1300CCB1B4 /* FishMeasureViewController.m in Sources */,
 				75E70C801E9C74F600CCB1B4 /* AVCamPreviewView.m in Sources */,
+				75E70C8E1E9C7F2A00CCB1B4 /* CameraControlView.m in Sources */,
 				75E70C8A1E9C74F600CCB1B4 /* DrawCircleView.m in Sources */,
 				75E70C691E9C6F1300CCB1B4 /* UseGuideView.m in Sources */,
 				752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */,
