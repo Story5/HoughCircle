@@ -13,6 +13,8 @@
 #import "DetectCircleTool.h"
 #import "UIImage+Rotate_Flip.h"
 
+#import <AssetsLibrary/AssetsLibrary.h>
+
 @interface RHCoinDetectView ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property (nonatomic,strong) AVCaptureSession *session;
@@ -26,7 +28,16 @@
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 
 @property (nonatomic,strong) DetectCircleTool *detectCircleTool;
+
+
+
+/**
+ create by RH
+ */
 @property (nonatomic,strong) UIImageView *imgView;
+//输出图片
+@property (nonatomic ,strong) AVCaptureStillImageOutput *imageOutput;
+@property (nonatomic,strong) UIImage *photoImage;
 
 @end
 
@@ -41,19 +52,6 @@
 }
 
 #pragma mark - draw rect
-//- (void)drawRect:(CGRect)rect {
-//    [super drawRect:rect];
-//    if (self.detectCircleTool.radius) {
-//        //边框圆
-//        CGContextRef context = UIGraphicsGetCurrentContext();
-//        CGContextSetLineWidth(context, 2);
-//        CGContextAddArc(context, self.detectCircleTool.center.x, self.detectCircleTool.center.y, self.detectCircleTool.radius, 0, 2*M_PI, 0);
-//        CGContextDrawPath(context, kCGPathStroke);
-//    }
-//    
-//}
-
-
 
 - (void)drawCircleWithCenter:(CGPoint)center Radius:(int)radius{
     /*
@@ -73,9 +71,7 @@
     [self.previewView.layer addSublayer:solidLine];
 }
 
-//- (void)layoutSublayersOfLayer:(CALayer *)layer{
-//    layer.frame =CGRectMake(self.detectCircleTool.center.x, self.detectCircleTool.center.y, self.detectCircleTool.radius, self.detectCircleTool.radius);
-//}
+
 
 #pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate
 // output
@@ -191,15 +187,6 @@
     self.previewView.session = self.session;
 }
 
-// Start the session running to start the flow of data
-- (void)startRunning
-{
-    [self.session startRunning];
-}
-- (void)stopRunning
-{
-    [self.session stopRunning];
-}
 
 
 // Create a UIImage from sample buffer data
@@ -298,5 +285,37 @@
         _imgView.image = [UIImage imageNamed:@"flag"];
     }
     return _imgView;
+}
+
+#pragma mark - public methods
+
+// Start the session running to start the flow of data
+- (void)startRunning
+{
+    [self.session startRunning];
+}
+- (void)stopRunning
+{
+    [self.session stopRunning];
+}
+
+- (UIImage *)takePhoto
+{
+    
+    AVCaptureConnection *conntion = [self.imageOutput connectionWithMediaType:AVMediaTypeVideo];
+    if (!conntion) {
+        NSLog(@"拍照失败!");
+        return nil;
+    }
+    [self.imageOutput captureStillImageAsynchronouslyFromConnection:conntion completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+        if (imageDataSampleBuffer == nil) {
+            return;
+        }
+        NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+        
+      self.photoImage = [UIImage imageWithData:imageData];
+        
+    }];
+    return self.photoImage;
 }
 @end

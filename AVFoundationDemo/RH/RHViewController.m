@@ -115,17 +115,18 @@
 //设备取景开始
 - (void)startCatch{
     [self.coinDetectView startRunning];
+//    [self.session startRunning];
 }
 //设备停止取景
 - (void)stopCatch{
     [self.coinDetectView stopRunning];
-    [self.coinDetectView.layer removeAllAnimations];
+//    [self.session stopRunning];
 }
 
 //捕获当前帧
 - (void)catchCurrentImage{
-   
-    
+//    self.catchImgView.image = (UIImage *)[self.arr lastObject];
+   self.catchImgView.image = [self.coinDetectView takePhoto];
 }
 
 

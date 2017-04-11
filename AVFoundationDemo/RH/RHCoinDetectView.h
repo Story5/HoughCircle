@@ -11,5 +11,5 @@
 @interface RHCoinDetectView : UIView
 - (void)startRunning;
 - (void)stopRunning;
-
+- (UIImage *)takePhoto;
 @end
