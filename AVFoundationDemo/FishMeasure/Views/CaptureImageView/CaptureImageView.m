@@ -7,6 +7,7 @@
 //
 
 #import "CaptureImageView.h"
+#import "ConfigureTool.h"
 
 @interface CaptureImageView ()
 
@@ -31,8 +32,9 @@
 
 - (void)drawIcon
 {
+    NSUInteger width = 30;
     UIImage *image = [UIImage imageNamed:@"logo.png"];
-    [image drawInRect:CGRectMake(10, 20, 30, 30)];
+    [image drawInRect:CGRectMake(self.bounds.size.width - width - 20, 20, width, width)];
 }
 
 - (void)drawTips
@@ -42,7 +44,7 @@
     CGFloat yOffset = 60;
     NSDictionary *attribute = @{NSForegroundColorAttributeName:[UIColor whiteColor],
                                 NSBackgroundColorAttributeName:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5],
-                                NSFontAttributeName:[UIFont systemFontOfSize:18]};
+                                NSFontAttributeName:[ConfigureTool shareInstance].tipDetectFont};
     if (self.coinDetectModel.detectStatus) {
         CGSize size = [self.tipsDetected sizeWithAttributes:attribute];
         CGPoint point = CGPointMake((self.bounds.size.width - size.width) / 2, yOffset);

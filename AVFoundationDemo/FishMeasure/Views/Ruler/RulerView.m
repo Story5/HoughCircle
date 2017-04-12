@@ -223,7 +223,9 @@
 
 - (void)drawMeasureText:(NSString *)text
 {
-    [text drawAtPoint:CGPointMake(10, self.bounds.size.height - 50) withAttributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
+    NSDictionary *attribute = @{NSForegroundColorAttributeName:[UIColor redColor],
+                                NSFontAttributeName:[UIFont systemFontOfSize:20]};
+    [text drawAtPoint:CGPointMake(10, self.bounds.size.height - 50) withAttributes:attribute];
 }
 
 // MARK: 画标尺

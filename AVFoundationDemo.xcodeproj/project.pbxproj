@@ -23,6 +23,7 @@
 		7532CE191E9CD02A005B7845 /* RulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE171E9CD02A005B7845 /* RulerView.m */; };
 		7532CE1D1E9CD4B4005B7845 /* CaptureImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE1C1E9CD4B4005B7845 /* CaptureImageView.m */; };
 		7532CE1F1E9CDBC2005B7845 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7532CE1E1E9CDBC2005B7845 /* logo.png */; };
+		753691C61E9E0D5B004E8F76 /* ConfigureTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 753691C51E9E0D5B004E8F76 /* ConfigureTool.m */; };
 		75E70C591E9C6F1300CCB1B4 /* CGGeometryConvertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C381E9C6F1200CCB1B4 /* CGGeometryConvertTool.m */; };
 		75E70C5A1E9C6F1300CCB1B4 /* DetectCircleTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C3B1E9C6F1200CCB1B4 /* DetectCircleTool.mm */; };
 		75E70C5B1E9C6F1300CCB1B4 /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C3D1E9C6F1200CCB1B4 /* UIImage+Rotate_Flip.m */; };
@@ -75,6 +76,8 @@
 		7532CE1B1E9CD4B4005B7845 /* CaptureImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureImageView.h; sourceTree = "<group>"; };
 		7532CE1C1E9CD4B4005B7845 /* CaptureImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureImageView.m; sourceTree = "<group>"; };
 		7532CE1E1E9CDBC2005B7845 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		753691C41E9E0D5B004E8F76 /* ConfigureTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureTool.h; sourceTree = "<group>"; };
+		753691C51E9E0D5B004E8F76 /* ConfigureTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureTool.m; sourceTree = "<group>"; };
 		75E70C371E9C6F1200CCB1B4 /* CGGeometryConvertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometryConvertTool.h; sourceTree = "<group>"; };
 		75E70C381E9C6F1200CCB1B4 /* CGGeometryConvertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGeometryConvertTool.m; sourceTree = "<group>"; };
 		75E70C3A1E9C6F1200CCB1B4 /* DetectCircleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectCircleTool.h; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				75E70C391E9C6F1200CCB1B4 /* DetectCircle */,
 				75E70C3C1E9C6F1200CCB1B4 /* UIImage+Rotate_Flip.h */,
 				75E70C3D1E9C6F1200CCB1B4 /* UIImage+Rotate_Flip.m */,
+				753691C41E9E0D5B004E8F76 /* ConfigureTool.h */,
+				753691C51E9E0D5B004E8F76 /* ConfigureTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 				7532CE0E1E9CBA7F005B7845 /* CoinDetectViewController.m in Sources */,
 				752BB1631E95ECEC007BE3DD /* main.m in Sources */,
 				75E70C5B1E9C6F1300CCB1B4 /* UIImage+Rotate_Flip.m in Sources */,
+				753691C61E9E0D5B004E8F76 /* ConfigureTool.m in Sources */,
 				75E70C5A1E9C6F1300CCB1B4 /* DetectCircleTool.mm in Sources */,
 				7532CE191E9CD02A005B7845 /* RulerView.m in Sources */,
 				7532CE121E9CBAC0005B7845 /* CoinDetectModel.m in Sources */,

@@ -15,6 +15,7 @@
 
 @property (nonatomic,strong) CaptureImageView *imageView;
 @property (nonatomic,strong) RulerView *rulerView;
+@property (nonatomic,strong) UIButton *closeButton;
 
 @end
 
@@ -39,6 +40,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - event
+- (void)clickedCloseButton:(UIButton *)aSender
+{
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 #pragma mark - setter
@@ -69,8 +76,23 @@
         _rulerView = [[RulerView alloc] initWithFrame:self.view.bounds];
         [self.view addSubview:_rulerView];
         [self.view bringSubviewToFront:_rulerView];
+        [self.view bringSubviewToFront:self.closeButton];
     }
     return _rulerView;
+}
+
+- (UIButton *)closeButton
+{
+    if (_closeButton == nil) {
+        NSUInteger width = 20;
+        _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _closeButton.frame = CGRectMake(20, 40, width, width);
+        [_closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_closeButton setTitle:@"X" forState:UIControlStateNormal];
+        [_closeButton addTarget:self action:@selector(clickedCloseButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_closeButton];
+    }
+    return _closeButton;
 }
 
 @end
