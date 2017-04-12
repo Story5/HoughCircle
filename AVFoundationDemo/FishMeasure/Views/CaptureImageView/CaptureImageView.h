@@ -13,4 +13,6 @@
 
 @property (nonatomic,strong) CoinDetectModel *coinDetectModel;
 
+@property (nonatomic,assign) BOOL detectingMode;
+
 @end

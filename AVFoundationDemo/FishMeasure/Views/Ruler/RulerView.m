@@ -28,8 +28,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        self.startPoint  = CGPointMake(200,100);
-        self.endPoint    = CGPointMake(150,500);
+        self.startPoint  = CGPointMake(280,100);
+        self.endPoint    = CGPointMake(280,400);
         self.rulerWidth  = 20;
         self.rulerCalculator = [[RulerCalculator alloc] init];
         self.rulerCalculator.startPoint = self.startPoint;

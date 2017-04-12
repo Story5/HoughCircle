@@ -391,6 +391,7 @@
 {
     if (_drawCircleView == nil) {
         _drawCircleView = [[CaptureImageView alloc] initWithFrame:self.bounds];
+        _drawCircleView.detectingMode = true;
         [self addSubview:_drawCircleView];
     }
     return _drawCircleView;

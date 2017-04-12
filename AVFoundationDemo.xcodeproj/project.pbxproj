@@ -219,8 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				75E70C361E9C6F1200CCB1B4 /* Tools */,
-				75E70C3E1E9C6F1200CCB1B4 /* Views */,
 				7532CE0D1E9CBA7F005B7845 /* Models */,
+				75E70C3E1E9C6F1200CCB1B4 /* Views */,
 				7532CE081E9CBA7F005B7845 /* Controllers */,
 			);
 			path = FishMeasure;
