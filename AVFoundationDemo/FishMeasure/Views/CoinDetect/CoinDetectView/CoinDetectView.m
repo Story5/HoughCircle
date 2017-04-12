@@ -104,7 +104,7 @@
 }
 
 - (void)cameraControlView:(CameraControlView *)cameraControleView clickGuideButton:(UIButton *)aSender
-{
+{    
     [self addSubview:self.guideView];
 }
 
@@ -371,7 +371,7 @@
 {
     if (_cameraControlView == nil) {
         NSInteger height = 110;
-        NSInteger bottomGap = 50;
+        NSInteger bottomGap = 20;
         _cameraControlView = [[CameraControlView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - height - bottomGap, self.bounds.size.width, height)];
         _cameraControlView.delegate = self;
         [self addSubview:_cameraControlView];

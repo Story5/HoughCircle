@@ -38,7 +38,7 @@
 
 - (void)configHeadView
 {
-    NSInteger fontSize = 30;
+    NSInteger fontSize = 20;
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 45, self.bounds.size.width, fontSize)];
     [self addSubview:headView];
     
@@ -50,6 +50,7 @@
     [headView addSubview:label];
     
     UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(25, 0, headView.bounds.size.height, headView.bounds.size.height)];
+    closeButton.titleLabel.font = [UIFont systemFontOfSize:fontSize];
     [closeButton setTitle:@"X" forState:UIControlStateNormal];
     [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(closeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
