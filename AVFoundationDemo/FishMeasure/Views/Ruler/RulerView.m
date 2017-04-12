@@ -9,6 +9,8 @@
 #import "RulerView.h"
 #import "RulerCalculator.h"
 
+#define OneYuan_Radius @"1.25cm"
+
 @interface RulerView ()
 
 @property (nonatomic,strong) RulerCalculator *rulerCalculator;
@@ -34,6 +36,8 @@
         self.rulerCalculator.endPoint = self.endPoint;
         self.rulerCalculator.rulerWidth = self.rulerWidth;
         self.rulerCalculator.rect = frame;
+        
+        _coinRadius = 1.25;
     }
     return self;
 }
@@ -47,17 +51,23 @@
     [self drawRulerWithRect:rect];
     
     
-    NSString *measureText = [NSString stringWithFormat:@"%.2f",self.measureLength];
+    NSString *measureText = [NSString stringWithFormat:@"%.2f cm",self.measureLength];
     [self drawMeasureText:measureText];
 }
 
 #pragma mark - public
-- (CGFloat)measureLength
+- (CGFloat)pixelLength
 {
     CGFloat xDifference = self.startPoint.x - self.endPoint.x;
     CGFloat yDifference = self.startPoint.y - self.endPoint.y;
-    CGFloat length = sqrtf((powf(xDifference, 2) + powf(yDifference, 2)));
-    _measureLength = length;
+    CGFloat pixelLength = sqrtf((powf(xDifference, 2) + powf(yDifference, 2)));
+    return pixelLength;
+}
+
+- (CGFloat)measureLength
+{
+    CGFloat pixelLength = [self pixelLength];
+    _measureLength = pixelLength / (CGFloat)self.coinPixelRadius * self.coinRadius;
     return _measureLength;
 }
 

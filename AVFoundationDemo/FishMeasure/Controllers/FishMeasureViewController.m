@@ -26,8 +26,6 @@
     NSLog(@"%s",__func__);
     self.view.backgroundColor = [UIColor greenColor];
     
-    [self createUI];
-    
     self.imageView.coinDetectModel = self.coinDetectModel;
     [self.imageView setNeedsDisplay];
 }
@@ -43,22 +41,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - init ui
-- (void)createUI
-{
-    self.imageView = [[CaptureImageView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:self.imageView];
-    
-    self.rulerView = [[RulerView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:self.rulerView];
-}
-
 #pragma mark - setter
 - (void)setCoinDetectModel:(CoinDetectModel *)coinDetectModel
 {
     _coinDetectModel = coinDetectModel;
+    self.rulerView.coinPixelRadius = _coinDetectModel.circleRadius;
+    NSLog(@"center = %@",NSStringFromCGPoint(_coinDetectModel.circleCenter));
+    NSLog(@"radius = %d",_coinDetectModel.circleRadius);
+    
     self.imageView.coinDetectModel = _coinDetectModel;
     [self.imageView setNeedsDisplay];
+}
+
+- (CaptureImageView *)imageView
+{
+    if (_imageView == nil) {
+        _imageView = [[CaptureImageView alloc] initWithFrame:self.view.bounds];
+        [self.view addSubview:_imageView];
+        [self.view sendSubviewToBack:_imageView];
+    }
+    return _imageView;
+}
+
+- (RulerView *)rulerView
+{
+    if (_rulerView == nil) {
+        _rulerView = [[RulerView alloc] initWithFrame:self.view.bounds];
+        [self.view addSubview:_rulerView];
+        [self.view bringSubviewToFront:_rulerView];
+    }
+    return _rulerView;
 }
 
 @end

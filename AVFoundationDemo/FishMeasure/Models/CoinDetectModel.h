@@ -11,6 +11,8 @@
 
 @interface CoinDetectModel : NSObject
 
+- (instancetype)shareInstance;
+
 @property (nonatomic,assign) BOOL detectStatus;
 @property (nonatomic,assign) CGPoint circleCenter;
 @property (nonatomic,assign) int circleRadius;

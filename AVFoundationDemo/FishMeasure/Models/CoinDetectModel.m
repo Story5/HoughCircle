@@ -8,7 +8,20 @@
 
 #import "CoinDetectModel.h"
 
+static CoinDetectModel *instance = nil;
+
 @implementation CoinDetectModel
+
+- (instancetype)shareInstance
+{
+    if (instance == nil) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            instance = [[CoinDetectModel alloc] init];
+        });
+    }
+    return instance;
+}
 
 - (void)setDetectStatus:(BOOL)detectStatus
 {
