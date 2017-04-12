@@ -24,6 +24,17 @@
 		7532CE1D1E9CD4B4005B7845 /* CaptureImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532CE1C1E9CD4B4005B7845 /* CaptureImageView.m */; };
 		7532CE1F1E9CDBC2005B7845 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7532CE1E1E9CDBC2005B7845 /* logo.png */; };
 		753691C61E9E0D5B004E8F76 /* ConfigureTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 753691C51E9E0D5B004E8F76 /* ConfigureTool.m */; };
+		753691D91E9E1245004E8F76 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753691CB1E9E1245004E8F76 /* AVCamPreviewView.m */; };
+		753691DA1E9E1245004E8F76 /* CameraControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753691CD1E9E1245004E8F76 /* CameraControlView.m */; };
+		753691DB1E9E1245004E8F76 /* CoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753691CF1E9E1245004E8F76 /* CoinDetectView.m */; };
+		753691DC1E9E1245004E8F76 /* FlashLight_Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 753691D11E9E1245004E8F76 /* FlashLight_Off@2x.png */; };
+		753691DD1E9E1245004E8F76 /* FlashLight_Off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 753691D21E9E1245004E8F76 /* FlashLight_Off@3x.png */; };
+		753691DE1E9E1245004E8F76 /* FlashLight_On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 753691D31E9E1245004E8F76 /* FlashLight_On@2x.png */; };
+		753691DF1E9E1245004E8F76 /* FlashLight_On@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 753691D41E9E1245004E8F76 /* FlashLight_On@3x.png */; };
+		753691E01E9E1245004E8F76 /* Guide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 753691D51E9E1245004E8F76 /* Guide@2x.png */; };
+		753691E11E9E1245004E8F76 /* Guide@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 753691D61E9E1245004E8F76 /* Guide@3x.png */; };
+		753691E21E9E1245004E8F76 /* TakePicture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 753691D71E9E1245004E8F76 /* TakePicture@2x.png */; };
+		753691E31E9E1245004E8F76 /* TakePicture@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 753691D81E9E1245004E8F76 /* TakePicture@3x.png */; };
 		75E70C591E9C6F1300CCB1B4 /* CGGeometryConvertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C381E9C6F1200CCB1B4 /* CGGeometryConvertTool.m */; };
 		75E70C5A1E9C6F1300CCB1B4 /* DetectCircleTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C3B1E9C6F1200CCB1B4 /* DetectCircleTool.mm */; };
 		75E70C5B1E9C6F1300CCB1B4 /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C3D1E9C6F1200CCB1B4 /* UIImage+Rotate_Flip.m */; };
@@ -37,17 +48,6 @@
 		75E70C671E9C6F1300CCB1B4 /* UseGuide2_750x1334.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C541E9C6F1300CCB1B4 /* UseGuide2_750x1334.png */; };
 		75E70C681E9C6F1300CCB1B4 /* UseGuide3_750x1334.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C551E9C6F1300CCB1B4 /* UseGuide3_750x1334.png */; };
 		75E70C691E9C6F1300CCB1B4 /* UseGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C571E9C6F1300CCB1B4 /* UseGuideView.m */; };
-		75E70C801E9C74F600CCB1B4 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C701E9C74F600CCB1B4 /* AVCamPreviewView.m */; };
-		75E70C811E9C74F600CCB1B4 /* CoinDetectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C721E9C74F600CCB1B4 /* CoinDetectView.m */; };
-		75E70C821E9C74F600CCB1B4 /* FlashLight_Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C741E9C74F600CCB1B4 /* FlashLight_Off@2x.png */; };
-		75E70C831E9C74F600CCB1B4 /* FlashLight_Off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C751E9C74F600CCB1B4 /* FlashLight_Off@3x.png */; };
-		75E70C841E9C74F600CCB1B4 /* FlashLight_On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C761E9C74F600CCB1B4 /* FlashLight_On@2x.png */; };
-		75E70C851E9C74F600CCB1B4 /* FlashLight_On@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C771E9C74F600CCB1B4 /* FlashLight_On@3x.png */; };
-		75E70C861E9C74F600CCB1B4 /* Guide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C781E9C74F600CCB1B4 /* Guide@2x.png */; };
-		75E70C871E9C74F600CCB1B4 /* Guide@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C791E9C74F600CCB1B4 /* Guide@3x.png */; };
-		75E70C881E9C74F600CCB1B4 /* TakePicture@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7A1E9C74F600CCB1B4 /* TakePicture@3x.png */; };
-		75E70C891E9C74F600CCB1B4 /* TakePicture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */; };
-		75E70C8E1E9C7F2A00CCB1B4 /* CameraControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E70C8D1E9C7F2A00CCB1B4 /* CameraControlView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +78,20 @@
 		7532CE1E1E9CDBC2005B7845 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		753691C41E9E0D5B004E8F76 /* ConfigureTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureTool.h; sourceTree = "<group>"; };
 		753691C51E9E0D5B004E8F76 /* ConfigureTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureTool.m; sourceTree = "<group>"; };
+		753691CA1E9E1245004E8F76 /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
+		753691CB1E9E1245004E8F76 /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
+		753691CC1E9E1245004E8F76 /* CameraControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraControlView.h; sourceTree = "<group>"; };
+		753691CD1E9E1245004E8F76 /* CameraControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraControlView.m; sourceTree = "<group>"; };
+		753691CE1E9E1245004E8F76 /* CoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectView.h; sourceTree = "<group>"; };
+		753691CF1E9E1245004E8F76 /* CoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectView.m; sourceTree = "<group>"; };
+		753691D11E9E1245004E8F76 /* FlashLight_Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_Off@2x.png"; sourceTree = "<group>"; };
+		753691D21E9E1245004E8F76 /* FlashLight_Off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_Off@3x.png"; sourceTree = "<group>"; };
+		753691D31E9E1245004E8F76 /* FlashLight_On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_On@2x.png"; sourceTree = "<group>"; };
+		753691D41E9E1245004E8F76 /* FlashLight_On@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_On@3x.png"; sourceTree = "<group>"; };
+		753691D51E9E1245004E8F76 /* Guide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guide@2x.png"; sourceTree = "<group>"; };
+		753691D61E9E1245004E8F76 /* Guide@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guide@3x.png"; sourceTree = "<group>"; };
+		753691D71E9E1245004E8F76 /* TakePicture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TakePicture@2x.png"; sourceTree = "<group>"; };
+		753691D81E9E1245004E8F76 /* TakePicture@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TakePicture@3x.png"; sourceTree = "<group>"; };
 		75E70C371E9C6F1200CCB1B4 /* CGGeometryConvertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometryConvertTool.h; sourceTree = "<group>"; };
 		75E70C381E9C6F1200CCB1B4 /* CGGeometryConvertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGeometryConvertTool.m; sourceTree = "<group>"; };
 		75E70C3A1E9C6F1200CCB1B4 /* DetectCircleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectCircleTool.h; sourceTree = "<group>"; };
@@ -95,20 +109,6 @@
 		75E70C551E9C6F1300CCB1B4 /* UseGuide3_750x1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UseGuide3_750x1334.png; sourceTree = "<group>"; };
 		75E70C561E9C6F1300CCB1B4 /* UseGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseGuideView.h; sourceTree = "<group>"; };
 		75E70C571E9C6F1300CCB1B4 /* UseGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseGuideView.m; sourceTree = "<group>"; };
-		75E70C6F1E9C74F600CCB1B4 /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
-		75E70C701E9C74F600CCB1B4 /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
-		75E70C711E9C74F600CCB1B4 /* CoinDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetectView.h; sourceTree = "<group>"; };
-		75E70C721E9C74F600CCB1B4 /* CoinDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetectView.m; sourceTree = "<group>"; };
-		75E70C741E9C74F600CCB1B4 /* FlashLight_Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_Off@2x.png"; sourceTree = "<group>"; };
-		75E70C751E9C74F600CCB1B4 /* FlashLight_Off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_Off@3x.png"; sourceTree = "<group>"; };
-		75E70C761E9C74F600CCB1B4 /* FlashLight_On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_On@2x.png"; sourceTree = "<group>"; };
-		75E70C771E9C74F600CCB1B4 /* FlashLight_On@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FlashLight_On@3x.png"; sourceTree = "<group>"; };
-		75E70C781E9C74F600CCB1B4 /* Guide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guide@2x.png"; sourceTree = "<group>"; };
-		75E70C791E9C74F600CCB1B4 /* Guide@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Guide@3x.png"; sourceTree = "<group>"; };
-		75E70C7A1E9C74F600CCB1B4 /* TakePicture@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TakePicture@3x.png"; sourceTree = "<group>"; };
-		75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TakePicture@2x.png"; sourceTree = "<group>"; };
-		75E70C8C1E9C7F2A00CCB1B4 /* CameraControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraControlView.h; sourceTree = "<group>"; };
-		75E70C8D1E9C7F2A00CCB1B4 /* CameraControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraControlView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +218,21 @@
 			path = CaptureImageView;
 			sourceTree = "<group>";
 		};
+		753691D01E9E1245004E8F76 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				753691D11E9E1245004E8F76 /* FlashLight_Off@2x.png */,
+				753691D21E9E1245004E8F76 /* FlashLight_Off@3x.png */,
+				753691D31E9E1245004E8F76 /* FlashLight_On@2x.png */,
+				753691D41E9E1245004E8F76 /* FlashLight_On@3x.png */,
+				753691D51E9E1245004E8F76 /* Guide@2x.png */,
+				753691D61E9E1245004E8F76 /* Guide@3x.png */,
+				753691D71E9E1245004E8F76 /* TakePicture@2x.png */,
+				753691D81E9E1245004E8F76 /* TakePicture@3x.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		75E70C1B1E9C6E7E00CCB1B4 /* FishMeasure */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,38 +331,15 @@
 		75E70C6D1E9C74F600CCB1B4 /* CoinDetect */ = {
 			isa = PBXGroup;
 			children = (
-				75E70C6E1E9C74F600CCB1B4 /* CoinDetectView */,
+				753691CA1E9E1245004E8F76 /* AVCamPreviewView.h */,
+				753691CB1E9E1245004E8F76 /* AVCamPreviewView.m */,
+				753691CC1E9E1245004E8F76 /* CameraControlView.h */,
+				753691CD1E9E1245004E8F76 /* CameraControlView.m */,
+				753691CE1E9E1245004E8F76 /* CoinDetectView.h */,
+				753691CF1E9E1245004E8F76 /* CoinDetectView.m */,
+				753691D01E9E1245004E8F76 /* Image */,
 			);
 			path = CoinDetect;
-			sourceTree = "<group>";
-		};
-		75E70C6E1E9C74F600CCB1B4 /* CoinDetectView */ = {
-			isa = PBXGroup;
-			children = (
-				75E70C731E9C74F600CCB1B4 /* Image */,
-				75E70C6F1E9C74F600CCB1B4 /* AVCamPreviewView.h */,
-				75E70C701E9C74F600CCB1B4 /* AVCamPreviewView.m */,
-				75E70C711E9C74F600CCB1B4 /* CoinDetectView.h */,
-				75E70C721E9C74F600CCB1B4 /* CoinDetectView.m */,
-				75E70C8C1E9C7F2A00CCB1B4 /* CameraControlView.h */,
-				75E70C8D1E9C7F2A00CCB1B4 /* CameraControlView.m */,
-			);
-			path = CoinDetectView;
-			sourceTree = "<group>";
-		};
-		75E70C731E9C74F600CCB1B4 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				75E70C741E9C74F600CCB1B4 /* FlashLight_Off@2x.png */,
-				75E70C751E9C74F600CCB1B4 /* FlashLight_Off@3x.png */,
-				75E70C761E9C74F600CCB1B4 /* FlashLight_On@2x.png */,
-				75E70C771E9C74F600CCB1B4 /* FlashLight_On@3x.png */,
-				75E70C781E9C74F600CCB1B4 /* Guide@2x.png */,
-				75E70C791E9C74F600CCB1B4 /* Guide@3x.png */,
-				75E70C7B1E9C74F600CCB1B4 /* TakePicture@2x.png */,
-				75E70C7A1E9C74F600CCB1B4 /* TakePicture@3x.png */,
-			);
-			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,27 +401,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753691DF1E9E1245004E8F76 /* FlashLight_On@3x.png in Resources */,
+				753691E01E9E1245004E8F76 /* Guide@2x.png in Resources */,
 				75E70C641E9C6F1300CCB1B4 /* UseGuide2_640x1136.png in Resources */,
 				752BB1711E95ECEC007BE3DD /* LaunchScreen.storyboard in Resources */,
+				753691E21E9E1245004E8F76 /* TakePicture@2x.png in Resources */,
 				75E70C671E9C6F1300CCB1B4 /* UseGuide2_750x1334.png in Resources */,
+				753691E31E9E1245004E8F76 /* TakePicture@3x.png in Resources */,
+				753691DE1E9E1245004E8F76 /* FlashLight_On@2x.png in Resources */,
 				75E70C661E9C6F1300CCB1B4 /* UseGuide1_750x1334.png in Resources */,
-				75E70C881E9C74F600CCB1B4 /* TakePicture@3x.png in Resources */,
 				75E70C621E9C6F1300CCB1B4 /* UseGuide3_1242x2208.png in Resources */,
-				75E70C871E9C74F600CCB1B4 /* Guide@3x.png in Resources */,
 				75E70C631E9C6F1300CCB1B4 /* UseGuide1_640x1136.png in Resources */,
 				75E70C611E9C6F1300CCB1B4 /* UseGuide2_1242x2208.png in Resources */,
-				75E70C841E9C74F600CCB1B4 /* FlashLight_On@2x.png in Resources */,
 				7532CE1F1E9CDBC2005B7845 /* logo.png in Resources */,
+				753691DC1E9E1245004E8F76 /* FlashLight_Off@2x.png in Resources */,
 				752BB16E1E95ECEC007BE3DD /* Assets.xcassets in Resources */,
+				753691DD1E9E1245004E8F76 /* FlashLight_Off@3x.png in Resources */,
 				75E70C651E9C6F1300CCB1B4 /* UseGuide3_640x1136.png in Resources */,
 				75E70C601E9C6F1300CCB1B4 /* UseGuide1_1242x2208.png in Resources */,
 				75E70C681E9C6F1300CCB1B4 /* UseGuide3_750x1334.png in Resources */,
-				75E70C821E9C74F600CCB1B4 /* FlashLight_Off@2x.png in Resources */,
-				75E70C851E9C74F600CCB1B4 /* FlashLight_On@3x.png in Resources */,
-				75E70C861E9C74F600CCB1B4 /* Guide@2x.png in Resources */,
-				75E70C891E9C74F600CCB1B4 /* TakePicture@2x.png in Resources */,
-				75E70C831E9C74F600CCB1B4 /* FlashLight_Off@3x.png in Resources */,
 				752BB16C1E95ECEC007BE3DD /* Main.storyboard in Resources */,
+				753691E11E9E1245004E8F76 /* Guide@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,9 +433,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7532CE0F1E9CBA7F005B7845 /* FishMeasureViewController.m in Sources */,
+				753691DB1E9E1245004E8F76 /* CoinDetectView.m in Sources */,
 				7532CE181E9CD02A005B7845 /* RulerCalculator.m in Sources */,
-				75E70C801E9C74F600CCB1B4 /* AVCamPreviewView.m in Sources */,
-				75E70C8E1E9C7F2A00CCB1B4 /* CameraControlView.m in Sources */,
+				753691DA1E9E1245004E8F76 /* CameraControlView.m in Sources */,
 				75E70C691E9C6F1300CCB1B4 /* UseGuideView.m in Sources */,
 				7532CE1D1E9CD4B4005B7845 /* CaptureImageView.m in Sources */,
 				752BB1661E95ECEC007BE3DD /* AppDelegate.m in Sources */,
@@ -454,8 +446,8 @@
 				75E70C5A1E9C6F1300CCB1B4 /* DetectCircleTool.mm in Sources */,
 				7532CE191E9CD02A005B7845 /* RulerView.m in Sources */,
 				7532CE121E9CBAC0005B7845 /* CoinDetectModel.m in Sources */,
-				75E70C811E9C74F600CCB1B4 /* CoinDetectView.m in Sources */,
 				75E70C591E9C6F1300CCB1B4 /* CGGeometryConvertTool.m in Sources */,
+				753691D91E9E1245004E8F76 /* AVCamPreviewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

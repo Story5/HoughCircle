@@ -28,13 +28,9 @@
 @property (nonatomic,strong) AVCaptureSession *session;
 @property (nonatomic,strong) AVCaptureDevice *device;
 @property (nonatomic,strong) AVCaptureDeviceInput *input;
-
-// 可以捕捉静态图像
-//@property (nonatomic,strong) AVCaptureStillImageOutput *stillImageOutput;
 // 可以逐帧处理捕获的视频
 @property (nonatomic,strong) AVCaptureVideoDataOutput *videoDataOutput;
 @property (nonatomic,strong) AVCamPreviewView *previewView;
-@property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 
 @property (nonatomic,strong) CameraControlView *cameraControlView;
 @property (nonatomic,strong) UseGuideView *guideView;
@@ -58,16 +54,6 @@
     return self;
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-//- (void)drawRect:(CGRect)rect {
-//    // Drawing code
-//    [self setAVCapture];
-//    
-//    
-//    UIImage *image = [UIImage imageNamed:@"flag.png"];
-//    [image drawInRect:CGRectMake(100, 100, 200, 200)];
-//}
 #pragma mark - CameraControlViewDelegate
 - (void)cameraControlView:(CameraControlView *)cameraControleView clickTakePictureButton:(UIButton *)aSender
 {
@@ -76,31 +62,6 @@
     if ([self.delegate respondsToSelector:@selector(coinDetectView:captureFishWithModel:)]) {
         [self.delegate coinDetectView:self captureFishWithModel:self.coinDetectModel];
     }
-//    AVCaptureConnection *videoConnection = [self getConnection];
-//    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:
-//     ^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
-//         CFDictionaryRef exifAttachments =
-//         CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
-//         if (exifAttachments) {
-//             // Do something with the attachments.
-//         }
-//         // Continue as appropriate.
-//         if (imageSampleBuffer == nil) {
-//             NSLog(@"图像缓冲区中没有图像");
-//             return ;
-//         }
-//         NSData *data = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
-//         UIImage *image = [UIImage imageWithData:data];
-//         CGRect rect = _previewView.bounds;
-//         CGFloat offset = (self.bounds.size.height - rect.size.height) * 0.5;
-//         
-//         UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0);
-//         [image drawInRect:CGRectInset(rect, 0, -offset)];
-//         UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
-//         UIGraphicsEndImageContext();
-//         
-//         UIImageWriteToSavedPhotosAlbum(resultImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-//     }];
 }
 
 - (void)cameraControlView:(CameraControlView *)cameraControleView clickGuideButton:(UIButton *)aSender
