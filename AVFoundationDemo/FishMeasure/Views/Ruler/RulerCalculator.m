@@ -10,6 +10,7 @@
 
 @interface RulerCalculator ()
 
+@property (nonatomic,assign) BOOL verticalStatus;
 
 @end
 
@@ -18,6 +19,9 @@
 
 #pragma mark - 计算所有直线方程
 - (void)calculateLineParam{
+    // 排除尺子垂直于y轴情况
+    if (self.verticalStatus) return;
+    
     // AB 直线方程 : y = kAB * x + bAB
     _kAB = (self.endPoint.y - self.startPoint.y) / (self.endPoint.x - self.startPoint.x);
     _bAB = (self.startPoint.x * self.endPoint.y - self.endPoint.x * self.startPoint.y) / (self.startPoint.x - self.endPoint.x);
@@ -36,6 +40,14 @@
 // MARK: 获取直线与屏幕边缘的交点
 - (NSArray *)getInterPoints
 {
+    if (self.verticalStatus) {
+        return @[[NSValue valueWithCGPoint:CGPointMake(0, self.startPoint.y)],
+                 [NSValue valueWithCGPoint:CGPointMake(self.rect.size.width, self.startPoint.y)],
+                 [NSValue valueWithCGPoint:CGPointMake(0, self.endPoint.y)],
+                 [NSValue valueWithCGPoint:CGPointMake(self.rect.size.width, self.endPoint.y)]
+                 ];
+    }
+
     [self calculateLineParam];
     
     /// 直接获取 x = 0, y = 0, x = width , y = height 四个点,然后判断相应的 0 =< x <= width, 0 =< y <= height
@@ -73,6 +85,13 @@
 // MARK: 获取尺子边框4个点坐标
 - (NSArray *)getRectPoints
 {
+    if (self.verticalStatus) {
+        return @[[NSValue valueWithCGPoint:CGPointMake(self.startPoint.x - self.rulerWidth / 2, self.startPoint.y)],
+                 [NSValue valueWithCGPoint:CGPointMake(self.startPoint.x + self.rulerWidth / 2, self.startPoint.y)],
+                 [NSValue valueWithCGPoint:CGPointMake(self.endPoint.x + self.rulerWidth / 2, self.endPoint.y)],
+                 [NSValue valueWithCGPoint:CGPointMake(self.endPoint.x - self.rulerWidth / 2, self.endPoint.y)]];
+    }
+    
     [self calculateLineParam];
     
     // x = (b2 - b1) / (k1 - k2)
@@ -96,6 +115,14 @@
         [rectPoints exchangeObjectAtIndex:2 withObjectAtIndex:3];
     }
     return rectPoints;
+}
+
+- (BOOL)verticalStatus
+{
+    if (self.startPoint.x == self.endPoint.x) {
+        return true;
+    }
+    return  false;
 }
 
 @end
