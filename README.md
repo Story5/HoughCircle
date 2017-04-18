@@ -1,4 +1,4 @@
-# AVFoundationDemo
+# CircleDetectDemo
 
 ## Introduction
 * 1.Use AVFoundation to get every frame of the capture video
