@@ -53,7 +53,7 @@
 /* Begin PBXFileReference section */
 		0444EFD91E978E3B00224B7E /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = AVFoundationDemo/opencv2.framework; sourceTree = "<group>"; };
 		50D6A2921E9B31E1006ACDE6 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
-		752BB15E1E95ECEC007BE3DD /* AVFoundationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVFoundationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		752BB15E1E95ECEC007BE3DD /* CircleDetectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleDetectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		752BB1621E95ECEC007BE3DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		752BB1641E95ECEC007BE3DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		752BB1651E95ECEC007BE3DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		752BB1551E95ECEC007BE3DD = {
 			isa = PBXGroup;
 			children = (
-				752BB1601E95ECEC007BE3DD /* AVFoundationDemo */,
+				752BB1601E95ECEC007BE3DD /* CircleDetectDemo */,
 				752BB15F1E95ECEC007BE3DD /* Products */,
 				752BB1781E95EFEB007BE3DD /* Frameworks */,
 			);
@@ -138,12 +138,12 @@
 		752BB15F1E95ECEC007BE3DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				752BB15E1E95ECEC007BE3DD /* AVFoundationDemo.app */,
+				752BB15E1E95ECEC007BE3DD /* CircleDetectDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		752BB1601E95ECEC007BE3DD /* AVFoundationDemo */ = {
+		752BB1601E95ECEC007BE3DD /* CircleDetectDemo */ = {
 			isa = PBXGroup;
 			children = (
 				752BB1641E95ECEC007BE3DD /* AppDelegate.h */,
@@ -155,6 +155,7 @@
 				752BB1721E95ECEC007BE3DD /* Info.plist */,
 				752BB1611E95ECEC007BE3DD /* Supporting Files */,
 			);
+			name = CircleDetectDemo;
 			path = AVFoundationDemo;
 			sourceTree = "<group>";
 		};
@@ -345,9 +346,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		752BB15D1E95ECEC007BE3DD /* AVFoundationDemo */ = {
+		752BB15D1E95ECEC007BE3DD /* CircleDetectDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 752BB1751E95ECEC007BE3DD /* Build configuration list for PBXNativeTarget "AVFoundationDemo" */;
+			buildConfigurationList = 752BB1751E95ECEC007BE3DD /* Build configuration list for PBXNativeTarget "CircleDetectDemo" */;
 			buildPhases = (
 				752BB15A1E95ECEC007BE3DD /* Sources */,
 				752BB15B1E95ECEC007BE3DD /* Frameworks */,
@@ -357,9 +358,9 @@
 			);
 			dependencies = (
 			);
-			name = AVFoundationDemo;
+			name = CircleDetectDemo;
 			productName = AVFoundationDemo;
-			productReference = 752BB15E1E95ECEC007BE3DD /* AVFoundationDemo.app */;
+			productReference = 752BB15E1E95ECEC007BE3DD /* CircleDetectDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -378,7 +379,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 752BB1591E95ECEC007BE3DD /* Build configuration list for PBXProject "AVFoundationDemo" */;
+			buildConfigurationList = 752BB1591E95ECEC007BE3DD /* Build configuration list for PBXProject "CircleDetectDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -391,7 +392,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				752BB15D1E95ECEC007BE3DD /* AVFoundationDemo */,
+				752BB15D1E95ECEC007BE3DD /* CircleDetectDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -602,7 +603,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		752BB1591E95ECEC007BE3DD /* Build configuration list for PBXProject "AVFoundationDemo" */ = {
+		752BB1591E95ECEC007BE3DD /* Build configuration list for PBXProject "CircleDetectDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				752BB1731E95ECEC007BE3DD /* Debug */,
@@ -611,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		752BB1751E95ECEC007BE3DD /* Build configuration list for PBXNativeTarget "AVFoundationDemo" */ = {
+		752BB1751E95ECEC007BE3DD /* Build configuration list for PBXNativeTarget "CircleDetectDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				752BB1761E95ECEC007BE3DD /* Debug */,
