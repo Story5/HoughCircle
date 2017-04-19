@@ -51,6 +51,7 @@
 		75A2875E1EA5FF11009C9E31 /* example01.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 75A287361EA5FF11009C9E31 /* example01.jpeg */; };
 		75A2875F1EA5FF11009C9E31 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75A287371EA5FF11009C9E31 /* Info.plist */; };
 		75A287601EA5FF11009C9E31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A287381EA5FF11009C9E31 /* main.m */; };
+		75A287B91EA741C4009C9E31 /* JavaRulerCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A287B81EA741C4009C9E31 /* JavaRulerCalculator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,8 @@
 		75A287361EA5FF11009C9E31 /* example01.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = example01.jpeg; sourceTree = "<group>"; };
 		75A287371EA5FF11009C9E31 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75A287381EA5FF11009C9E31 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		75A287B71EA741C4009C9E31 /* JavaRulerCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JavaRulerCalculator.h; sourceTree = "<group>"; };
+		75A287B81EA741C4009C9E31 /* JavaRulerCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JavaRulerCalculator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +285,8 @@
 		75A2871D1EA5FF11009C9E31 /* Ruler */ = {
 			isa = PBXGroup;
 			children = (
+				75A287B71EA741C4009C9E31 /* JavaRulerCalculator.h */,
+				75A287B81EA741C4009C9E31 /* JavaRulerCalculator.m */,
 				75A2871E1EA5FF11009C9E31 /* RulerCalculator.h */,
 				75A2871F1EA5FF11009C9E31 /* RulerCalculator.m */,
 				75A287201EA5FF11009C9E31 /* RulerView.h */,
@@ -474,6 +479,7 @@
 				75A287391EA5FF11009C9E31 /* AppDelegate.m in Sources */,
 				75A287441EA5FF11009C9E31 /* CaptureImageView.m in Sources */,
 				75A2873F1EA5FF11009C9E31 /* CoinDetectModel.m in Sources */,
+				75A287B91EA741C4009C9E31 /* JavaRulerCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
