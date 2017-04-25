@@ -11,6 +11,15 @@
 
 @interface DetectCircleTool : NSObject
 
+@property (nonatomic,assign) double size;
+@property (nonatomic,assign) double dp;
+@property (nonatomic,assign) double minDist;
+@property (nonatomic,assign) double param1;
+@property (nonatomic,assign) double param2;
+@property (nonatomic,assign) int minRadius;
+@property (nonatomic,assign) int maxRadius;
+
+
 @property (nonatomic,readonly) CGPoint center;
 @property (nonatomic,readonly) int radius;
 @property (nonatomic,strong,readonly) UIImage *covertImage;

@@ -19,6 +19,13 @@
 
 @interface CoinDetectView : UIView
 
+@property (nonatomic,assign) double dp;
+@property (nonatomic,assign) double minDist;
+@property (nonatomic,assign) double param1;
+@property (nonatomic,assign) double param2;
+@property (nonatomic,assign) int minRadius;
+@property (nonatomic,assign) int maxRadius;
+
 @property (nonatomic,strong) id<CoinDetectViewDelegate>delegate;
 
 - (void)startRunning;

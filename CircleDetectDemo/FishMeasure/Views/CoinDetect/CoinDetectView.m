@@ -32,6 +32,8 @@
 @property (nonatomic,strong) AVCaptureVideoDataOutput *videoDataOutput;
 @property (nonatomic,strong) AVCamPreviewView *previewView;
 
+
+
 @property (nonatomic,strong) CameraControlView *cameraControlView;
 @property (nonatomic,strong) UseGuideView *guideView;
 
@@ -49,7 +51,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setAVCapture];
+        [self createUI];
+//        [self configOtherView];
+//        
+//        UIImage *image = [UIImage imageNamed:@"coin"];
+//        [self detectCoinWithImage:image];
     }
     return self;
 }
@@ -84,6 +90,18 @@
     //    CIImage *image = [[CIImage alloc] initWithCVImageBuffer:pixelBuffer];
     UIImage *sourceImage = [self imageFromSampleBuffer:sampleBuffer];
     UIImage *image = [sourceImage rotateImageWithRadian:M_PI_2 cropMode:enSvCropExpand];
+    [self detectCoinWithImage:image];
+}
+
+// drop
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
+{
+    
+}
+
+#pragma mark - detect Coin
+- (void)detectCoinWithImage:(UIImage *)image
+{
     self.covertTool.sourceSize = image.size;
     
     BOOL detected = [self.detectCircleTool detectCircleInImage:image];
@@ -102,13 +120,13 @@
     });
 }
 
-// drop
-- (void)captureOutput:(AVCaptureOutput *)captureOutput didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
+#pragma mark - set AVCapturete
+- (void)createUI
 {
-    
+    [self setAVCapture];
+    [self configOtherView];
 }
 
-#pragma mark - set AVCapture
 - (void)setAVCapture
 {
     //  **********   步骤 - 1   **********
@@ -122,18 +140,19 @@
     [self configVideoDataOutput];
     //  **********   步骤 - 5   **********
     [self configPreview];
-    
-    // 配置画圆视图
-    [self configCircleImageView];
-    
-    // 配置拍照按钮控件
-    [self configCameraControlView];
-    
     //  **********   步骤 - 6   **********
     [self startRunning];
     
     // Assign session to an ivar.
     [self setSession:self.session];
+}
+
+- (void)configOtherView
+{
+    // 配置画圆视图
+    [self configCircleImageView];
+    // 配置拍照按钮控件
+    [self configCameraControlView];
 }
 
 // Create the session
@@ -153,9 +172,9 @@
     
     NSError *error = nil;
     [self.device lockForConfiguration:&error];
-    // If you wish to cap the frame rate to a known value, such as 15 fps, set
+    // If you wish to cap the frame rate to a known value, such as 30 fps, set
     // minFrameDuration.
-    self.device.activeVideoMinFrameDuration = CMTimeMake(1, 15);
+    self.device.activeVideoMinFrameDuration = CMTimeMake(1, 30);
 }
 
 // Create a device input with the device and add it to the session
@@ -311,6 +330,37 @@
 //    }];
 //    [alert addAction:cancel];
 //    [self presentViewController:alert animated:true completion:nil];
+}
+
+#pragma mark - setter
+- (void)setDp:(double)dp
+{
+    self.detectCircleTool.dp = dp;
+}
+
+- (void)setMinDist:(double)minDist
+{
+    self.detectCircleTool.minDist = minDist;
+}
+
+- (void)setParam1:(double)param1
+{
+    self.detectCircleTool.param1 = param1;
+}
+
+- (void)setParam2:(double)param2
+{
+    self.detectCircleTool.param2 = param2;
+}
+
+- (void)setMinRadius:(int)minRadius
+{
+    self.detectCircleTool.minRadius = minRadius;
+}
+
+- (void)setMaxRadius:(int)maxRadius
+{
+    self.detectCircleTool.maxRadius = maxRadius;
 }
 
 #pragma mark - getter

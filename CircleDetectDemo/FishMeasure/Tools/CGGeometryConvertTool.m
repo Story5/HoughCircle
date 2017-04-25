@@ -32,11 +32,20 @@
 
 - (CGPoint)convertPoint:(CGPoint)point
 {
-    CGPoint covertPoint = CGPointMake(point.x * self.scale, point.y * self.scale);
-    CGPoint returnPoint = CGPointMake(covertPoint.x, self.covertSize.height - covertPoint.y);
-    NSLog(@"source point = %@",NSStringFromCGPoint(point));
-    NSLog(@"covert point = %@",NSStringFromCGPoint(returnPoint));
-    return returnPoint;
+    CGPoint covertPoint = CGPointMake(point.x * [self widthScale], point.y * [self heightScale]);
+    return covertPoint;
+}
+
+- (CGFloat)widthScale
+{
+    CGFloat scaleWidth = self.covertSize.width / self.sourceSize.width;
+    return scaleWidth;
+}
+
+- (CGFloat)heightScale
+{
+    CGFloat scaleHeight = self.covertSize.height / self.sourceSize.height;
+    return scaleHeight;
 }
 
 - (CGFloat)scale

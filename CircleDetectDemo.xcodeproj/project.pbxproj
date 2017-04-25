@@ -52,6 +52,8 @@
 		75A2875F1EA5FF11009C9E31 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75A287371EA5FF11009C9E31 /* Info.plist */; };
 		75A287601EA5FF11009C9E31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A287381EA5FF11009C9E31 /* main.m */; };
 		75A287B91EA741C4009C9E31 /* JavaRulerCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A287B81EA741C4009C9E31 /* JavaRulerCalculator.m */; };
+		75C4666B1EA9A8D00083CB14 /* ParamSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C4666A1EA9A8D00083CB14 /* ParamSlider.m */; };
+		75C466741EAEDC3E0083CB14 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 75C466731EAEDC3E0083CB14 /* coin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +119,9 @@
 		75A287381EA5FF11009C9E31 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		75A287B71EA741C4009C9E31 /* JavaRulerCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JavaRulerCalculator.h; sourceTree = "<group>"; };
 		75A287B81EA741C4009C9E31 /* JavaRulerCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JavaRulerCalculator.m; sourceTree = "<group>"; };
+		75C466691EA9A8D00083CB14 /* ParamSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamSlider.h; sourceTree = "<group>"; };
+		75C4666A1EA9A8D00083CB14 /* ParamSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamSlider.m; sourceTree = "<group>"; };
+		75C466731EAEDC3E0083CB14 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coin.png; path = CircleDetectDemo/Image/Source/coin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +142,7 @@
 		752BB1551E95ECEC007BE3DD = {
 			isa = PBXGroup;
 			children = (
+				75C466731EAEDC3E0083CB14 /* coin.png */,
 				75A286ED1EA5FF11009C9E31 /* CircleDetectDemo */,
 				752BB15F1E95ECEC007BE3DD /* Products */,
 				752BB1781E95EFEB007BE3DD /* Frameworks */,
@@ -235,6 +241,7 @@
 		75A287081EA5FF11009C9E31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				75C466681EA9A8C20083CB14 /* ParamSlider */,
 				75A287091EA5FF11009C9E31 /* CaptureImageView */,
 				75A2870D1EA5FF11009C9E31 /* CoinDetect */,
 				75A2871D1EA5FF11009C9E31 /* Ruler */,
@@ -370,6 +377,15 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		75C466681EA9A8C20083CB14 /* ParamSlider */ = {
+			isa = PBXGroup;
+			children = (
+				75C466691EA9A8D00083CB14 /* ParamSlider.h */,
+				75C4666A1EA9A8D00083CB14 /* ParamSlider.m */,
+			);
+			path = ParamSlider;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -430,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75A287491EA5FF11009C9E31 /* FlashLight_Off@2x.png in Resources */,
+				75C466741EAEDC3E0083CB14 /* coin.png in Resources */,
 				75A287561EA5FF11009C9E31 /* UseGuide1_640x1136.png in Resources */,
 				75A2874D1EA5FF11009C9E31 /* Guide@2x.png in Resources */,
 				75A2874E1EA5FF11009C9E31 /* Guide@3x.png in Resources */,
@@ -473,6 +490,7 @@
 				75A287461EA5FF11009C9E31 /* AVCamPreviewView.m in Sources */,
 				75A287511EA5FF11009C9E31 /* RulerCalculator.m in Sources */,
 				75A287421EA5FF11009C9E31 /* DetectCircleTool.mm in Sources */,
+				75C4666B1EA9A8D00083CB14 /* ParamSlider.m in Sources */,
 				75A287431EA5FF11009C9E31 /* UIImage+Rotate_Flip.m in Sources */,
 				75A287521EA5FF11009C9E31 /* RulerView.m in Sources */,
 				75A287481EA5FF11009C9E31 /* CoinDetectView.m in Sources */,
