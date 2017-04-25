@@ -7,6 +7,7 @@
 //
 
 #import <opencv2/opencv.hpp>
+#import <opencv2/core.hpp>
 #import <opencv2/imgcodecs/ios.h>
 #import <opencv2/imgproc/imgproc.hpp>
 
@@ -29,8 +30,14 @@
     return self;
 }
 
-- (BOOL)detectCircleInImage:(UIImage *)image
+- (BOOL)detectCircleInImage:(UIImage *)image params:(NSDictionary *)params
 {
+    
+    //
+    UIImage *coinImage = [UIImage imageNamed:@"coin"];
+    cv::Mat src_coin;
+    UIImageToMat(coinImage, src_coin);
+    
     // 将 UIImage 转成 MAT
     cv::Mat src;
     UIImageToMat(image, src);
@@ -40,19 +47,38 @@
     cv::cvtColor(src, src_gray, CV_BGR2GRAY);
     image = MatToUIImage(src_gray);
     
-    
     // 将图像直方图均值化,提高图像对比度
 //    cv::Mat src_hist;
 //    cv::equalizeHist(src_gray,src_gray);
 //    image = MatToUIImage(src_gray);
 
     // 锐化图像,突显边界
-//    cv::Mat dst,dst2;
-//    cv::Sobel(src_gray, src_gray, -1, 1, 1);
-//    image = MatToUIImage(src_gray);
-//    cv::Laplacian(src_gray, src_gray, -1);
-//    image = MatToUIImage(src_gray);
+//    cv::Mat src_Laplacian;
+//    cv::Laplacian(src_gray, src_Laplacian, -1);
+//    image = MatToUIImage(src_Laplacian);
     
+    // 使用Threshold检测边缘
+//    cv::Mat src_threshold;
+//    cv::threshold(src_gray, src_threshold, 100, 255, cv::THRESH_BINARY);
+//    image = MatToUIImage(src_threshold);
+
+    if (params) {
+        self.size     = [params[@"size"] doubleValue];
+        self.dp       = [params[@"dp"] doubleValue];
+        self.minDist  = [params[@"minDist"] doubleValue];
+        self.param1   = [params[@"param1"] doubleValue];
+        self.param2   = [params[@"param2"] doubleValue];
+        self.minRadius   = [params[@"minRadius"] intValue];
+        self.maxRadius   = [params[@"maxRadius"] intValue];
+        NSLog(@"size        = %f",self.size);
+        NSLog(@"dp          = %f",self.dp);
+        NSLog(@"minDist     = %f",self.minDist);
+        NSLog(@"param1      = %f",self.param1);
+        NSLog(@"param2      = %f",self.param2);
+        NSLog(@"minRadius   = %d",self.minRadius);
+        NSLog(@"maxRadius   = %d",self.maxRadius);
+        NSLog(@"*****************");
+    }
     // 高斯滤镜
     cv::Mat src_gaussian;
     cv::GaussianBlur(src_gray,          // src
@@ -83,6 +109,8 @@
         _covertImage = nil;
         return false;
     }
+    
+    image = MatToUIImage(src_gaussian);
     
     for( size_t i = 0; i < circles.size(); i++ )
     {

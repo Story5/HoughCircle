@@ -25,8 +25,6 @@
 - (int)covertIntLength:(int)length
 {
     int covertLength = length * self.scale;
-    NSLog(@"source length = %d",length);
-    NSLog(@"covert length = %d",covertLength);
     return covertLength;
 }
 

@@ -51,6 +51,13 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.size = 9;
+        self.dp = 1.0;
+        self.minDist = 8.0;
+        self.param1 = 200.0;
+        self.param2 = 100.0;
+        self.minRadius = 0;
+        self.maxRadius = 0;
         [self createUI];
 //        [self configOtherView];
 //        
@@ -104,7 +111,15 @@
 {
     self.covertTool.sourceSize = image.size;
     
-    BOOL detected = [self.detectCircleTool detectCircleInImage:image];
+    NSDictionary *params = @{@"size"        :[NSNumber numberWithDouble:self.size],
+                             @"dp"          :[NSNumber numberWithDouble:self.dp],
+                             @"minDist"     :[NSNumber numberWithDouble:self.minDist],
+                             @"param1"      :[NSNumber numberWithDouble:self.param1],
+                             @"param2"      :[NSNumber numberWithDouble:self.param2],
+                             @"minRadius"   :[NSNumber numberWithInt:self.minRadius],
+                             @"maxRadius"   :[NSNumber numberWithInt:self.maxRadius]};
+    
+    BOOL detected = [self.detectCircleTool detectCircleInImage:image params:params];
     int radius = [self.covertTool covertIntLength:self.detectCircleTool.radius];
     CGPoint center = [self.covertTool convertPoint:self.detectCircleTool.center];
     
@@ -333,33 +348,45 @@
 }
 
 #pragma mark - setter
+- (void)setSize:(double)size
+{
+    _size = size;
+    self.detectCircleTool.size = size;
+}
+
 - (void)setDp:(double)dp
 {
+    _dp = dp;
     self.detectCircleTool.dp = dp;
 }
 
 - (void)setMinDist:(double)minDist
 {
+    _minDist = minDist;
     self.detectCircleTool.minDist = minDist;
 }
 
 - (void)setParam1:(double)param1
 {
+    _param1 = param1;
     self.detectCircleTool.param1 = param1;
 }
 
 - (void)setParam2:(double)param2
 {
+    _param2 = param2;
     self.detectCircleTool.param2 = param2;
 }
 
 - (void)setMinRadius:(int)minRadius
 {
+    _minRadius = minRadius;
     self.detectCircleTool.minRadius = minRadius;
 }
 
 - (void)setMaxRadius:(int)maxRadius
 {
+    _maxRadius = maxRadius;
     self.detectCircleTool.maxRadius = maxRadius;
 }
 

@@ -80,15 +80,23 @@
              @200];
 }
 
+/*
+ dp：偵測解析度倒數比例，假設dp=1，偵測圖和輸入圖尺寸相同，假設dp=2，偵測圖長和寬皆為輸入圖的一半。
+ minDist：圓彼此間的最短距離，太小的話可能會把鄰近的幾個圓視為一個，太大的話可能會錯過某些圓。
+ param1：圓偵測內部會呼叫Canny()尋找邊界，param1就是Canny()的高閾值，低閾值自動設為此值的一半。
+ param2：計數閾值，超過此值的圓才會存入circles。
+ minRadius：最小的圓半徑。
+ maxRadius：最大的圓半徑。
+ */
 - (NSArray<NSNumber *> *)enterValueForParamSlider:(ParamSlider *)paramSlider
 {
-    return @[@9,
-             @1,
-             @8,
-             @200,
-             @100,
-             @0,
-             @100];
+    return @[@9,    // size;
+             @2,    // dp;
+             @8,    // minDist;
+             @200,  // param1;
+             @0,    // param2;
+             @0,    // minRadius;
+             @100]; // maxRadius;
 }
 
 - (void)value:(float)value indexOfSlider:(NSInteger)index
@@ -97,21 +105,24 @@
     
     switch (index) {
         case 0:
-            self.coinDetectView.dp = value;
+            self.coinDetectView.size = value;
             break;
         case 1:
-            self.coinDetectView.minDist = value;
+            self.coinDetectView.dp = value;
             break;
         case 2:
-            self.coinDetectView.param1 = value;
+            self.coinDetectView.minDist = value;
             break;
         case 3:
-            self.coinDetectView.param2 = value;
+            self.coinDetectView.param1 = value;
             break;
         case 4:
-            self.coinDetectView.minRadius = value;
+            self.coinDetectView.param2 = value;
             break;
         case 5:
+            self.coinDetectView.minRadius = value;
+            break;
+        case 6:
             self.coinDetectView.maxRadius = value;
             break;
         default:
@@ -145,10 +156,7 @@
 #pragma mark - test
 - (void)test
 {
-    UIImage *coinImage = [UIImage imageNamed:@"coin"];
-    DetectCircleTool *tool = [[DetectCircleTool alloc] init];
-    BOOL detected = [tool detectCircleInImage:coinImage];
-    NSLog(@"detected = %d",detected);
+    
 }
 
 @end

@@ -19,6 +19,7 @@
 
 @interface CoinDetectView : UIView
 
+@property (nonatomic,assign) double size;
 @property (nonatomic,assign) double dp;
 @property (nonatomic,assign) double minDist;
 @property (nonatomic,assign) double param1;

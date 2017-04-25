@@ -24,6 +24,6 @@
 @property (nonatomic,readonly) int radius;
 @property (nonatomic,strong,readonly) UIImage *covertImage;
 
-- (BOOL)detectCircleInImage:(UIImage *)image;
+- (BOOL)detectCircleInImage:(UIImage *)image params:(NSDictionary *)params;
 
 @end
