@@ -81,6 +81,9 @@
         if (self.enterValues) {
             float value = [self.enterValues[i] floatValue];
             slider.value = value;
+            if ([self.delegate respondsToSelector:@selector(value:indexOfSlider:)]) {
+                [self.delegate value:slider.value indexOfSlider:i];
+            }
         }
         [slider addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
         [self addSubview:slider];

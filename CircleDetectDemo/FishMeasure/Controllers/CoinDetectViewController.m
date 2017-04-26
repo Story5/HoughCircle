@@ -91,12 +91,12 @@
 - (NSArray<NSNumber *> *)enterValueForParamSlider:(ParamSlider *)paramSlider
 {
     return @[@9,    // size;
-             @2,    // dp;
+             @1,    // dp;
              @8,    // minDist;
              @200,  // param1;
-             @0,    // param2;
+             @100,    // param2;
              @0,    // minRadius;
-             @100]; // maxRadius;
+             @0]; // maxRadius;
 }
 
 - (void)value:(float)value indexOfSlider:(NSInteger)index
